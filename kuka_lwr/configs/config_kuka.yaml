@@ -4,6 +4,11 @@ HALInterface:
   lib_file: "libXBotKuka"
   lib_name: "KUKA"
 
+WebServer:
+  enable: "true"
+  address: "127.0.0.1"
+  port: "8081"
+
 XBotInterface:
   urdf_path: "configs/ADVR_shared/kuka_lwr/urdf/kuka.urdf"
   srdf_path: "configs/ADVR_shared/kuka_lwr/srdf/kuka.srdf"
