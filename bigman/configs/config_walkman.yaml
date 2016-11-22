@@ -1,9 +1,9 @@
 # WALKMAN config
 
 XBotInterface:
-  urdf_path: "urdf/bigman.urdf"
-  srdf_path: "srdf/bigman.srdf"
-  joint_map_path: "joint_map/bigman_ecat_joint_map.yaml"
+  urdf_path: "/configs/ADVR_shared/bigman/urdf/bigman.urdf"
+  srdf_path: "/configs/ADVR_shared/bigman/srdf/bigman.srdf"
+  joint_map_path: "/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
 RobotInterface:
   framework_name: "YARP"
