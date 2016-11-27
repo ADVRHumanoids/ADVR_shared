@@ -5,7 +5,7 @@ XBotInterface:
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_test_joint_map_upperbody.yaml"
 
 RobotInterface:
-  framework_name: "ROS"
+  framework_name: "XBotRT"
   
 ModelInterface:
   model_type: "RBDL"
@@ -19,6 +19,11 @@ RobotInterfaceROS:
   jointstate_message_type: "JointState"
   ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
   imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
+  
+RobotInterfaceXBotRT:
+  subclass_name: "RobotInterfaceXBotRT"
+  path_to_shared_lib: "libRobotInterfaceXBotRT.so"
+  subclass_factory_name: "robot_interface_xbot_rt"
   
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
