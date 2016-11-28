@@ -1,17 +1,22 @@
 # WALKMAN config
 
 XBotInterface:
-  urdf_path: "/configs/ADVR_shared/bigman/urdf/bigman.urdf"
-  srdf_path: "/configs/ADVR_shared/bigman/srdf/bigman.srdf"
-  joint_map_path: "/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_fixed_hands.urdf"
+  srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
+  joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
 RobotInterface:
-  framework_name: "YARP"
+  framework_name: "XBotRT"
   
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "false"
   
+RobotInterfaceXBotRT:
+  subclass_name: "RobotInterfaceXBotRT"
+  path_to_shared_lib: "libRobotInterfaceXBotRT.so"
+  subclass_factory_name: "robot_interface_xbot_rt"
+
 RobotInterfaceYARP:
   subclass_name: "RobotInterfaceYARP"
   path_to_shared_lib: "libRobotInterfaceYARP.so"
