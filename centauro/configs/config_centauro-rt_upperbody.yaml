@@ -25,6 +25,9 @@ RobotInterfaceXBotRT:
   path_to_shared_lib: "libRobotInterfaceXBotRT.so"
   subclass_factory_name: "robot_interface_xbot_rt"
   
+XBotRTPlugins:
+  plugins: ["IkExample"]
+  
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
