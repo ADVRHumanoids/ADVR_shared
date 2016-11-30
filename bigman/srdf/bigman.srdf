@@ -98,6 +98,9 @@
     <group name="left_leg"/>
     <!-- RIGHT LEG -->
     <group name="right_leg"/>
+    
+    <group name="right_hand"/>
+    <group name="left_hand"/>
   </group>
   <!-- END CHAINS -->
   <group_state group="chains" name="home">
