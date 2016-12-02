@@ -1,6 +1,6 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upperbody.urdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upperbody_new.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_test_joint_map_upperbody.yaml"
 
