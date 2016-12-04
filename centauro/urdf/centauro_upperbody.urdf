@@ -792,7 +792,7 @@
     <parent link="arm1_5"/>
     <child link="arm1_6"/>
     <origin xyz="0 0.049 -0.180"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="350" lower="-1.570" upper="1.570" velocity="6.5"/>
     <!-- TODO -->
   </joint>
@@ -1244,7 +1244,7 @@
     <parent link="arm2_5"/>
     <child link="arm2_6"/>
     <origin xyz="0 -0.049 -0.180"/>
-    <axis xyz="0 -1 0"/>
+    <axis xyz="0 1 0"/>
     <limit effort="350" lower="-1.570" upper="1.570" velocity="6.5"/>
     <!-- TODO -->
   </joint>
