@@ -187,7 +187,7 @@ CentAcESC_5:
 
 CentAcESC_6:
   control_mode: pos_3b
-  sign: -1
+  sign: 1
   pos_offset: 0
   max_current_A: 1.0
   pid :
@@ -260,7 +260,7 @@ CentAcESC_12:
     
 CentAcESC_13:
   control_mode: pos_3b
-  sign: -1
+  sign: 1
   pos_offset: 0
   max_current_A: 10.0
   pid :
