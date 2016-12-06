@@ -151,7 +151,7 @@ CentAcESC_2:
   pos_offset: 45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
@@ -161,7 +161,7 @@ CentAcESC_3:
   pos_offset: 45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
@@ -171,7 +171,7 @@ CentAcESC_4:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
 
@@ -181,7 +181,7 @@ CentAcESC_5:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
 
@@ -191,7 +191,7 @@ CentAcESC_6:
   pos_offset: 0
   max_current_A: 1.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
@@ -201,7 +201,7 @@ CentAcESC_7:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
@@ -211,7 +211,7 @@ CentAcESC_8:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
@@ -224,7 +224,7 @@ CentAcESC_9:
   pos_offset: -45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
@@ -234,7 +234,7 @@ CentAcESC_10:
   pos_offset: -45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
@@ -244,7 +244,7 @@ CentAcESC_11:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]    
+    position: [150.0 , 0.0 , 5.0]    
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
     
@@ -254,7 +254,7 @@ CentAcESC_12:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]    
+    position: [150.0 , 0.0 , 5.0]    
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
     
@@ -264,7 +264,7 @@ CentAcESC_13:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
@@ -274,7 +274,7 @@ CentAcESC_14:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
@@ -284,7 +284,7 @@ CentAcESC_15:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [1000.0 , 0.0 , 30.0]
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
