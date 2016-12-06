@@ -26,7 +26,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
   
 XBotRTPlugins:
-  plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
+  plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
