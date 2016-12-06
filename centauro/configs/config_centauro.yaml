@@ -1,7 +1,7 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upperbody_new.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upperbody_new_ft.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody_new_ft.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml"
 
 RobotInterface:
@@ -26,7 +26,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
   
 XBotRTPlugins:
-  plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  plugins: ["HomingExample"]
+  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   
 CustomCmnd:
@@ -54,8 +55,8 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 x_bot_core:
-  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_upperbody_new.urdf
-  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf
+  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_upperbody_new_ft.urdf
+  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_upperbody_new_ft.srdf
   joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml
 
 x_bot_ecat:
