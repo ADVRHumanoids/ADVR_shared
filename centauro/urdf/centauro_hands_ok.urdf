@@ -531,7 +531,7 @@
   <!-- OK: 1.7 -->
   <!--         <inertia ixx="0.001" ixy="0.00" ixz="0.00" iyy="0.001" iyz="0.00" izz="0.001"/>
       </inertial>
-        
+	
       <visual>
          <origin xyz="0.0 0.0 0"/>
          <geometry>
@@ -936,7 +936,7 @@
   <!-- OK: 1.7 -->
   <!--         <inertia ixx="0.001" ixy="0.00" ixz="0.00" iyy="0.001" iyz="0.00" izz="0.001"/>
       </inertial>
-        
+	
       <visual>
          <origin xyz="0.0 0.0 0"/>
          <geometry>

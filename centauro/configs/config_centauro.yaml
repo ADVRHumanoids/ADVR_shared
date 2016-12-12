@@ -26,9 +26,9 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
   
 XBotRTPlugins:
-  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  plugins: ["HomingExample"]
+  #plugins: ["HomingExample"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   
