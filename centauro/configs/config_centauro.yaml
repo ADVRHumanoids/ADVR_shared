@@ -113,8 +113,14 @@ firmware_update:
 #############################
 
 LpESC_X:
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
+  max_current_A: 6.0
+  pid :
+    position: [150.0 , 0.0 , 5.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
 HpESC_X:
   sign: 1
