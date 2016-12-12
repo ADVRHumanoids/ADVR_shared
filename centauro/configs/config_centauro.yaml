@@ -1,8 +1,8 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upperbody_new_ft.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody_new_ft.srdf"
-  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf"
+  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
 
 RobotInterface:
   framework_name: "XBotRT"
@@ -27,8 +27,9 @@ RobotInterfaceXBotRT:
   
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
-  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   plugins: ["HomingExample"]
+  #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   
 CustomCmnd:
@@ -56,9 +57,9 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 x_bot_core:
-  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_upperbody_new_ft.urdf
-  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_upperbody_new_ft.srdf
-  joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml
+  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
+  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf
+  joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml
 
 x_bot_ecat:
   name: XBotCore
@@ -118,7 +119,7 @@ LpESC_X:
   pos_offset: 0
   max_current_A: 6.0
   pid :
-    position: [150.0 , 0.0 , 5.0]
+    position: [100000.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
