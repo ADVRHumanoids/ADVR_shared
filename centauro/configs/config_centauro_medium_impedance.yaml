@@ -29,6 +29,7 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   plugins: ["HomingExample"]
+  #plugins: ["PeriodicHomingPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   
@@ -149,7 +150,7 @@ CentAcESC_1:
     position:   [180.0 , 0.0 , 1.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 0.5, 0.001, 0.0]
+    impedance:  [250.0, 10.0, 0.5, 0.001, 0.0]
     
 
 ##############################
@@ -163,7 +164,7 @@ CentAcESC_2:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.0, 0.003, 0.0]
 
 CentAcESC_3:
   control_mode: impedance_d4
@@ -173,7 +174,7 @@ CentAcESC_3:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.0, 0.003, 0.0]
 
 CentAcESC_4:
   control_mode: impedance_d4
@@ -183,7 +184,7 @@ CentAcESC_4:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.2, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.2, 0.003, 0.0]
 
 CentAcESC_5:
   control_mode: impedance_d4
@@ -193,7 +194,7 @@ CentAcESC_5:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.4, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.4, 0.003, 0.0]
 
 CentAcESC_6:
   control_mode: impedance_d4
@@ -236,7 +237,7 @@ CentAcESC_9:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.0, 0.003, 0.0]
 
 CentAcESC_10:
   control_mode: impedance_d4
@@ -246,7 +247,7 @@ CentAcESC_10:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.0, 0.003, 0.0]
 
 CentAcESC_11:
   control_mode: impedance_d4
@@ -256,7 +257,7 @@ CentAcESC_11:
   pid :
     position: [150.0 , 0.0 , 5.0]    
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.2, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.2, 0.003, 0.0]
     
 CentAcESC_12:
   control_mode: impedance_d4
@@ -266,7 +267,7 @@ CentAcESC_12:
   pid :
     position: [150.0 , 0.0 , 5.0]    
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [250.0, 0.0, 1.4, 0.003, 0.0]
+    impedance:  [250.0, 10.0, 1.4, 0.003, 0.0]
     
 CentAcESC_13:
   control_mode: impedance_d4
