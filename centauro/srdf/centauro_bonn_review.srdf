@@ -26,6 +26,10 @@
         <joint name="l_arm_ft_joint"/>
     </group>
     
+    <group name="controlled_joints">
+        <joint name="j_arm1_8"/>
+    </group>
+    
     <group name="imu_sensors">
         <joint name="test_imu_1_joint"/>
         <joint name="test_imu_2_joint"/>
