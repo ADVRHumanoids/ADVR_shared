@@ -3,7 +3,9 @@
 XBotRTPlugins:
   #plugins: ["HomingExample"]
   #plugins: ["GainCommunicationPlugin","GainTuningPlugin"]
-  plugins: ["TorqueReaderPlugin"]
+  plugins: ["JointConfigurationPlugin"]
+  
+JointConfiguration: ["home", "home2"]
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_fixed_hands.urdf"
