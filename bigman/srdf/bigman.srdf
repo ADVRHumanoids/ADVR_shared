@@ -103,37 +103,186 @@
     <group name="left_hand"/>-->
   </group>
   <!-- END CHAINS -->
-  <group_state group="chains" name="home">
-    <joint name="NeckYawj" value="0.0"/>
-    <joint name="NeckPitchj" value="0.0"/>
-    <joint name="WaistLat" value="0.0"/>
-    <joint name="WaistSag" value="0.0"/>
-    <joint name="WaistYaw" value="0.0"/>
-    <joint name="RShSag" value="0.1"/>
-    <joint name="RShLat" value="-0.5"/>
-    <joint name="RShYaw" value="0.1"/>
-    <joint name="RElbj" value="-1.0"/>
-    <joint name="RForearmPlate" value="-0.6"/>
-    <joint name="RWrj1" value="-0.6"/>
-    <joint name="RWrj2" value="-0.1"/>
-    <joint name="LShSag" value="-0.3"/>
-    <joint name="LShLat" value="0.5"/>
-    <joint name="LShYaw" value="-0.3"/>
-    <joint name="LElbj" value="-0.8"/>
-    <joint name="LForearmPlate" value="1.8"/>
-    <joint name="LWrj1" value="0.0"/>
-    <joint name="LWrj2" value="-1.0"/>
-    <joint name="RHipLat" value="0.0"/>
-    <joint name="RHipYaw" value="0.0"/>
-    <joint name="RHipSag" value="0.0"/>
-    <joint name="RKneeSag" value="0.0"/>
-    <joint name="RAnkSag" value="0.0"/>
-    <joint name="RAnkLat" value="0.0"/>
-    <joint name="LHipLat" value="0.0"/>
-    <joint name="LHipYaw" value="0.0"/>
-    <joint name="LHipSag" value="0.0"/>
-    <joint name="LKneeSag" value="0.0"/>
-    <joint name="LAnkSag" value="0.0"/>
-    <joint name="LAnkLat" value="0.0"/>
-  </group_state>
+  
+    <group_state group="chains" name="00 zero positions">
+    </group_state>
+
+    <group_state group="chains" name="-1 safe">
+        <joint name="LKneeSag" value="1.39626"/>
+        <joint name="RKneeSag" value="1.39626"/>
+        <joint name="LHipSag" value="-1.04719"/>
+        <joint name="RHipSag" value="-1.04719"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        <joint name="LShLat" value="0.1745"/>
+        <joint name="RShLat" value="-0.1745"/>
+    </group_state>
+    
+    <group_state group="chains" name="0 home">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        <joint name="LShLat" value="0.1745"/>
+        <joint name="RShLat" value="-0.1745"/>
+    </group_state>
+  
+    <group_state group="chains" name="1 T-position">
+        
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        
+        <joint name="LShLat" value="1.57079"/>
+        <joint name="RShLat" value="-1.57079"/>
+        <joint name="LShSag" value="0.34906"/>
+        <joint name="RShSag" value="0.34906"/>
+    </group_state>
+    
+    <group_state group="chains" name="2 arms backward">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        <joint name="LShLat" value="0.1745"/>
+        <joint name="RShLat" value="-0.1745"/>
+        
+        <joint name="LShSag" value="1.57079"/>
+        <joint name="RShSag" value="1.57079"/>
+    </group_state>
+    
+    <group_state group="chains" name="3 T bent elbows">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        
+        <joint name="LAnkSag" value="-1.37881"/>
+        <joint name="RAnkSag" value="-1.37881"/>
+        
+        <joint name="LShLat" value="1.57079"/>
+        <joint name="RShLat" value="-1.57079"/>        
+        <joint name="LWrj1" value="-0.78539"/>
+        <joint name="RWrj1" value="-0.78539"/>
+        <joint name="LElbj" value="-1.57079"/>
+        <joint name="RElbj" value="-1.57079"/>
+    </group_state>
+    
+    <group_state group="chains" name="4 flying bent elbows">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        
+        <joint name="LShLat" value="0.78539"/>
+        <joint name="RShLat" value="-0.78539"/>
+        <joint name="LHipLat" value="0.76794"/>
+        <joint name="RHipLat" value="-0.76794"/>
+        <joint name="LElbj" value="-1.57079"/>
+        <joint name="RElbj" value="-1.57079"/>
+        <joint name="LWrj2" value="1.37881"/>
+        <joint name="RWrj2" value="-1.37881"/>
+    </group_state>
+    
+    <group_state group="chains" name="5 jump pushing">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        
+<!--         <joint name="WaistSag" value="0.61086"/> -->
+        <joint name="LHipLat" value="0.76794"/>
+        <joint name="RHipLat" value="-0.76794"/>
+        <joint name="LShLat" value="0.78539"/>
+        <joint name="RShLat" value="-0.78539"/>
+        <joint name="LShSag" value="0.34906"/>
+        <joint name="RShSag" value="0.34906"/>        
+    </group_state>
+
+    <!-- detach podest before moving into this for safety! -->
+    <group_state group="chains" name="6 flying rotated waist">
+        <joint name="LKneeSag" value="1.57079"/>
+        <joint name="RKneeSag" value="1.57079"/>
+        <joint name="LHipSag" value="-1.2217"/>
+        <joint name="RHipSag" value="-1.2217"/>
+        <joint name="LAnkSag" value="-0.34906"/>
+        <joint name="RAnkSag" value="-0.34906"/>
+        <joint name="LShLat" value="0.1745"/>
+        <joint name="RShLat" value="-0.1745"/>
+
+        <joint name="LShSag" value="0.34906"/>
+        <joint name="RShSag" value="1.57079"/>
+        <joint name="LShLat" value="0.78539"/>
+        <joint name="RShLat" value="-0.78539"/>
+        <joint name="WaistSag" value="-0.34906"/>
+        <joint name="WaistYaw" value="-0.78539"/>
+        <joint name="LKneeSag" value="2.26892"/>
+        <joint name="RKneeSag" value="2.26892"/>        
+        <joint name="LHipLat" value="0.76794"/>
+        <joint name="RHipLat" value="-0.76794"/>
+    </group_state>
+    
+    <group_state group="chains" name="test1">
+        
+        <joint name="RHipLat" value="0.04"/>
+        <joint name="RHipYaw" value="0.025"/>
+        <joint name="RHipSag" value="-0.29"/>
+        <joint name="RKneeSag" value="0.55"/>
+        <joint name="RAnkSag" value="0.25"/>
+        <joint name="RAnkLat" value="-0.04"/>
+        
+        <joint name="LHipLat" value="-0.04"/>
+        <joint name="LHipYaw" value="-0.025"/>
+        <joint name="LHipSag" value="-0.29"/>
+        <joint name="LKneeSag" value="0.55"/>
+        <joint name="LAnkSag" value="0.25"/>
+        <joint name="LAnkLat" value="0.04"/>
+       
+        
+        <joint name="LShLat" value="0.5"/>
+        <joint name="RShLat" value="-0.5"/>
+        
+        <joint name="LShSag" value="0.8"/>
+        <joint name="RShSag" value="0.8"/>
+        
+    
+    </group_state>
+    
+    <group_state group="chains" name="test2">
+        
+        <joint name="RHipLat" value="-0.25"/>
+        <joint name="RHipYaw" value="-0.6"/>
+        <joint name="RHipSag" value="-1.32"/>
+        <joint name="RKneeSag" value="1.32"/>
+        <joint name="RAnkSag" value="-0.25"/>
+        <joint name="RAnkLat" value="0.25"/>
+        
+        <joint name="LHipLat" value="0.25"/>
+        <joint name="LHipYaw" value="0.6"/>
+        <joint name="LHipSag" value="-1.32"/>
+        <joint name="LKneeSag" value="1.32"/>
+        <joint name="LAnkSag" value="-0.25"/>
+        <joint name="LAnkLat" value="-0.25"/>
+       
+        
+        <joint name="LShLat" value="0.7"/>
+        <joint name="RShLat" value="-0.7"/>
+        
+        <joint name="LShSag" value="1.2"/>
+        <joint name="RShSag" value="1.2"/>
+        
+    
+    </group_state>
+    
 </robot>
