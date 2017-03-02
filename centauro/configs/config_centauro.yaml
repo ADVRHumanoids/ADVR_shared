@@ -1,12 +1,12 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_no_ft_no_hands.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_no_ft_no_hands.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
 
 RobotInterface:
   framework_name: "XBotRT"
-  
+
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "false"
@@ -19,33 +19,33 @@ RobotInterfaceROS:
   jointstate_message_type: "JointState"
   ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
   imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
-  
+
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
   path_to_shared_lib: "libRobotInterfaceXBotRT.so"
   subclass_factory_name: "robot_interface_xbot_rt"
-  
+
 XBotRTPlugins:
-  plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   #plugins: ["HomingExample"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
-  #plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
-  
+  plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
+
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
   subclass_factory_name: "customcmnd_control_message"
   joint_service_name: "/centauro/position_controller/get_joint_names"
   command_topic_name: "/centauro/position_controller/command"
-  
+
 JointState:
   subclass_name: "JointStateMessage"
   path_to_shared_lib: "libJointStateMessage.so"
   subclass_factory_name: "jointstate_jointstate_message"
   joint_state_topic_name: "/centauro/joint_states"
 
-  
+
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"
   path_to_shared_lib: "libRobotInterfaceDUMMY.so"
@@ -83,7 +83,7 @@ ec_board_ctrl:
 #
 ec_boards_base:
   create_pipes: false
-  
+
 firmware_update:
   #
   fw_path: ../examples/fw_update/fw_test/
@@ -100,7 +100,7 @@ firmware_update:
   # all CentAC motor
   slave_pos_list: [-4]
   #slave_pos_list: [1]
-  
+
   cent_AC:
     m3:
       bin_file: cent_AC_m3.bin
@@ -108,7 +108,7 @@ firmware_update:
     c28:
       bin_file: cent_AC_c28.bin
       passwd: 0xDAD0
-      
+
 #############################
 # GENERIC ESC config
 #############################
@@ -150,7 +150,7 @@ CentAcESC_1:
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
-    
+
 
 ##############################
 # Right Arm
@@ -227,7 +227,7 @@ CentAcESC_8:
 
 ##############################
 # Left Arm
-    
+
 CentAcESC_9:
   control_mode: pos_3b
   sign: 1
@@ -254,20 +254,20 @@ CentAcESC_11:
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [150.0 , 0.0 , 5.0]    
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
-    
+
 CentAcESC_12:
   control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
-    position: [150.0 , 0.0 , 5.0]    
+    position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
-    
+
 CentAcESC_13:
   control_mode: pos_3b
   sign: 1
