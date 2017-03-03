@@ -8,7 +8,7 @@
   <!--
 <xacro:property name="ARMS" value="true"/>
 <xacro:property name="TORSO" value="true" />
-<xacro:property name="ARM_ACTUATORS" value="true"/> 
+<xacro:property name="ARM_ACTUATORS" value="true"/>
 <xacro:property name="LEGS" value="true"/>
 <xacro:property name="LEG_ACTUATORS" value="true"/>
 
@@ -697,7 +697,7 @@
     <origin xyz="0 0.049 -0.180"/>
     <axis xyz="0 1 0"/>
     s
-      
+
     <limit effort="350" lower="-1.570" upper="1.570" velocity="6.5"/>
     <!-- TODO -->
   </joint>
@@ -1036,7 +1036,7 @@
     <origin xyz="0 -0.049 -0.180"/>
     <axis xyz="0 -1 0"/>
     s
-      
+
     <limit effort="350" lower="-1.570" upper="1.570" velocity="6.5"/>
     <!-- TODO -->
   </joint>
@@ -1301,7 +1301,7 @@
     <child link="knee_1"/>
     <origin xyz="0 0 -0.35"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35000" lower="-3.14" upper="3.14" velocity="600.5"/>
+    <limit effort="35000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <!-- TODO -->
   </joint>
   <joint name="ft_foot_1_joint" type="fixed">
@@ -1512,7 +1512,7 @@
     <child link="knee_2"/>
     <origin xyz="0 0 -0.35"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35000" lower="-3.14" upper="3.14" velocity="600.5"/>
+    <limit effort="35000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <!-- TODO -->
   </joint>
   <joint name="ft_foot_2_joint" type="fixed">
@@ -1723,7 +1723,7 @@
     <child link="knee_3"/>
     <origin xyz="0 0 -0.35"/>
     <axis xyz="0 1 0"/>
-    <limit effort="35000" lower="-3.14" upper="3.14" velocity="600.5"/>
+    <limit effort="35000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <!-- TODO -->
   </joint>
   <joint name="ft_foot_3_joint" type="fixed">
@@ -1934,7 +1934,7 @@
     <child link="knee_4"/>
     <origin xyz="0 0 -0.35"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="35000" lower="-3.14" upper="3.14" velocity="600.5"/>
+    <limit effort="35000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <!-- TODO -->
   </joint>
   <joint name="ft_foot_4_joint" type="fixed">
