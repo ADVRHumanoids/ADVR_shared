@@ -8,6 +8,18 @@ XBotInterface:
 RobotInterface:
   framework_name: "XBotRT"
   
+RobotInterfaceXBotRT:
+  subclass_name: "RobotInterfaceXBotRT"
+  path_to_shared_lib: "libRobotInterfaceXBotRT.so"
+  subclass_factory_name: "robot_interface_xbot_rt"
+
+XBotRTPlugins:
+  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
+  plugins: ["HomingExample", "OpenSotIkTestPlugin", "PlayJointSpaceDemo"]
+  #plugins: ["ExoskeletonCommunicationPlugin"]
+  #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
+  
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "false"
