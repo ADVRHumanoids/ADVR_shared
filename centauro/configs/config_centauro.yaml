@@ -1,6 +1,6 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_no_ft_no_hands.urdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_no_ft_no_hands.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
 
@@ -28,7 +28,7 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk","PlayJointSpaceDemo", "QPPVMPlugin", "IdExample"]
   io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
@@ -68,6 +68,20 @@ ModelInterfaceRBDL:
   subclass_name: "ModelInterfaceRBDL"
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
+
+GazeboXBotPlugin:
+  gains:
+    j_arm1_1: {p: 5000, d: 30}
+    j_arm1_2: {p: 8000, d: 50}
+    j_arm1_3: {p: 5000, d: 30}
+    j_arm1_4: {p: 5000, d: 30}
+    j_arm1_6: {p: 2000, d: 5}
+    j_arm2_1: {p: 5000, d: 30}
+    j_arm2_2: {p: 8000, d: 50}
+    j_arm2_3: {p: 5000, d: 30}
+    j_arm2_4: {p: 5000, d: 30}
+    j_arm2_6: {p: 2000, d: 5}
+    torso_yaw: {p: 5000, d: 30}
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf

@@ -1,6 +1,6 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_full_body.urdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_full_updated_inertia.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_full_body.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml"
 
@@ -67,6 +67,33 @@ ModelInterfaceRBDL:
   subclass_name: "ModelInterfaceRBDL"
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
+
+GazeboXBotPlugin:
+  gains:
+    j_arm1_1: {p: 5000, d: 30}
+    j_arm1_2: {p: 8000, d: 50}
+    j_arm1_3: {p: 5000, d: 30}
+    j_arm1_4: {p: 5000, d: 30}
+    j_arm1_6: {p: 2000, d: 5}
+    j_arm2_1: {p: 5000, d: 30}
+    j_arm2_2: {p: 8000, d: 50}
+    j_arm2_3: {p: 5000, d: 30}
+    j_arm2_4: {p: 5000, d: 30}
+    j_arm2_6: {p: 2000, d: 5}
+    torso_yaw: {p: 5000, d: 30}
+    hip_yaw_1: {p: 5000, d: 30}
+    hip_yaw_2: {p: 5000, d: 30}
+    hip_yaw_3: {p: 5000, d: 30}
+    hip_yaw_4: {p: 5000, d: 30}
+    hip_pitch_1: {p: 5000, d: 30}
+    hip_pitch_2: {p: 5000, d: 30}
+    hip_pitch_3: {p: 5000, d: 30}
+    hip_pitch_4: {p: 5000, d: 30}
+    knee_pitch_1: {p: 8000, d: 50}
+    knee_pitch_2: {p: 8000, d: 50}
+    knee_pitch_3: {p: 8000, d: 50}
+    knee_pitch_4: {p: 8000, d: 50}
+
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
