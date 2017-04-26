@@ -51,6 +51,10 @@
         <joint name="ft_foot_4_joint"/>-->
     </group>
 
+    <group name="imu_sensors">
+        <link name="imu_link"/>
+    </group>
+
    <group name="chains">
 
 	<group name="left_arm"/>

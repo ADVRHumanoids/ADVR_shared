@@ -26,3 +26,4 @@ joint_map:
   25: hip_yaw_4
   26: hip_pitch_4
   27: knee_pitch_4
+  99: imu_joint
