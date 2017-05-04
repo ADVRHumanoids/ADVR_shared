@@ -107,11 +107,6 @@
     </group> 
     <!-- END F-T sensors -->
     
-    
-    
-    <!-- TBD IMU -->
-    <!-- TBD END IMU -->
-    
     <!-- Disabled Joint -->
 <!--     <disabled_joint name="LShSag"/> -->
 <!--     <disabled_joint name="LShLat"/> -->

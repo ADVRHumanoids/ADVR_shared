@@ -1,20 +1,26 @@
-# WALKMAN upper body config
-
-XBotRTPlugins:
-  #plugins: ["HomingExample"]
-  #plugins: ["GainCommunicationPlugin","GainTuningPlugin"]
-  plugins: ["JointConfigurationPlugin"]
-  
-JointConfiguration: ["home", "home2"]
+# WALKMAN 
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_fixed_hands.urdf"
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
   srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
   joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
 RobotInterface:
   framework_name: "XBotRT"
-  
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "false"
+
+RobotInterfaceROS:
+  subclass_name: "RobotInterfaceROS"
+  path_to_shared_lib: "libRobotInterfaceROS.so"
+  subclass_factory_name: "robot_interface_ros"
+  control_message_type: "AdvrCommandMessage"
+  jointstate_message_type: "AdvrJointStateMessage"
+  ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
+  imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
+
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
   path_to_shared_lib: "libRobotInterfaceXBotRT.so"
@@ -23,51 +29,79 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  plugins: ["HomingExample", "OpenSotIkTestPlugin", "PlayJointSpaceDemo"]
+  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
-  
-ModelInterface:
-  model_type: "RBDL"
-  is_model_floating_base: "false"
 
-######################################################################################
-
-RobotInterfaceROS:
-  subclass_name: "RobotInterfaceROS"
-  path_to_shared_lib: "libRobotInterfaceROS.so"
-  subclass_factory_name: "robot_interface_ros"
-  joint_state_name: "/centauro/joint_states"
+CustomCmnd:
+  subclass_name: "CustomCmndMessage"
+  path_to_shared_lib: "libCustomCmndMessage.so"
+  subclass_factory_name: "customcmnd_control_message"
   joint_service_name: "/centauro/position_controller/get_joint_names"
   command_topic_name: "/centauro/position_controller/command"
-  ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
-  
-RobotInterfaceYARP:
-  subclass_name: "RobotInterfaceYARP"
-  path_to_shared_lib: "libRobotInterfaceYARP.so"
-  subclass_factory_name: "robot_interface_yarp"
-  module_prefix: "test_YARP"
-  robot_name: "bigman"
-  
+
+JointState:
+  subclass_name: "JointStateMessage"
+  path_to_shared_lib: "libJointStateMessage.so"
+  subclass_factory_name: "jointstate_jointstate_message"
+  joint_state_topic_name: "/centauro/joint_states"
+
+AdvrCommandMessage:
+  subclass_name: "CommandAdvr"
+  path_to_shared_lib: "libAdvrCommandMessage.so"
+  subclass_factory_name: "advrcommandmessage_control_message"
+  joint_service_name: "/centauro/position_controller/get_joint_names"
+  command_topic_name: "/xbotcore/centauro/command"
+
+AdvrJointStateMessage:
+  subclass_name: "AdvrJointState"
+  path_to_shared_lib: "libAdvrJointStateMessage.so"
+  subclass_factory_name: "advrjointstate_jointstate_message"
+  joint_state_topic_name: "/xbotcore/centauro/joint_states"
+
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"
   path_to_shared_lib: "libRobotInterfaceDUMMY.so"
   subclass_factory_name: "robot_interface_dummy"
 
-RobotInterfaceXBotRT:
-  subclass_name: "RobotInterfaceXBotRT"
-  path_to_shared_lib: "libRobotInterfaceXBotRT.so"
-  subclass_factory_name: "robot_interface_xbot_rt"
-  
 ModelInterfaceRBDL:
   subclass_name: "ModelInterfaceRBDL"
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
 
+GazeboXBotPlugin:
+  gains:
+    RShSag: {p: 5000, d: 30}
+    RShLat: {p: 8000, d: 50}
+    RShYaw: {p: 5000, d: 30}
+    RElbj: {p: 5000, d: 30}
+    RWrj1: {p: 2000, d: 5}
+    LShSag: {p: 5000, d: 30}
+    LShLat: {p: 8000, d: 50}
+    LShYaw: {p: 5000, d: 30}
+    LElbj: {p: 5000, d: 30}
+    LWrj1: {p: 2000, d: 5}
+    WaistYaw: {p: 5000, d: 30}
+    WaistSag: {p: 8000, d: 50}
+    WaistLat: {p: 5000, d: 30}
+    RHipLat: {p: 8000, d: 30}
+    RHipYaw: {p: 5000, d: 50}
+    RHipSag: {p: 5000, d: 30}
+    RKneeSag: {p: 5000, d: 30}
+    RAnkSag: {p: 5000, d: 30}
+    RAnkLat: {p: 2000, d: 5}
+    LHipLat: {p: 8000, d: 30}
+    LHipYaw: {p: 5000, d: 50}
+    LHipSag: {p: 8000, d: 30}
+    LKneeSag: {p: 5000, d: 30}
+    LAnkSag: {p: 5000, d: 30}
+    LAnkLat: {p: 2000, d: 5}
+
 x_bot_core:
-  urdf_path: /home/embedded/walkman-superbuild/configs/ADVR_shared/bigman/urdf/bigman_fixed_hands.urdf
-  srdf_path: /home/embedded/walkman-superbuild/configs/ADVR_shared/bigman/srdf/bigman.srdf
-  joint_map_config: /home/embedded/walkman-superbuild/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml
+  urdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/urdf/bigman.urdf
+  srdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/srdf/bigman.srdf
+  joint_map_config: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml
   
 x_bot_ecat:
   name: XBotCore
@@ -89,19 +123,21 @@ ec_boards_base:
 
 #
 LpESC_1:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
-    position: [20.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
+    impedance:  [100.0, 20.0, 2.0, 0.01, 0.8]
 
 #
 LpESC_2:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
-    position: [20.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
+    impedance:  [100.0, 5.0, 2.0, 0.01, 0.8]
 
 #############################
 # RIGHT LEG
@@ -263,7 +299,7 @@ HpESC_56:
 
 # RA_SH_1 = 11
 HpESC_11:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -272,7 +308,7 @@ HpESC_11:
 
 # RA_SH_2 = 12
 HpESC_12:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   #pos_offset: -90 NOTE it was not working for the left_arm joint
@@ -282,7 +318,7 @@ HpESC_12:
 
 # RA_SH_3 = 13
 HpESC_13:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -291,7 +327,7 @@ HpESC_13:
 
 # RA_EL_ = 14
 HpESC_14:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -300,37 +336,38 @@ HpESC_14:
 
 # RA_WR_1 = 15
 LpESC_15:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
 
 # RA_WR_2 = 16
 LpESC_16:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
     mix_position: [800.0, 0.0, 5.0]
 
 # RA_WR_3 = 17
 LpESC_17:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
     mix_position: [800.0, 0.0, 5.0]
+    impedance:  [100.0, 20.0, 2.0, 0.01, 0.8]
 
 # RA_HA = 19
 LpESC_19:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
     mix_position: [800.0, 0.0, 5.0]
 
 #############################
@@ -339,7 +376,7 @@ LpESC_19:
 
 # LA_SH_1 = 21
 HpESC_21:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -348,7 +385,7 @@ HpESC_21:
 
 # LA_SH_2 = 22
 HpESC_22:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset : 0
   #pos_offset: 90 NOTE it was not working for the left_arm joint
@@ -358,7 +395,7 @@ HpESC_22:
 
 # LA_SH_3 = 23
 HpESC_23:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -367,7 +404,7 @@ HpESC_23:
 
 # LA_EL = 24
 HpESC_24:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -376,31 +413,31 @@ HpESC_24:
 
 # LA_WR_1 = 25
 LpESC_25:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
 
 # LA_WR_2 = 26
 LpESC_26:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
 
 # LA_WR_3 = 27
 LpESC_27:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
 
 # LA_HA = 29
 LpESC_29:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   pid :
@@ -412,7 +449,7 @@ LpESC_29:
 
 # WST_Y = 31
 HpESC_31:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -421,7 +458,7 @@ HpESC_31:
 
 # WST_P = 32
 HpESC_32:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -436,4 +473,3 @@ HpESC_33:
   pid :
     position: [40.0 , 0.0 , 1.0]
     mix_position: [800.0, 0.0, 10.0]
-
