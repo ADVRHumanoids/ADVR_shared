@@ -29,7 +29,8 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  plugins: ["HomingExample"]
   io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
