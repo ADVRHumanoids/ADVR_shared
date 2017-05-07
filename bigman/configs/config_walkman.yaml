@@ -146,7 +146,7 @@ LpESC_2:
 
 # RL_H_R = 41
 HpESC_41:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -159,7 +159,7 @@ HpESC_41:
 
 # RL_H_Y = 42
 HpESC_42:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -171,7 +171,7 @@ HpESC_42:
 
 # RL_H_P = 43
 HpESC_43:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -183,7 +183,7 @@ HpESC_43:
 
 # RL_K = 44
 HpESC_44:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -195,7 +195,7 @@ HpESC_44:
 
 # RL_A_P = 45
 HpESC_45:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -207,7 +207,7 @@ HpESC_45:
 
 # RL_A_R = 46
 HpESC_46:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -223,7 +223,7 @@ HpESC_46:
 
 # LL_H_R = 51
 HpESC_51:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -235,7 +235,7 @@ HpESC_51:
 
 # LL_H_Y = 52
 HpESC_52:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -247,7 +247,7 @@ HpESC_52:
 
 # LL_H_P = 53
 HpESC_53:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -259,7 +259,7 @@ HpESC_53:
 
 # LL_K = 54
 HpESC_54:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -271,7 +271,7 @@ HpESC_54:
 
 # LL_A_P = 55
 HpESC_55:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: 0
   pid :
@@ -283,7 +283,7 @@ HpESC_55:
 
 # LL_A_R = 56
 HpESC_56:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: -1
   pos_offset: 0
   pid :
@@ -309,7 +309,7 @@ HpESC_11:
 
 # RA_SH_2 = 12
 HpESC_12:
-  control_mode: mix_pos_3c
+  control_mode: idle
   sign: -1
   pos_offset: 0
   #pos_offset: -90 NOTE it was not working for the left_arm joint
@@ -386,7 +386,7 @@ HpESC_21:
 
 # LA_SH_2 = 22
 HpESC_22:
-  control_mode: mix_pos_3c
+  control_mode: idle
   sign: -1
   pos_offset : 0
   #pos_offset: 90 NOTE it was not working for the left_arm joint
