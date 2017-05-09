@@ -734,7 +734,7 @@
   <!-- /actuators -->
   <!-- end-effector -->
   <!-- links -->
-  <link name="arm2_8">
+  <link name="ft_arm2">
     <inertial>
       <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
       <mass value="0.15"/>
@@ -742,24 +742,24 @@
       <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
     </inertial>
     <visual>
-      <origin rpy="3.14159265316 -0.0 0.0" xyz="-1.9971412865e-11 -3.9418704065e-12 -0.056579685"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.09496663" radius="0.0276743"/>
+        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
-      <origin rpy="3.14159265316 -0.0 0.0" xyz="-1.9971412865e-11 -3.9418704065e-12 -0.056579685"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <cylinder length="0.09496663" radius="0.0276743"/>
+        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
       </geometry>
     </collision>
   </link>
   <!-- /links -->
   <!-- joints -->
-  <joint name="j_arm2_8" type="fixed">
+  <joint name="j_ft_arm2" type="fixed">
     <parent link="arm2_7"/>
-    <child link="arm2_8"/>
+    <child link="ft_arm2"/>
     <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="0.0" upper="0" velocity="0"/>

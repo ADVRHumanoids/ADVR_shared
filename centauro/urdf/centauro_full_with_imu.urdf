@@ -767,7 +767,7 @@
   <!-- /actuators -->
   <!-- end-effector -->
   <!-- links -->
-  <link name="arm2_8">
+  <link name="ft_arm2">
     <inertial>
       <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
       <mass value="0.15"/>
@@ -790,9 +790,9 @@
   </link>
   <!-- /links -->
   <!-- joints -->
-  <joint name="j_arm2_8" type="fixed">
+  <joint name="j_ft_arm2" type="fixed">
     <parent link="arm2_7"/>
-    <child link="arm2_8"/>
+    <child link="ft_arm2"/>
     <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="0.0" upper="0" velocity="0"/>
