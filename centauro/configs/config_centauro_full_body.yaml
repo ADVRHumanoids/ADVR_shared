@@ -28,7 +28,7 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  plugins: ["MotionControlPlugin", "HomingExample"]
+  plugins: ["MotionControlPlugin", "HomingExample", "FullIdControl"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: [] #"PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
 
