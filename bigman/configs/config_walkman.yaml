@@ -35,6 +35,9 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
 
+MasterCommunicationInterface:
+  framework_name: "ROS"
+  
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
