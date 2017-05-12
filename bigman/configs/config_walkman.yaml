@@ -42,27 +42,27 @@ CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
   subclass_factory_name: "customcmnd_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
-  command_topic_name: "/centauro/position_controller/command"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
+  command_topic_name: "/bigman/position_controller/command"
 
 JointState:
   subclass_name: "JointStateMessage"
   path_to_shared_lib: "libJointStateMessage.so"
   subclass_factory_name: "jointstate_jointstate_message"
-  joint_state_topic_name: "/centauro/joint_states"
+  joint_state_topic_name: "/bigman/joint_states"
 
 AdvrCommandMessage:
   subclass_name: "CommandAdvr"
   path_to_shared_lib: "libAdvrCommandMessage.so"
   subclass_factory_name: "advrcommandmessage_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
-  command_topic_name: "/xbotcore/centauro/command"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
+  command_topic_name: "/xbotcore/bigman/command"
 
 AdvrJointStateMessage:
   subclass_name: "AdvrJointState"
   path_to_shared_lib: "libAdvrJointStateMessage.so"
   subclass_factory_name: "advrjointstate_jointstate_message"
-  joint_state_topic_name: "/xbotcore/centauro/joint_states"
+  joint_state_topic_name: "/xbotcore/bigman/joint_states"
 
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"
