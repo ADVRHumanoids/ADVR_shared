@@ -2,7 +2,7 @@
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
-  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
+  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
 
 RobotInterface:
   framework_name: "XBotRT"
@@ -34,7 +34,7 @@ XBotRTPlugins:
   #io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
-  
+
 MasterCommunicationInterface:
   framework_name: "ROS"
 
