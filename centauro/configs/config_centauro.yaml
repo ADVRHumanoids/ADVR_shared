@@ -5,7 +5,7 @@ XBotInterface:
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
 
 RobotInterface:
-  framework_name: "XBotRT"
+  framework_name: "ROS"
 
 ModelInterface:
   model_type: "RBDL"
