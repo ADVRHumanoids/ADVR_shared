@@ -15,24 +15,6 @@
   <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
   <!-- Robot kinematic chains -->
   <!-- CONSTRAINT: specify the chain inside a group: only one chain per group -->
-  <group name="head">
-    <chain base_link="DWYTorso" tip_link="NeckPitch"/>
-  </group>
-  <group name="left_arm">
-    <chain base_link="DWYTorso" tip_link="l_wrist"/>
-  </group>
-  <group name="right_arm">
-    <chain base_link="DWYTorso" tip_link="r_wrist"/>
-  </group>
-  <group name="left_hand">
-    <chain base_link="LWrMot3" tip_link="LSoftHand"/>
-  </group>
-  <group name="right_hand">
-    <chain base_link="RWrMot3" tip_link="RSoftHand"/>
-  </group>
-  <group name="torso">
-    <chain base_link="Waist" tip_link="DWYTorso"/>
-  </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="l_sole"/>
   </group>
@@ -42,16 +24,12 @@
   <!-- Robot kinematic chains END -->
   <!-- F-T sensors -->
   <group name="force_torque_sensors">
-    <joint name="l_arm_ft_joint"/>
-    <joint name="r_arm_ft_joint"/>
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
   </group>
   <!-- END F-T sensors -->
-  
-  <group name="imu_sensors">
-      <link name="imu_link"/>
-  </group>
+  <!-- TBD IMU -->
+  <!-- TBD END IMU -->
   <!-- Disabled Joint -->
   <!--     <disabled_joint name="LShSag"/> -->
   <!--     <disabled_joint name="LShLat"/> -->
@@ -60,13 +38,8 @@
   <!--     <disabled_joint name="LForearmPlate"/> -->
   <!--     <disabled_joint name="LWrj1"/> -->
   <!-- END Disabled Joint -->
-
   <!-- CONSTRAINT: first left then right -->
   <group name="arms">
-    <!-- LEFT LEG -->
-    <group name="left_arm"/>
-    <!-- RIGHT LEG -->
-    <group name="right_arm"/>
   </group>
   <!-- CONSTRAINT: first left then right -->
   <group name="legs">
@@ -75,70 +48,30 @@
     <!-- RIGHT LEG -->
     <group name="right_leg"/>
   </group>
-
+  
 .
-
+    
   <!-- CHAINS -->
   <!-- CONSTRAINT: keep it in the end, it refers to already defined groups -->
   <group name="chains">
-    <!-- HEAD -->
-    <group name="head"/>
-    <!-- LEFT ARM -->
-    <group name="left_arm"/>
-    --&gt;
-    <!-- RIGHT ARM -->
-    <group name="right_arm"/>
-    
-    <!-- LEFT HAND -->
-    <!-- RIGHT HAND -->
-    
-    <!-- TORSO -->
-    <group name="torso"/>
     <!-- LEFT LEG -->
     <group name="left_leg"/>
     <!-- RIGHT LEG -->
     <group name="right_leg"/>
-
-<!--    <group name="right_hand"/>
-    <group name="left_hand"/>-->
   </group>
   <!-- END CHAINS -->
-
-  <group_state group="chains" name="00 zero positions">
-  </group_state>
-
   <group_state group="chains" name="home">
-        <joint name="NeckYawj" value="0.0"/>
-        <joint name="NeckPitchj" value="0.0"/>
-        <joint name="WaistLat" value="0.0"/>
-        <joint name="WaistSag" value="0.0"/>
-        <joint name="WaistYaw" value="0.0"/>
-        <joint name="RShSag" value="0.1"/>
-        <joint name="RShLat" value="-0.5"/>
-        <joint name="RShYaw" value="0.1"/>
-        <joint name="RElbj" value="-1.0"/>
-        <joint name="RForearmPlate" value="-0.6"/>
-        <joint name="RWrj1" value="-0.6"/>
-        <joint name="RWrj2" value="-0.1"/>
-        <joint name="LShSag" value="-0.3"/>
-        <joint name="LShLat" value="0.5"/>
-        <joint name="LShYaw" value="-0.3"/>
-        <joint name="LElbj" value="-0.8"/>
-        <joint name="LForearmPlate" value="1.8"/>
-        <joint name="LWrj1" value="0.0"/>
-        <joint name="LWrj2" value="-1.0"/>
-        <joint name="RHipLat" value="0.0"/>
-        <joint name="RHipYaw" value="0.0"/>
-        <joint name="RHipSag" value="0.0"/>
-        <joint name="RKneeSag" value="0.0"/>
-        <joint name="RAnkSag" value="0.0"/>
-        <joint name="RAnkLat" value="0.0"/>
-        <joint name="LHipLat" value="0.0"/>
-        <joint name="LHipYaw" value="0.0"/>
-        <joint name="LHipSag" value="0.0"/>
-        <joint name="LKneeSag" value="0.0"/>
-        <joint name="LAnkSag" value="0.0"/>
-        <joint name="LAnkLat" value="0.0"/>
+    <joint name="RHipLat" value="0.0"/>
+    <joint name="RHipYaw" value="0.0"/>
+    <joint name="RHipSag" value="0.0"/>
+    <joint name="RKneeSag" value="0.0"/>
+    <joint name="RAnkSag" value="0.0"/>
+    <joint name="RAnkLat" value="0.0"/>
+    <joint name="LHipLat" value="0.0"/>
+    <joint name="LHipYaw" value="0.0"/>
+    <joint name="LHipSag" value="0.0"/>
+    <joint name="LKneeSag" value="0.0"/>
+    <joint name="LAnkSag" value="0.0"/>
+    <joint name="LAnkLat" value="0.0"/>
   </group_state>
-
 </robot>

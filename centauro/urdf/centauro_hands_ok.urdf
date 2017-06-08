@@ -531,7 +531,7 @@
   <!-- OK: 1.7 -->
   <!--         <inertia ixx="0.001" ixy="0.00" ixz="0.00" iyy="0.001" iyz="0.00" izz="0.001"/>
       </inertial>
-        
+	
       <visual>
          <origin xyz="0.0 0.0 0"/>
          <geometry>
@@ -756,28 +756,28 @@
   <!-- /actuators -->
   <!-- sensors -->
   <!--   <xacro:if value="$(arg ARM_SENSORS)"> -->
-  <link name="l_arm_ft">
+  <link name="ft_arm1_7">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.3"/>
       <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
     </inertial>
   </link>
-  <joint name="l_arm_ft_joint" type="fixed">
+  <joint name="ft_j_arm1_7" type="revolute">
     <parent link="arm1_7"/>
-    <child link="l_arm_ft"/>
+    <child link="ft_arm1_7"/>
     <origin rpy="0 0 0" xyz="0 0 -0.0255"/>
     <axis xyz="1 0 0"/>
     <limit effort="5" lower="0.0" upper="0.0" velocity="4.0"/>
   </joint>
-  <gazebo reference="l_arm_ft_joint">
+  <gazebo reference="ft_j_arm1_7">
     <provideFeedback>true</provideFeedback>
   </gazebo>
   <gazebo>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="l_arm_ft_joint_ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_j_arm1_7_ft_sensor">
       <updateRate>100.0</updateRate>
-      <topicName>centauro/l_arm_ft_joint_ft_sensor</topicName>
-      <jointName>l_arm_ft_joint</jointName>
+      <topicName>centauro/ft_j_arm1_7_ft_sensor</topicName>
+      <jointName>ft_j_arm1_7</jointName>
     </plugin>
   </gazebo>
   <!--  </xacro:if> -->
@@ -936,7 +936,7 @@
   <!-- OK: 1.7 -->
   <!--         <inertia ixx="0.001" ixy="0.00" ixz="0.00" iyy="0.001" iyz="0.00" izz="0.001"/>
       </inertial>
-        
+	
       <visual>
          <origin xyz="0.0 0.0 0"/>
          <geometry>
@@ -1138,7 +1138,7 @@
   </link>
   <!-- /links -->
   <!-- joints -->
-  <joint name="j_arm2_8" type="fixed">
+  <joint name="j_arm2_8" type="revolute">
     <parent link="arm2_7"/>
     <child link="arm2_8"/>
     <origin rpy="0 3.14159265359 -1.5707963268" xyz="0 0 -0.0405"/>
@@ -1168,7 +1168,7 @@
       <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
     </inertial>
   </link>
-  <joint name="ft_j_arm2_7" type="fixed">
+  <joint name="ft_j_arm2_7" type="revolute">
     <parent link="arm2_7"/>
     <child link="ft_arm2_7"/>
     <origin rpy="0 0 0" xyz="0 0 -0.0255"/>

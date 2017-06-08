@@ -1,12 +1,11 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_no_ft_no_hands.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_no_ft_no_hands.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
 
 RobotInterface:
-  #framework_name: "XBotRT"
-  framework_name: "ROS"
+  framework_name: "XBotRT"
 
 ModelInterface:
   model_type: "RBDL"
@@ -16,8 +15,8 @@ RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
   path_to_shared_lib: "libRobotInterfaceROS.so"
   subclass_factory_name: "robot_interface_ros"
-  control_message_type: "AdvrCommandMessage"
-  jointstate_message_type: "AdvrJointStateMessage"
+  control_message_type: "CustomCmnd"
+  jointstate_message_type: "JointState"
   ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
   imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
 
@@ -27,17 +26,12 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
+  plugins: ["PlayJointSpaceDemo", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample"]
-  io_plugins: []
-  #io_plugins: ["IkRosIo"]
+  #plugins: ["HomingExample"]
+  #plugins: ["QPPVMPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
-  #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
-  
-MasterCommunicationInterface:
-  framework_name: "ROS"
+  #plugins: ["SharedControlPlugin", "TwoPriorityRtIkPlugin"]
 
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
@@ -52,18 +46,6 @@ JointState:
   subclass_factory_name: "jointstate_jointstate_message"
   joint_state_topic_name: "/centauro/joint_states"
 
-AdvrCommandMessage:
-  subclass_name: "CommandAdvr"
-  path_to_shared_lib: "libAdvrCommandMessage.so"
-  subclass_factory_name: "advrcommandmessage_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
-  command_topic_name: "/xbotcore/centauro/command"
-
-AdvrJointStateMessage:
-  subclass_name: "AdvrJointState"
-  path_to_shared_lib: "libAdvrJointStateMessage.so"
-  subclass_factory_name: "advrjointstate_jointstate_message"
-  joint_state_topic_name: "/xbotcore/centauro/joint_states"
 
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"
@@ -75,23 +57,9 @@ ModelInterfaceRBDL:
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
 
-GazeboXBotPlugin:
-  gains:
-    j_arm1_1: {p: 5000, d: 30}
-    j_arm1_2: {p: 8000, d: 50}
-    j_arm1_3: {p: 5000, d: 30}
-    j_arm1_4: {p: 5000, d: 30}
-    j_arm1_6: {p: 2000, d: 5}
-    j_arm2_1: {p: 5000, d: 30}
-    j_arm2_2: {p: 8000, d: 50}
-    j_arm2_3: {p: 5000, d: 30}
-    j_arm2_4: {p: 5000, d: 30}
-    j_arm2_6: {p: 2000, d: 5}
-    torso_yaw: {p: 5000, d: 30}
-
 x_bot_core:
-  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
-  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf
+  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_no_ft_no_hands.urdf
+  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_no_ft_no_hands.srdf
   joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml
 
 x_bot_ecat:

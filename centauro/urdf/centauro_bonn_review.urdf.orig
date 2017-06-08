@@ -613,7 +613,26 @@
     <limit effort="350" lower="-2.618" upper="2.618" velocity="6.5"/>
     <!-- TODO -->
   </joint>
+<<<<<<< HEAD
+  
+   <joint name="j_arm1_8" type="fixed">
+    <parent link="arm1_7"/>
+    <child link="arm1_8"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.04"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="5" lower="0.0" upper="1.57075" velocity="4.0"/>
+    <dynamics damping="3.0" friction="0"/>
+  </joint>
+  <!--	<joint name="mass${arm_num}" type="fixed">
+		<parent link="arm${arm_num}_7"/>
+		<child link="mass${arm_num}_body"/>
+		<origin xyz="0 0 -0.15"/> 
+	</joint> -->
+  <!-- /wrist pitch-->
+  <!-- actuators -->
+=======
   <!-- wrist pitch-->
+>>>>>>> ft_issue_centauro
   <transmission name="t_j_arm1_1">
     <type> transmission_interface/SimpleTransmission</type>
     <joint name="j_arm1_1">

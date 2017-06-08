@@ -1,12 +1,11 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
-  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
+  urdf_path: "configs/ADVR_shared/rrbot/urdf/rrbot.urdf"
+  srdf_path: "configs/ADVR_shared/rrbot/srdf/rrbot.srdf"
+  joint_map_path: "configs/ADVR_shared/rrbot/joint_map/rrbot_map.yaml"
 
 RobotInterface:
-  #framework_name: "XBotRT"
-  framework_name: "ROS"
+  framework_name: "XBotRT"
 
 ModelInterface:
   model_type: "RBDL"
@@ -29,15 +28,9 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample"]
-  io_plugins: []
-  #io_plugins: ["IkRosIo"]
+  plugins: ["HomingExample"] #, "OpenSotIkTestPlugin", "PlayJointSpaceDemo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
-  
-MasterCommunicationInterface:
-  framework_name: "ROS"
 
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
@@ -74,20 +67,6 @@ ModelInterfaceRBDL:
   subclass_name: "ModelInterfaceRBDL"
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
-
-GazeboXBotPlugin:
-  gains:
-    j_arm1_1: {p: 5000, d: 30}
-    j_arm1_2: {p: 8000, d: 50}
-    j_arm1_3: {p: 5000, d: 30}
-    j_arm1_4: {p: 5000, d: 30}
-    j_arm1_6: {p: 2000, d: 5}
-    j_arm2_1: {p: 5000, d: 30}
-    j_arm2_2: {p: 8000, d: 50}
-    j_arm2_3: {p: 5000, d: 30}
-    j_arm2_4: {p: 5000, d: 30}
-    j_arm2_6: {p: 2000, d: 5}
-    torso_yaw: {p: 5000, d: 30}
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf

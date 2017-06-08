@@ -1,16 +1,15 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
-  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_full_with_imu.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_full_body.srdf"
+  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_upperbody_map.yaml"
 
 RobotInterface:
-  #framework_name: "XBotRT"
-  framework_name: "ROS"
+  framework_name: "XBotRT"
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  is_model_floating_base: "true"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -29,15 +28,9 @@ RobotInterfaceXBotRT:
 XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  #plugins: ["MotionControlPlugin", "HomingExample"]
   plugins: ["HomingExample"]
-  io_plugins: []
-  #io_plugins: ["IkRosIo"]
-  #plugins: ["ExoskeletonCommunicationPlugin"]
-  #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
-  
-MasterCommunicationInterface:
-  framework_name: "ROS"
+  #plugins: [] #"PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
 
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
@@ -88,6 +81,19 @@ GazeboXBotPlugin:
     j_arm2_4: {p: 5000, d: 30}
     j_arm2_6: {p: 2000, d: 5}
     torso_yaw: {p: 5000, d: 30}
+    hip_yaw_1: {p: 5000, d: 30}
+    hip_yaw_2: {p: 5000, d: 30}
+    hip_yaw_3: {p: 5000, d: 30}
+    hip_yaw_4: {p: 5000, d: 30}
+    hip_pitch_1: {p: 5000, d: 30}
+    hip_pitch_2: {p: 5000, d: 30}
+    hip_pitch_3: {p: 5000, d: 30}
+    hip_pitch_4: {p: 5000, d: 30}
+    knee_pitch_1: {p: 8000, d: 50}
+    knee_pitch_2: {p: 8000, d: 50}
+    knee_pitch_3: {p: 8000, d: 50}
+    knee_pitch_4: {p: 8000, d: 50}
+
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
