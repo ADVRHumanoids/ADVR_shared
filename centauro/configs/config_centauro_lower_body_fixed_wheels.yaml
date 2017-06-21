@@ -1,7 +1,7 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody.srdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_lower_body_fixed_wheels.urdf"
+  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_lower_body_fixed_wheels.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
 
 RobotInterface:
@@ -9,7 +9,7 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  is_model_floating_base: "true"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -17,8 +17,8 @@ RobotInterfaceROS:
   subclass_factory_name: "robot_interface_ros"
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
-  ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
-  imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
+  ft_topic_names: []
+  imu_topic_names: ["/xbotcore/centauro/imu/imu_link"]
 
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
@@ -26,30 +26,10 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
-  #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample", "IdExample"]
-  io_plugins: []
-  #io_plugins: ["IkRosIo"]
-  #plugins: ["ExoskeletonCommunicationPlugin"]
-  #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
+  plugins: ["HomingExample", "IkMotionControl"]
 
 MasterCommunicationInterface:
   framework_name: "ROS"
-
-CustomCmnd:
-  subclass_name: "CustomCmndMessage"
-  path_to_shared_lib: "libCustomCmndMessage.so"
-  subclass_factory_name: "customcmnd_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
-  command_topic_name: "/centauro/position_controller/command"
-
-JointState:
-  subclass_name: "JointStateMessage"
-  path_to_shared_lib: "libJointStateMessage.so"
-  subclass_factory_name: "jointstate_jointstate_message"
-  joint_state_topic_name: "/centauro/joint_states"
 
 AdvrCommandMessage:
   subclass_name: "CommandAdvr"
@@ -87,6 +67,23 @@ GazeboXBotPlugin:
     j_arm2_4: {p: 5000, d: 30}
     j_arm2_6: {p: 2000, d: 5}
     torso_yaw: {p: 5000, d: 30}
+    hip_yaw_1: {p: 5000, d: 30}
+    hip_yaw_2: {p: 5000, d: 30}
+    hip_yaw_3: {p: 5000, d: 30}
+    hip_yaw_4: {p: 5000, d: 30}
+    hip_pitch_1: {p: 5000, d: 30}
+    hip_pitch_2: {p: 5000, d: 30}
+    hip_pitch_3: {p: 5000, d: 30}
+    hip_pitch_4: {p: 5000, d: 30}
+    knee_pitch_1: {p: 8000, d: 50}
+    knee_pitch_2: {p: 8000, d: 50}
+    knee_pitch_3: {p: 8000, d: 50}
+    knee_pitch_4: {p: 8000, d: 50}
+    ankle_pitch_1: {p: 4000, d: 40}
+    ankle_pitch_2: {p: 4000, d: 40}
+    ankle_pitch_3: {p: 4000, d: 40}
+    ankle_pitch_4: {p: 4000, d: 40}
+
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf

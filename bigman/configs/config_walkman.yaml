@@ -1,4 +1,4 @@
-# WALKMAN 
+# WALKMAN
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
@@ -18,8 +18,8 @@ RobotInterfaceROS:
   subclass_factory_name: "robot_interface_ros"
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
-  ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
-  imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
+  ft_topic_names: ["/xbotcore/bigman/ft/l_arm_ft", "/xbotcore/bigman/ft/r_arm_ft", "/xbotcore/bigman/ft/l_leg_ft", "/xbotcore/bigman/ft/r_leg_ft"]
+  imu_topic_names: ["/xbotcore/bigman/imu/imu_link"]
 
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
@@ -37,7 +37,7 @@ XBotRTPlugins:
 
 MasterCommunicationInterface:
   framework_name: "ROS"
-  
+
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
@@ -106,10 +106,10 @@ x_bot_core:
   urdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/urdf/bigman.urdf
   srdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/srdf/bigman.srdf
   joint_map_config: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml
-  
+
 x_bot_ecat:
   name: XBotCore
-  sdo_xddp_prefix : 
+  sdo_xddp_prefix :
   # periodic - priority if needed here
 
 ec_board_ctrl:
@@ -120,7 +120,7 @@ ec_board_ctrl:
 
 ec_boards_base:
   create_pipes: true
-  
+
 #############################
 # HEAD
 #############################
@@ -158,7 +158,7 @@ HpESC_41:
     impedance:  [300.0, 65.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
-    
+
 
 # RL_H_Y = 42
 HpESC_42:
