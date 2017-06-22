@@ -37,3 +37,4 @@ joint_map:
   55: LAnkSag
   56: LAnkLat
   57: l_leg_ft_joint
+  91: imu_joint
