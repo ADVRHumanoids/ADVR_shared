@@ -78,31 +78,31 @@ ModelInterfaceRBDL:
 
 GazeboXBotPlugin:
   gains:
-    RShSag:   {p: 2000, d: 17}
-    RShLat:   {p: 1500, d: 17}
-    RShYaw:   {p: 1500, d: 11.5}
-    RElbj:    {p: 1500, d: 11.5}
-    RWrj1:    {p: 745,  d: 4}
-    LShSag:   {p: 2000, d: 17}
-    LShLat:   {p: 1500, d: 17}
-    LShYaw:   {p: 1500, d: 11.5}
-    LElbj:    {p: 1500, d: 11.5}
-    LWrj1:    {p: 745,  d: 4}
-    WaistSag: {p: 5500, d: 10}
-    WaistYaw: {p: 4000, d: 10}
-    WaistLat: {p: 4000, d: 10}
-    LHipYaw:  {p: 1063, d: 10}
-    RHipYaw:  {p: 1063, d: 10}
-    RHipLat:  {p: 6500, d: 15}
-    RHipSag:  {p: 6500, d: 15}
-    RKneeSag: {p: 6500, d: 15}
-    RAnkSag:  {p: 6500, d: 15}
-    RAnkLat:  {p: 6500, d: 15}
-    LHipLat:  {p: 6500, d: 15}
-    LHipSag:  {p: 6500, d: 15}
-    LKneeSag: {p: 6500, d: 15}
-    LAnkSag:  {p: 6500, d: 15}
-    LAnkLat:  {p: 6500, d: 15}
+    RShSag:   {p: 4000, d: 30}
+    RShLat:   {p: 3000, d: 30}
+    RShYaw:   {p: 3000, d: 20}
+    RElbj:    {p: 3000, d: 20}
+    RWrj1:    {p: 1500, d: 10}
+    LShSag:   {p: 4000, d: 30}
+    LShLat:   {p: 3000, d: 30}
+    LShYaw:   {p: 3000, d: 25}
+    LElbj:    {p: 3000, d: 25}
+    LWrj1:    {p: 1500, d: 10}
+    WaistSag: {p: 10000, d: 30}
+    WaistYaw: {p: 8000, d: 30}
+    WaistLat: {p: 8000, d: 30}
+    LHipYaw:  {p: 3000, d: 10}
+    RHipYaw:  {p: 3000, d: 10}
+    RHipLat:  {p: 15000, d: 80}
+    RHipSag:  {p: 15000, d: 80}
+    RKneeSag: {p: 15000, d: 80}
+    RAnkSag:  {p: 15000, d: 80}
+    RAnkLat:  {p: 15000, d: 80}
+    LHipLat:  {p: 15000, d: 80}
+    LHipSag:  {p: 15000, d: 80}
+    LKneeSag: {p: 15000, d: 80}
+    LAnkSag:  {p: 15000, d: 80}
+    LAnkLat:  {p: 15000, d: 80}
 
     # RShSag:   {p: 2000,  d: 17}
     # RShLat:   {p: 1500,  d: 17}
