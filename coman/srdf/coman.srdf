@@ -71,6 +71,24 @@
   <group name="torso">
     <chain base_link="Waist" tip_link="DWYTorso"/>
   </group>
+
+  <!-- CONSTRAINT: first left then right -->
+  <group name="arms">
+    <!-- LEFT LEG -->
+    <group name="left_arm"/>
+    <!-- RIGHT LEG -->
+    <group name="right_arm"/>
+  </group>
+  <!-- CONSTRAINT: first left then right -->
+  <group name="legs">
+    <!-- LEFT LEG -->
+    <group name="left_leg"/>
+    <!-- RIGHT LEG -->
+    <group name="right_leg"/>
+  </group>
+
+
+
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
     <group name="left_arm"/>

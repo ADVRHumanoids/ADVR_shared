@@ -1,9 +1,9 @@
 # COMAN config
 
 XBotInterface:
-  urdf_path: "urdf/coman.urdf"
-  srdf_path: "srdf/coman.srdf"
-  joint_map_path: "joint_map/coman_ecat_joint_map.yaml"
+  urdf_path: "configs/ADVR_shared/coman/urdf/coman.urdf"
+  srdf_path: "configs/ADVR_shared/coman/srdf/coman.srdf"
+  joint_map_path: "configs/ADVR_shared/coman/joint_map/coman_ecat_joint_map.yaml"
 
 RobotInterface:
   framework_name: "YARP"
