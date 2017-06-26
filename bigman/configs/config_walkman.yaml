@@ -27,8 +27,10 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "chengxu_walking", "ManipulationExample"]
-  io_plugins: ["IkRosIo"]
+  # "HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "chengxu_walking", "ManipulationExample"
+  plugins: ["HomingExample", "yw_walking_rt_plugin"]
+  io_plugins: []
+  #"IkRosIo"
   
 NRTPlugins:
   plugins: [ "ManipulationPlugin"]
