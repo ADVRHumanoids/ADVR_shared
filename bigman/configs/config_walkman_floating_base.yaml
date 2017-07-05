@@ -27,11 +27,12 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk","DebrisRemovalTask", "ManipulationExample"]
-  io_plugins: ["IkRosIo"]
+  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk","DebrisRemovalTask", "ManipulationExample"]
+  plugins: ["Juan_FBcontrollers"]
+  #io_plugins: ["IkRosIo"]
   
 NRTPlugins:
-  plugins: [ "ManipulationPlugin"]
+  #plugins: [ "ManipulationPlugin"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:
@@ -113,7 +114,7 @@ x_bot_ecat:
 
 ec_board_ctrl:
   eth_iface: rteth0
-  sync_cycle_time_ns: 1000000
+  sync_cycle_time_ns: 5000000
   sync_cycle_offset_ns: 0
   power_off_boards: true
 
