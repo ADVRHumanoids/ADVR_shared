@@ -27,7 +27,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
+  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
+  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask"]
   #io_plugins: ["IkRosIo"]
   io_plugins: ["IkRosIo", "OdomPublisher"]
   
