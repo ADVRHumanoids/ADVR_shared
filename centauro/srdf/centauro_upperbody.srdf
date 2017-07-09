@@ -23,16 +23,15 @@
     
     <group name="imu_sensors">
     </group>
+    
+    <group name="arms">
+        <joint name="j_arm1_8"/>
+    </group>
 
     <group name="chains">
         <group name="left_arm"/>
         <group name="right_arm"/>
         <group name="torso"/>
-    </group>
-    
-        
-    <group name="hands">
-        <joint name="j_arm1_8">
     </group>
 
     
