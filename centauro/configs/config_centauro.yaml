@@ -29,14 +29,14 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample"]
-  io_plugins: []
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "ManipulationExample"]
+  io_plugins: ["IkRosIo"]
   #io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
 
 NRTPlugins:
-  plugins: [] 
+  plugins: ["ManipulationPlugin"] 
 
 MasterCommunicationInterface:
   framework_name: "ROS"
