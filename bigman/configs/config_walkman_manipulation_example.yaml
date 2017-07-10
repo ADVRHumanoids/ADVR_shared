@@ -33,7 +33,7 @@ XBotRTPlugins:
   #io_plugins: []
 
 NRTPlugins:
-  plugins: [ "ManipulationPlugin", "ManipulationExample"]
+  plugins: [ "ManipulationExample"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:

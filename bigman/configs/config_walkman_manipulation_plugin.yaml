@@ -27,13 +27,13 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "ManipulationExample"]
   io_plugins: ["IkRosIo"]
   #plugins: ["HomingExample"]
   #io_plugins: []
 
 NRTPlugins:
-  plugins: [ "ManipulationPlugin", "ManipulationExample"]
+  plugins: [ "ManipulationPlugin"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:
