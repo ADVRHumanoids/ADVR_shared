@@ -1,7 +1,8 @@
 # WALKMAN 
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_floating_base.urdf"
+  # urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
   srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
   joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
@@ -10,7 +11,8 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  # is_model_floating_base: "false"
+  is_model_floating_base: "true"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -31,7 +33,7 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
   #plugins: ["HomingExample"]
-  plugins: ["HomingExample", "chengxu_walking"]
+  plugins: ["HomingExample"]
   #plugins: ["chengxu_walking"]
   io_plugins: []
   #plugins: ["ExoskeletonCommunicationPlugin"]
