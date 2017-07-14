@@ -52,6 +52,11 @@
   <group name="imu_sensors">
       <link name="imu_link"/>
   </group>
+
+  <group name="hands">
+      <joint name="r_handj"/>
+      <joint name="l_handj"/>
+  </group>
   <!-- Disabled Joint -->
   <!--     <disabled_joint name="LShSag"/> -->
   <!--     <disabled_joint name="LShLat"/> -->
