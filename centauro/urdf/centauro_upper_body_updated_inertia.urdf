@@ -64,8 +64,20 @@
       <material name="grey"/>
     </collision>
   </link>
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.0"/>
+      <!-- mass  7: torso_1 (2) + torso_2 (5), head un_modelled -->
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <!-- /torso links -->
   <!-- torso joints -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="torso_2"/>
+    <child link="imu_link"/>
+    <origin xyz="-0.0704 0.0 -0.0416"/>
+  </joint>
   <joint name="torso_yaw" type="revolute">
     <parent link="world"/>
     <origin xyz="0.3 0.0 0.95"/>
@@ -314,6 +326,46 @@
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
+
+	<gazebo reference="j_arm1_7">
+		<sensor type="force_torque" name="left_arm_ft">
+			<force_torque>
+                       <frame>sensor</frame>
+                       <measure_direction>child_to_parent</measure_direction>
+                     </force_torque>
+			<always_on>true</always_on>
+			<visualize>true</visualize>
+			<update_rate>1000</update_rate>
+                     <pose>0 0 -0.0565 0 0 0</pose>
+		</sensor>
+	</gazebo>
+
+	<gazebo reference="j_arm2_7">
+		<sensor type="force_torque" name="right_arm_ft">
+			<force_torque>
+                       <frame>sensor</frame>
+                       <measure_direction>child_to_parent</measure_direction>
+                     </force_torque>
+			<always_on>true</always_on>
+			<visualize>true</visualize>
+			<update_rate>1000</update_rate>
+                     <pose>0 0 -0.0565 0 0 0</pose>
+		</sensor>
+	</gazebo>
+
+  <link name="left_arm_ft"/>
+  <link name="right_arm_ft"/>
+  <joint name="l_arm_ft_joint" type="fixed">
+    <parent link="arm1_7"/>
+    <child link="left_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
+  </joint>
+  <joint name="r_arm_ft_joint" type="fixed">
+    <parent link="arm2_7"/>
+    <child link="right_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
+  </joint>
+
   <transmission name="t_j_arm1_1">
     <type> transmission_interface/SimpleTransmission</type>
     <joint name="j_arm1_1">
