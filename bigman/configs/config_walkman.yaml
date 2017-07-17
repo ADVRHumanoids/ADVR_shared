@@ -27,13 +27,13 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "ManipulationExample"]
   io_plugins: ["IkRosIo"]
   #plugins: ["HomingExample"]
   #io_plugins: []
 
 NRTPlugins:
-  plugins: [ "ManipulationPlugin", "ManipulationExample"]
+  plugins: [ "ManipulationPlugin"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:
@@ -43,20 +43,20 @@ CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
   subclass_factory_name: "customcmnd_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
-  command_topic_name: "/centauro/position_controller/command"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
+  command_topic_name: "/bigman/position_controller/command"
 
 JointState:
   subclass_name: "JointStateMessage"
   path_to_shared_lib: "libJointStateMessage.so"
   subclass_factory_name: "jointstate_jointstate_message"
-  joint_state_topic_name: "/centauro/joint_states"
+  joint_state_topic_name: "/bigman/joint_states"
 
 AdvrCommandMessage:
   subclass_name: "CommandAdvr"
   path_to_shared_lib: "libAdvrCommandMessage.so"
   subclass_factory_name: "advrcommandmessage_control_message"
-  joint_service_name: "/centauro/position_controller/get_joint_names"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
   command_topic_name: "/xbotcore/bigman/command"
 
 AdvrJointStateMessage:
@@ -102,12 +102,7 @@ GazeboXBotPlugin:
     LKneeSag: {p: 15000, d: 80}
     LAnkSag:  {p: 15000, d: 80}
     LAnkLat:  {p: 15000, d: 80}
-
-x_bot_core:
-  urdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/urdf/bigman.urdf
-  srdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/srdf/bigman.srdf
-  joint_map_config: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml
-  
+ 
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix : 
