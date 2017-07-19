@@ -174,7 +174,7 @@ CentAcESC_1:
   control_mode: pos_3b
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 15.0
   pid :
     position:   [180.0 , 0.0 , 1.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
