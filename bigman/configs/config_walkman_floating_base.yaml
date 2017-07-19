@@ -78,31 +78,31 @@ ModelInterfaceRBDL:
 
 GazeboXBotPlugin:
   gains:
-    RShSag:   {p: 4000, d: 30}
-    RShLat:   {p: 3000, d: 30}
-    RShYaw:   {p: 3000, d: 20}
-    RElbj:    {p: 3000, d: 20}
+    RShSag:   {p: 1500, d: 10}
+    RShLat:   {p: 1500, d: 10}
+    RShYaw:   {p: 1500, d: 10}
+    RElbj:    {p: 1500, d: 10}
     RWrj1:    {p: 1500, d: 10}
-    LShSag:   {p: 4000, d: 30}
-    LShLat:   {p: 3000, d: 30}
-    LShYaw:   {p: 3000, d: 25}
-    LElbj:    {p: 3000, d: 25}
+    LShSag:   {p: 1500, d: 10}
+    LShLat:   {p: 1500, d: 10}
+    LShYaw:   {p: 1500, d: 10}
+    LElbj:    {p: 1500, d: 10}
     LWrj1:    {p: 1500, d: 10}
-    WaistSag: {p: 10000, d: 30}
-    WaistYaw: {p: 8000, d: 30}
-    WaistLat: {p: 8000, d: 30}
-    LHipYaw:  {p: 3000, d: 10}
-    RHipYaw:  {p: 3000, d: 10}
-    RHipLat:  {p: 15000, d: 80}
-    RHipSag:  {p: 15000, d: 80}
-    RKneeSag: {p: 15000, d: 80}
-    RAnkSag:  {p: 15000, d: 80}
-    RAnkLat:  {p: 15000, d: 80}
-    LHipLat:  {p: 15000, d: 80}
-    LHipSag:  {p: 15000, d: 80}
-    LKneeSag: {p: 15000, d: 80}
-    LAnkSag:  {p: 15000, d: 80}
-    LAnkLat:  {p: 15000, d: 80}
+    WaistSag: {p: 10000, d: 160}
+    WaistYaw: {p: 10000, d: 140}
+    WaistLat: {p: 10000, d: 100}
+    LHipYaw:  {p: 2000, d: 10}
+    RHipYaw:  {p: 2000, d: 10}
+    RHipLat:  {p: 15000, d: 160}
+    RHipSag:  {p: 10000, d: 40}
+    RKneeSag: {p: 10000, d: 40}
+    RAnkSag:  {p: 10000, d: 40}
+    RAnkLat:  {p: 8000, d: 40}
+    LHipLat:  {p: 15000, d: 160}
+    LHipSag:  {p: 10000, d: 40}
+    LKneeSag: {p: 10000, d: 40}
+    LAnkSag:  {p: 10000, d: 40}
+    LAnkLat:  {p: 8000, d: 40}
 
     # RShSag:   {p: 2000,  d: 17}
     # RShLat:   {p: 1500,  d: 17}
@@ -130,31 +130,31 @@ GazeboXBotPlugin:
     # LAnkSag:  {p: 6500, d: 15}
     # LAnkLat:  {p: 6500, d: 15}
 
-    # RShSag: {p: 5000, d: 30}
-    # RShLat: {p: 8000, d: 50}
-    # RShYaw: {p: 5000, d: 30}
-    # RElbj: {p: 5000, d: 30}
-    # RWrj1: {p: 2000, d: 5}
-    # LShSag: {p: 5000, d: 30}
-    # LShLat: {p: 8000, d: 50}
-    # LShYaw: {p: 5000, d: 30}
-    # LElbj: {p: 5000, d: 30}
-    # LWrj1: {p: 2000, d: 5}
-    # WaistYaw: {p: 5000, d: 30}
-    # WaistSag: {p: 8000, d: 50}
-    # WaistLat: {p: 5000, d: 30}
-    # RHipLat: {p: 8000, d: 30}
-    # RHipYaw: {p: 5000, d: 50}
-    # RHipSag: {p: 5000, d: 30}
-    # RKneeSag: {p: 5000, d: 30}
-    # RAnkSag: {p: 5000, d: 30}
-    # RAnkLat: {p: 2000, d: 5}
-    # LHipLat: {p: 8000, d: 30}
-    # LHipYaw: {p: 5000, d: 50}
-    # LHipSag: {p: 8000, d: 30}
-    # LKneeSag: {p: 5000, d: 30}
-    # LAnkSag: {p: 5000, d: 30}
-    # LAnkLat: {p: 2000, d: 5}
+    # RShSag:   {p: 2500, d: 10}
+    # RShLat:   {p: 2500, d: 10}
+    # RShYaw:   {p: 2500, d: 10}
+    # RElbj:    {p: 2500, d: 10}
+    # RWrj1:    {p: 2500, d: 10}
+    # LShSag:   {p: 2500, d: 10}
+    # LShLat:   {p: 2500, d: 10}
+    # LShYaw:   {p: 2500, d: 10}
+    # LElbj:    {p: 2500, d: 10}
+    # LWrj1:    {p: 2500, d: 10}
+    # WaistSag: {p: 6500, d: 15}
+    # WaistYaw: {p: 6500, d: 15}
+    # WaistLat: {p: 6500, d: 15}
+    # LHipYaw:  {p: 1000, d: 10}
+    # RHipYaw:  {p: 1000, d: 10}
+    # RHipLat:  {p: 6000, d: 25}
+    # RHipSag:  {p: 6000, d: 25}
+    # RKneeSag: {p: 6000, d: 25}
+    # RAnkSag:  {p: 6000, d: 25}
+    # RAnkLat:  {p: 6000, d: 25}
+    # LHipLat:  {p: 6000, d: 25}
+    # LHipSag:  {p: 6000, d: 25}
+    # LKneeSag: {p: 6000, d: 25}
+    # LAnkSag:  {p: 6000, d: 25}
+    # LAnkLat:  {p: 6000, d: 25}
 
 x_bot_core:
   urdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/urdf/bigman.urdf
