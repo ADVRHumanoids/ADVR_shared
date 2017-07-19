@@ -9,26 +9,48 @@
      Also all the parameter dependencies are resolved-->
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
-  <gazebo reference="j_arm1_8">
-    <provideFeedback>true</provideFeedback>
+  <!--xacro:if value="${arm_sensors}">
+  <xacro:force-torque_sensor joint="j_arm1_7" robot="centauro"/>
+  <xacro:if value="${arms}">
+    <xacro:force-torque_sensor joint="j_arm2_7" robot="centauro"/>
+  </xacro:if>
+</xacro:if-->
+  <gazebo reference="j_arm1_7">
+    <sensor name="left_arm_ft" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 -0.0565 0 0 0</pose>
+    </sensor>
   </gazebo>
-  <gazebo>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="j_arm1_8_ft_sensor">
-      <updateRate>100.0</updateRate>
-      <topicName>centauro/j_arm1_8_ft_sensor</topicName>
-      <jointName>j_arm1_8</jointName>
-    </plugin>
+  <gazebo reference="j_arm2_7">
+    <sensor name="right_arm_ft" type="force_torque">
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>1000</update_rate>
+      <pose>0 0 -0.0565 0 0 0</pose>
+    </sensor>
   </gazebo>
-  <gazebo reference="j_arm2_8">
-    <provideFeedback>true</provideFeedback>
-  </gazebo>
-  <gazebo>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="j_arm2_8_ft_sensor">
-      <updateRate>100.0</updateRate>
-      <topicName>centauro/j_arm2_8_ft_sensor</topicName>
-      <jointName>j_arm2_8</jointName>
-    </plugin>
-  </gazebo>
+  <link name="left_arm_ft"/>
+  <link name="right_arm_ft"/>
+  <joint name="l_arm_ft_joint" type="fixed">
+    <parent link="arm1_7"/>
+    <child link="left_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
+  </joint>
+  <joint name="r_arm_ft_joint" type="fixed">
+    <parent link="arm2_7"/>
+    <child link="right_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
+  </joint>
   <!-- ROS CONTROLLER -->
   <!--	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -110,6 +132,9 @@
   <!-- VISUALiZATION AND FRICTION -->
   <gazebo reference="base_link">
     <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="load">
+    <material>Gazebo/OrangeTransparent</material>
   </gazebo>
   <gazebo reference="pelvis">
     <material>Gazebo/OrangeTransparent</material>
@@ -793,12 +818,36 @@
   <!-- /other files -->
   <!-- reference -->
   <link name="world"/>
-  <joint name="floating_base" type="floating">
+  <link name="base_link"/>
+  <!--link name="load">
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.1 0.2 0.4"/>
+        </geometry>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.1 0.2 0.4"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <mass value="20"/>
+        <inertia ixx="0.2" ixy="0.0" ixz="0.0" iyy="0.2" iyz="0.0" izz="0.1"/>
+    </inertial>
+</link-->
+  <joint name="floating_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.6"/>
     <parent link="world"/>
     <child link="base_link"/>
   </joint>
-  <origin rpy="0 0 0" xyz="0.0 0.0 0.6"/>
-  <link name="base_link"/>
+  <!--joint name="load_joint" type="fixed">
+    <origin xyz="0.04 0.0 0.4" rpy="0 0 0" /> 
+    <parent link="base_link"/>
+    <child link="load"/>
+</joint-->
   <!-- torso links -->
   <link name="torso_2">
     <inertial>
@@ -998,7 +1047,8 @@
     <child link="arm1_1"/>
     <origin rpy="0.0 0.0 -0.523602668986" xyz="0.04576 0.169137 0.190626"/>
     <axis xyz="0 0.984807753012 0.173648177667"/>
-    <limit effort="147" lower="-3.403" upper="1.658" velocity="5.7"/>
+    <!--          <limit lower="-3.403" upper="1.658" effort="147" velocity="5.7"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder yaw -->
   <!-- shoulder roll -->
@@ -1007,7 +1057,8 @@
     <child link="arm1_2"/>
     <origin xyz="-0.09115 0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="-3.49" upper="0" velocity="5.7"/>
+    <!--          <limit lower="-3.49" upper="0" effort="147" velocity="5.7"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->
@@ -1016,7 +1067,8 @@
     <child link="arm1_3"/>
     <origin xyz="0.09115 0.0 -0.21915"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="147" lower="-2.618" upper="2.618" velocity="8.2"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="147" velocity="8.2"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder pitch -->
   <!-- elbow yaw -->
@@ -1025,7 +1077,8 @@
     <child link="arm1_4"/>
     <origin xyz="0.04 0.05615 -0.074"/>
     <axis xyz="0 1 0"/>
-    <limit effort="147" lower="-2.530" upper="0.349" velocity="8.2"/>
+    <!--          <limit lower="-2.530" upper="0.349" effort="147" velocity="8.2"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /elbow yaw -->
   <!-- elbow pitch-->
@@ -1034,7 +1087,8 @@
     <child link="arm1_5"/>
     <origin xyz="-0.015 -0.05615 -0.061"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="55" lower="-2.618" upper="2.618" velocity="11.6"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="55" velocity="11.6"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /elbow pitch-->
   <!-- wrist yaw-->
@@ -1043,7 +1097,8 @@
     <child link="arm1_6"/>
     <origin xyz="0.0 0.049 -0.18"/>
     <axis xyz="0 1 0"/>
-    <limit effort="55" lower="-1.570" upper="1.570" velocity="11.6"/>
+    <!--       <limit lower="-1.570" upper="1.570" effort="55" velocity="11.6"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /wrist yaw-->
   <!-- wrist pitch-->
@@ -1052,7 +1107,8 @@
     <child link="arm1_7"/>
     <origin xyz="0.0 -0.049 -0.169"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="27" lower="-2.618" upper="2.618" velocity="20.3"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="27" velocity="20.3"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
@@ -1140,33 +1196,46 @@
     <visual>
       <geometry>
         <box size="0.3 0.1 0.02"/>
+        <!--box size="0.3 0.04 0.3"/-->
         <!--cylinder length="0.3" radius="0.02"/-->
       </geometry>
     </visual>
     <collision>
       <geometry>
         <box size="0.3 0.1 0.02"/>
+        <!--box size="0.3 0.04 0.3"/-->
         <!--cylinder length="0.3" radius="0.02"/-->
       </geometry>
     </collision>
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
   </link>
   <!-- /links -->
+  <!--xacro:if value="${arm_num == 1}">
+        <joint name="j_arm${arm_num}_8" type="fixed">
+            <parent link="arm${arm_num}_7"/>
+            <child link="arm${arm_num}_8"/>
+            <origin xyz="0 0 -0.05" rpy="0 0 0.0"/>
+        </joint>
+    </xacro:if>
+
+    <xacro:if value="${arm_num == 2}">
+        <joint name="j_arm${arm_num}_8" type="fixed">
+            <parent link="arm${arm_num}_7"/>
+            <child link="arm${arm_num}_8"/>
+            <origin xyz="0 0 -0.05" rpy="0 0 -0.0"/>
+        </joint>
+    </xacro:if-->
+  <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 0.5"/-->
+  <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 -0.5"/-->
+  <!-- /joints -->
   <joint name="j_arm1_8" type="fixed">
     <parent link="arm1_7"/>
     <child link="arm1_8"/>
-    <origin rpy="0 0 0.5" xyz="0 0 -0.05"/>
-    <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 0.5"/-->
+    <origin rpy="0 0 0" xyz="0 0 -0.05"/>
   </joint>
-  <!-- /joints -->
-  <!--joint name="j_arm${arm_num}_8" type="fixed">
-            <parent link="arm${arm_num}_7"/>
-            <child link="arm${arm_num}_8"/>
-            <origin xyz="0 0 -0.0605" rpy="0 1.5707 0.5"/>
-        </joint-->
   <!-- /end-effector -->
   <!-- LINKS -->
   <!-- shoulder yaw-roll-->
@@ -1326,7 +1395,8 @@
     <child link="arm2_1"/>
     <origin rpy="0.0 0.0 0.523602668986" xyz="0.04576 -0.169137 0.190626"/>
     <axis xyz="0 -0.984807753012 0.173648177667"/>
-    <limit effort="147" lower="-1.658" upper="3.403" velocity="5.7"/>
+    <!--          <limit lower="-1.658" upper="3.403" effort="147" velocity="5.7"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder yaw -->
   <!-- shoulder roll -->
@@ -1335,7 +1405,8 @@
     <child link="arm2_2"/>
     <origin xyz="-0.09115 -0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="0" upper="3.49" velocity="5.7"/>
+    <!--          <limit lower="0" upper="3.49" effort="147" velocity="5.7"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->
@@ -1344,7 +1415,8 @@
     <child link="arm2_3"/>
     <origin xyz="0.09115 0.0 -0.21915"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="147" lower="-2.618" upper="2.618" velocity="8.2"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="147" velocity="8.2"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /shoulder pitch -->
   <!-- elbow yaw -->
@@ -1353,7 +1425,8 @@
     <child link="arm2_4"/>
     <origin xyz="0.04 -0.05615 -0.074"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="147" lower="-0.349" upper="2.530" velocity="8.2"/>
+    <!--          <limit lower="-0.349" upper="2.530" effort="147" velocity="8.2"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /elbow yaw -->
   <!-- elbow pitch-->
@@ -1362,7 +1435,8 @@
     <child link="arm2_5"/>
     <origin xyz="-0.015 0.05615 -0.061"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="55" lower="-2.618" upper="2.618" velocity="11.6"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="55" velocity="11.6"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /elbow pitch-->
   <!-- wrist yaw-->
@@ -1371,7 +1445,8 @@
     <child link="arm2_6"/>
     <origin xyz="0.0 -0.049 -0.18"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="55" lower="-1.570" upper="1.570" velocity="11.6"/>
+    <!--       <limit lower="-1.570" upper="1.570" effort="55" velocity="11.6"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- /wrist yaw-->
   <!-- wrist pitch-->
@@ -1380,7 +1455,8 @@
     <child link="arm2_7"/>
     <origin xyz="0.0 0.049 -0.169"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="27" lower="-2.618" upper="2.618" velocity="20.3"/>
+    <!--       <limit lower="-2.618" upper="2.618" effort="27" velocity="20.3"/> -->
+    <limit effort="147" lower="-3.0" upper="3.0" velocity="5.7"/>
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
@@ -1468,33 +1544,46 @@
     <visual>
       <geometry>
         <box size="0.3 0.1 0.02"/>
+        <!--box size="0.3 0.04 0.3"/-->
         <!--cylinder length="0.3" radius="0.02"/-->
       </geometry>
     </visual>
     <collision>
       <geometry>
         <box size="0.3 0.1 0.02"/>
+        <!--box size="0.3 0.04 0.3"/-->
         <!--cylinder length="0.3" radius="0.02"/-->
       </geometry>
     </collision>
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
   </link>
   <!-- /links -->
+  <!--xacro:if value="${arm_num == 1}">
+        <joint name="j_arm${arm_num}_8" type="fixed">
+            <parent link="arm${arm_num}_7"/>
+            <child link="arm${arm_num}_8"/>
+            <origin xyz="0 0 -0.05" rpy="0 0 0.0"/>
+        </joint>
+    </xacro:if>
+
+    <xacro:if value="${arm_num == 2}">
+        <joint name="j_arm${arm_num}_8" type="fixed">
+            <parent link="arm${arm_num}_7"/>
+            <child link="arm${arm_num}_8"/>
+            <origin xyz="0 0 -0.05" rpy="0 0 -0.0"/>
+        </joint>
+    </xacro:if-->
+  <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 0.5"/-->
+  <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 -0.5"/-->
+  <!-- /joints -->
   <joint name="j_arm2_8" type="fixed">
     <parent link="arm2_7"/>
     <child link="arm2_8"/>
-    <origin rpy="0 0 -0.5" xyz="0 0 -0.05"/>
-    <!--origin xyz="0 0 -0.0605" rpy="0 1.5707 -0.5"/-->
+    <origin rpy="0 0 0" xyz="0 0 -0.05"/>
   </joint>
-  <!-- /joints -->
-  <!--joint name="j_arm${arm_num}_8" type="fixed">
-            <parent link="arm${arm_num}_7"/>
-            <child link="arm${arm_num}_8"/>
-            <origin xyz="0 0 -0.0605" rpy="0 1.5707 0.5"/>
-        </joint-->
   <!-- /end-effector -->
   <!-- /arms -->
   <!-- /legs -->

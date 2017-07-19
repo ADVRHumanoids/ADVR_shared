@@ -1,6 +1,7 @@
 # CENTAURO config
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
+#  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_upper_body_updated_inertia.urdf"
+  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_floating_arm.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro_upperbody_without_ft.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml"
 
@@ -89,21 +90,21 @@ GazeboXBotPlugin:
     #j_arm2_6: {p: 2000, d: 5}
     #torso_yaw: {p: 5000, d: 30}
 
-    j_arm1_1: {p: 500, d: 1}
-    j_arm1_2: {p: 500, d: 1}
-    j_arm1_3: {p: 50,  d: 1}
-    j_arm1_4: {p: 500, d: 1}
-    j_arm1_5: {p: 50,  d: 1}
-    j_arm1_6: {p: 500, d: 1}
-    j_arm1_7: {p: 50,  d: 1}
-    j_arm2_1: {p: 500, d: 1}
-    j_arm2_2: {p: 500, d: 1}
-    j_arm2_3: {p: 50,  d: 1}
-    j_arm2_4: {p: 500, d: 1}
-    j_arm2_5: {p: 50,  d: 1}
-    j_arm2_6: {p: 500, d: 1}
-    j_arm2_7: {p: 50,  d: 1}
-    #torso_yaw: {p: 100, d: 1}
+    j_arm1_1: {p: 3000, d: 1}
+    j_arm1_2: {p: 3000, d: 1}
+    j_arm1_3: {p: 300,  d: 1}
+    j_arm1_4: {p: 3000, d: 1}
+    j_arm1_5: {p: 300,  d: 1}
+    j_arm1_6: {p: 3000, d: 1}
+    j_arm1_7: {p: 300,  d: 1}
+    j_arm2_1: {p: 3000, d: 1}
+    j_arm2_2: {p: 3000, d: 1}
+    j_arm2_3: {p: 300,  d: 1}
+    j_arm2_4: {p: 3000, d: 1}
+    j_arm2_5: {p: 300,  d: 1}
+    j_arm2_6: {p: 3000, d: 1}
+    j_arm2_7: {p: 300,  d: 1}
+    #torso_yaw: {p6 100, d: 1}
 
 x_bot_core:
   urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
