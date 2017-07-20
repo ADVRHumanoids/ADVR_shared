@@ -115,7 +115,7 @@
   <group_state group="chains" name="00 zero positions">
   </group_state>
 
-  <group_state group="chains" name="home">
+  <!--<group_state group="chains" name="home">
         <joint name="NeckYawj" value="0.0"/>
         <joint name="NeckPitchj" value="0.6"/>
         <joint name="WaistLat" value="0.0"/>
@@ -147,6 +147,40 @@
         <joint name="LKneeSag" value="0.90"/>
         <joint name="LAnkSag" value="-0.45"/>
         <joint name="LAnkLat" value="0.06"/>
-  </group_state>
+  </group_state>-->
+  
+  <group_state group="chains" name="home">
+        <joint name="NeckYawj" value="0.0"/>
+        <joint name="NeckPitchj" value="0.0"/>
+        <joint name="WaistLat" value="0.0"/>
+        <joint name="WaistSag" value="0.0"/>
+        <joint name="WaistYaw" value="0.0"/>
+        <joint name="RShSag" value="1.047"/>
+        <joint name="RShLat" value="-0.174"/>
+        <joint name="RShYaw" value="0.349"/>
+        <joint name="RElbj" value="-1.919"/>
+        <joint name="RForearmPlate" value="0.0"/>
+        <joint name="RWrj1" value="-0.523"/>
+        <joint name="RWrj2" value="0.0"/>
+        <joint name="LShSag" value="1.047"/>
+        <joint name="LShLat" value="0.174"/>
+        <joint name="LShYaw" value="-0.349"/>
+        <joint name="LElbj" value="-1.919"/>
+        <joint name="LForearmPlate" value="0.0"/>
+        <joint name="LWrj1" value="-0.523"/>
+        <joint name="LWrj2" value="0.0"/>
+        <joint name="RHipLat" value="0.038"/>
+        <joint name="RHipYaw" value="0.002"/>
+        <joint name="RHipSag" value="-0.30"/>
+        <joint name="RKneeSag" value="0.579"/>
+        <joint name="RAnkSag" value="-0.279"/>
+        <joint name="RAnkLat" value="-0.039"/>
+        <joint name="LHipLat" value="-0.038"/>
+        <joint name="LHipYaw" value="-0.002"/>
+        <joint name="LHipSag" value="-0.30"/>
+        <joint name="LKneeSag" value="0.579"/>
+        <joint name="LAnkSag" value="-0.279"/>
+        <joint name="LAnkLat" value="0.039"/>
+</group_state>
 
 </robot>
