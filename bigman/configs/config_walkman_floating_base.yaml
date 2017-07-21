@@ -28,7 +28,7 @@ RobotInterfaceXBotRT:
 
 XBotRTPlugins:
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk","ManipulationExample"]
   #io_plugins: ["IkRosIo"]
   io_plugins: ["IkRosIo", "OdomPublisher"]
   
@@ -314,8 +314,8 @@ HpESC_11:
 # RA_SH_2 = 12
 HpESC_12:
   control_mode: idle
-  sign: -1
-  pos_offset: 0
+  sign: 1
+  pos_offset: -90
   #pos_offset: -90 NOTE it was not working for the left_arm joint
   pid :
     position: [40.0 , 0.0 , 1.0]
@@ -391,8 +391,8 @@ HpESC_21:
 # LA_SH_2 = 22
 HpESC_22:
   control_mode: idle
-  sign: -1
-  pos_offset : 0
+  sign: 1
+  pos_offset : 90
   #pos_offset: 90 NOTE it was not working for the left_arm joint
   pid :
     position: [40.0 , 0.0 , 1.0]
