@@ -90,20 +90,20 @@ GazeboXBotPlugin:
     #j_arm2_6: {p: 2000, d: 5}
     #torso_yaw: {p: 5000, d: 30}
 
-    j_arm1_1: {p: 3000, d: 1}
-    j_arm1_2: {p: 3000, d: 1}
-    j_arm1_3: {p: 300,  d: 1}
-    j_arm1_4: {p: 3000, d: 1}
-    j_arm1_5: {p: 300,  d: 1}
-    j_arm1_6: {p: 3000, d: 1}
-    j_arm1_7: {p: 300,  d: 1}
-    j_arm2_1: {p: 3000, d: 1}
-    j_arm2_2: {p: 3000, d: 1}
-    j_arm2_3: {p: 300,  d: 1}
-    j_arm2_4: {p: 3000, d: 1}
-    j_arm2_5: {p: 300,  d: 1}
-    j_arm2_6: {p: 3000, d: 1}
-    j_arm2_7: {p: 300,  d: 1}
+    j_arm1_1: {p: 5000, d: 1}
+    j_arm1_2: {p: 5000, d: 1}
+    j_arm1_3: {p: 500,  d: 1}
+    j_arm1_4: {p: 5000, d: 1}
+    j_arm1_5: {p: 500,  d: 1}
+    j_arm1_6: {p: 5000, d: 1}
+    j_arm1_7: {p: 500,  d: 1}
+    j_arm2_1: {p: 5000, d: 1}
+    j_arm2_2: {p: 5000, d: 1}
+    j_arm2_3: {p: 500,  d: 1}
+    j_arm2_4: {p: 5000, d: 1}
+    j_arm2_5: {p: 500,  d: 1}
+    j_arm2_6: {p: 5000, d: 1}
+    j_arm2_7: {p: 500,  d: 1}
     #torso_yaw: {p6 100, d: 1}
 
 x_bot_core:
