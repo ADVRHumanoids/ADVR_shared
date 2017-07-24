@@ -313,7 +313,7 @@ HpESC_11:
 
 # RA_SH_2 = 12
 HpESC_12:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset: -90
   #pos_offset: -90 NOTE it was not working for the left_arm joint
@@ -390,7 +390,7 @@ HpESC_21:
 
 # LA_SH_2 = 22
 HpESC_22:
-  control_mode: idle
+  control_mode: mix_pos_3c
   sign: 1
   pos_offset : 90
   #pos_offset: 90 NOTE it was not working for the left_arm joint
