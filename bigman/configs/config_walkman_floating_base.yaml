@@ -28,9 +28,9 @@ RobotInterfaceXBotRT:
 
 XBotRTPlugins:
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "DebrisRemovalTask"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "Grasp", "chengxu_walking"]
   #io_plugins: ["IkRosIo"]
-  io_plugins: ["IkRosIo", "OdomPublisher"]
+  io_plugins: ["IkRosIo", "OdomPublisher", "FHRosIo"]
   
 NRTPlugins:
   plugins: [ "ManipulationPlugin"]
@@ -150,7 +150,7 @@ HpESC_41:
   pos_offset: 0
   pid :
     position: [800.0 , 0.0 , 12.0]
-    mix_position: [4800.0, 0.0, 35.0]
+    mix_position: [6000.0, 0.0, 50.0]
     impedance:  [300.0, 65.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -163,7 +163,7 @@ HpESC_42:
   pos_offset: 0
   pid :
     position: [180.0 , 0.0 , 3.0]
-    mix_position: [800.0, 0.0, 10.0]
+    mix_position: [1200.0, 0.0, 20.0]
     impedance:  [300.0, 8.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -175,7 +175,7 @@ HpESC_43:
   pos_offset: 0
   pid :
     position: [700.0 , 0.0 , 10.0]
-    mix_position: [4200.0, 0.0, 40.0]
+    mix_position: [5000.0, 0.0, 45.0]
     impedance:  [300.0, 54.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -187,7 +187,7 @@ HpESC_44:
   pos_offset: 0
   pid :
     position: [500.0 , 0.0 , 1.0]
-    mix_position: [3700.0, 0.0, 35.0]
+    mix_position: [4500.0, 0.0, 40.0]
     impedance:  [300.0, 30.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -199,7 +199,7 @@ HpESC_45:
   pos_offset: 0
   pid :
     position: [500.0 , 0.0 , 2.0]
-    mix_position: [2000.0, 0.0, 30.0]
+    mix_position: [4000.0, 0.0, 40.0]
     impedance:  [300.0, 7.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -211,7 +211,7 @@ HpESC_46:
   pos_offset: 0
   pid :
     position: [80.0 , 0.0 , 4.0]
-    mix_position: [800.0, 0.0, 10.0]
+    mix_position: [1500.0, 0.0, 20.0]
     impedance:  [300.0, 5.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -227,7 +227,7 @@ HpESC_51:
   pos_offset: 0
   pid :
     position: [800.0 , 0.0 , 12.0]
-    mix_position: [4800.0, 0.0, 35.0]
+    mix_position: [6000.0, 0.0, 50.0]
     impedance:  [300.0, 65.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -239,7 +239,7 @@ HpESC_52:
   pos_offset: 0
   pid :
     position: [180.0 , 0.0 , 3.0]
-    mix_position: [800.0, 0.0, 10.0]
+    mix_position: [1200.0, 0.0, 20.0]
     impedance:  [300.0, 8.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -251,7 +251,7 @@ HpESC_53:
   pos_offset: 0
   pid :
     position: [700.0 , 0.0 , 10.0]
-    mix_position: [4200.0, 0.0, 40.0]
+    mix_position: [5000.0, 0.0, 45.0]
     impedance:  [300.0, 54.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -263,7 +263,7 @@ HpESC_54:
   pos_offset: 0
   pid :
     position: [500.0 , 0.0 , 1.0]
-    mix_position: [3700.0, 0.0, 35.0]
+    mix_position: [4500.0, 0.0, 40.0]
     impedance:  [300.0, 30.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -275,7 +275,7 @@ HpESC_55:
   pos_offset: 0
   pid :
     position: [500.0 , 0.0 , 2.0]
-    mix_position: [3700.0, 0.0, 30.0]
+    mix_position: [4000.0, 0.0, 40.0]
     impedance:  [300.0, 7.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -287,7 +287,7 @@ HpESC_56:
   pos_offset: 0
   pid :
     position: [80.0 , 0.0 , 4.0]
-    mix_position: [800.0, 0.0, 10.0]
+    mix_position: [1500.0, 0.0, 20.0]
     impedance:  [300.0, 5.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 2.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 0.0, 0.0, 0.8]
@@ -441,7 +441,8 @@ LpESC_29:
   sign: 1
   pos_offset: 0
   pid :
-    position: [40.0 , 0.0 , 1.0]
+    position: [100000.0 , 0.0 , 0.0]
+    mix_position: [800.0, 0.0, 5.0]
 
 #############################
 # WAIST
