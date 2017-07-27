@@ -31,7 +31,7 @@ XBotRTPlugins:
   io_plugins: ["IkRosIo"]
   
 NRTPlugins:
-  plugins: [ "ManipulationPlugin"]
+  plugins: [ "ManipulationPlugin", "DoorOpening"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:
