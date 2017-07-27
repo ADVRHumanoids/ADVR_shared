@@ -28,12 +28,12 @@ RobotInterfaceXBotRT:
 
 XBotRTPlugins:
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "DebrisRemovalTask"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "Grasp"]
   #io_plugins: ["IkRosIo"]
   io_plugins: ["IkRosIo", "OdomPublisher"]
   
 NRTPlugins:
-  plugins: [ "ManipulationPlugin"]
+  plugins: [ "ManipulationPlugin", "DebrisRemovalTask", "Hose_Task", "DoorFinalDemo"]
   ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
 
 MasterCommunicationInterface:
