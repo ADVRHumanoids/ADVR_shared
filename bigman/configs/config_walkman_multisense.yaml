@@ -1,0 +1,105 @@
+# WALKMAN 
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_real.urdf"
+  srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
+  joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
+
+RobotInterface:
+  framework_name: "ROS"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "false"
+
+RobotInterfaceROS:
+  subclass_name: "RobotInterfaceROS"
+  path_to_shared_lib: "libRobotInterfaceROS.so"
+  subclass_factory_name: "robot_interface_ros"
+  control_message_type: "AdvrCommandMessage"
+  jointstate_message_type: "AdvrJointStateMessage"
+  ft_topic_names: ["/xbotcore/bigman/ft/l_arm_ft", "/xbotcore/bigman/ft/l_leg_ft", "/xbotcore/bigman/ft/r_arm_ft", "/xbotcore/bigman/ft/r_leg_ft"]
+  imu_topic_names: ["/xbotcore/bigman/imu/imu_link"]
+
+RobotInterfaceXBotRT:
+  subclass_name: "RobotInterfaceXBotRT"
+  path_to_shared_lib: "libRobotInterfaceXBotRT.so"
+  subclass_factory_name: "robot_interface_xbot_rt"
+
+XBotRTPlugins:
+  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
+  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "Grasp", "chengxu_walking"]
+  #io_plugins: ["IkRosIo"]
+  io_plugins: ["IkRosIo", "OdomPublisher"]
+  
+NRTPlugins:
+  plugins: [ "ManipulationPlugin"]
+  ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
+
+MasterCommunicationInterface:
+  framework_name: "ROS"
+  
+CustomCmnd:
+  subclass_name: "CustomCmndMessage"
+  path_to_shared_lib: "libCustomCmndMessage.so"
+  subclass_factory_name: "customcmnd_control_message"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
+  command_topic_name: "/bigman/position_controller/command"
+
+JointState:
+  subclass_name: "JointStateMessage"
+  path_to_shared_lib: "libJointStateMessage.so"
+  subclass_factory_name: "jointstate_jointstate_message"
+  joint_state_topic_name: "/bigman/joint_states"
+
+AdvrCommandMessage:
+  subclass_name: "CommandAdvr"
+  path_to_shared_lib: "libAdvrCommandMessage.so"
+  subclass_factory_name: "advrcommandmessage_control_message"
+  joint_service_name: "/bigman/position_controller/get_joint_names"
+  command_topic_name: "/xbotcore/bigman/command"
+
+AdvrJointStateMessage:
+  subclass_name: "AdvrJointState"
+  path_to_shared_lib: "libAdvrJointStateMessage.so"
+  subclass_factory_name: "advrjointstate_jointstate_message"
+  joint_state_topic_name: "/xbotcore/bigman/joint_states"
+
+RobotInterfaceDUMMY:
+  subclass_name: "RobotInterfaceDUMMY"
+  path_to_shared_lib: "libRobotInterfaceDUMMY.so"
+  subclass_factory_name: "robot_interface_dummy"
+
+ModelInterfaceRBDL:
+  subclass_name: "ModelInterfaceRBDL"
+  path_to_shared_lib: "libModelInterfaceRBDL.so"
+  subclass_factory_name: "model_interface_rbdl"
+
+GazeboXBotPlugin:
+  gains:
+    RShSag:   {p: 4000, d: 30}
+    RShLat:   {p: 3000, d: 30}
+    RShYaw:   {p: 3000, d: 20}
+    RElbj:    {p: 3000, d: 20}
+    RWrj1:    {p: 1500, d: 10}
+    LShSag:   {p: 4000, d: 30}
+    LShLat:   {p: 3000, d: 30}
+    LShYaw:   {p: 3000, d: 25}
+    LElbj:    {p: 3000, d: 25}
+    LWrj1:    {p: 1500, d: 10}
+    WaistSag: {p: 10000, d: 30}
+    WaistYaw: {p: 8000, d: 30}
+    WaistLat: {p: 8000, d: 30}
+    LHipYaw:  {p: 3000, d: 10}
+    RHipYaw:  {p: 3000, d: 10}
+    RHipLat:  {p: 15000, d: 80}
+    RHipSag:  {p: 15000, d: 80}
+    RKneeSag: {p: 15000, d: 80}
+    RAnkSag:  {p: 15000, d: 80}
+    RAnkLat:  {p: 15000, d: 80}
+    LHipLat:  {p: 15000, d: 80}
+    LHipSag:  {p: 15000, d: 80}
+    LKneeSag: {p: 15000, d: 80}
+    LAnkSag:  {p: 15000, d: 80}
+    LAnkLat:  {p: 15000, d: 80}
+
