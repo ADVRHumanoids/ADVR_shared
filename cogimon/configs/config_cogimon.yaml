@@ -1,0 +1,16 @@
+# COGIMON
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
+  srdf_path: "configs/ADVR_shared/cogimon/srdf/cogimon.srdf"
+  joint_map_path: "configs/ADVR_shared/cogimon/joint_map/cogimon_ecat_joint_map.yaml"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "true"
+
+ModelInterfaceRBDL:
+  subclass_name: "ModelInterfaceRBDL"
+  path_to_shared_lib: "libModelInterfaceRBDL.so"
+  subclass_factory_name: "model_interface_rbdl"
+
