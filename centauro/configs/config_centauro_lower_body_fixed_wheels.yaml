@@ -26,7 +26,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkMotionControl"]
+  plugins: ["HomingExample", "MplIkControl"]
+  io_plugins: ["OdomPublisher", "MplIo"]
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -83,6 +84,10 @@ GazeboXBotPlugin:
     ankle_pitch_2: {p: 4000, d: 40}
     ankle_pitch_3: {p: 4000, d: 40}
     ankle_pitch_4: {p: 4000, d: 40}
+    j_wheel_1: {p: 600, d: 10}
+    j_wheel_2: {p: 600, d: 10}
+    j_wheel_3: {p: 600, d: 10}
+    j_wheel_4: {p: 600, d: 10}
 
 
 x_bot_core:
