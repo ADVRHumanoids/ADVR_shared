@@ -6,7 +6,7 @@ XBotInterface:
   joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
 RobotInterface:
-  framework_name: "ROS"
+  framework_name: "YARP"
 
 ModelInterface:
   model_type: "RBDL"
@@ -26,19 +26,22 @@ RobotInterfaceXBotRT:
   path_to_shared_lib: "libRobotInterfaceXBotRT.so"
   subclass_factory_name: "robot_interface_xbot_rt"
 
+RobotInterfaceYARP:
+  subclass_name: "RobotInterfaceYARP"
+  path_to_shared_lib: "libRobotInterfaceYARP.so"
+  subclass_factory_name: "robot_interface_yarp"
+
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "ManipulationExample"]
-  io_plugins: ["IkRosIo"]
-  #plugins: ["HomingExample"]
-  #io_plugins: []
+  plugins: ["HomingExample"]
+  io_plugins: []
 
 NRTPlugins:
-  plugins: [ "ManipulationPlugin"]
-  ## "DoorOpening", "Hose_Task", "DebrisRemovalTask"
+  plugins: [ ]
 
 MasterCommunicationInterface:
-  framework_name: "ROS"
-  
+  framework_name: "YARP"
+  enable_ref_read: "false"
+ 
 CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
