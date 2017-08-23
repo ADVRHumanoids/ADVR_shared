@@ -26,17 +26,11 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
-  #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk"]
-  io_plugins: ["IkRosIo"]
-  #io_plugins: ["IkRosIo"]
-  #plugins: ["ExoskeletonCommunicationPlugin"]
-  #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
+  plugins: ["HomingExample"]
+  io_plugins: []
 
 NRTPlugins:
-  plugins: ["ManipulationPlugin"] 
+  plugins: [] 
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -186,7 +180,7 @@ CentAcESC_1:
 # Right Arm
 
 CentAcESC_2:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
@@ -196,7 +190,7 @@ CentAcESC_2:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_3:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
@@ -206,7 +200,7 @@ CentAcESC_3:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_4:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -216,7 +210,7 @@ CentAcESC_4:
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
 
 CentAcESC_5:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -226,7 +220,7 @@ CentAcESC_5:
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
 
 CentAcESC_6:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -236,7 +230,7 @@ CentAcESC_6:
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_7:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -246,7 +240,7 @@ CentAcESC_7:
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
 CentAcESC_8:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 6.0
