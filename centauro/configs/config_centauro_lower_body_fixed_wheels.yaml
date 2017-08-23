@@ -331,7 +331,7 @@ CentAcESC_15:
 CentAcESC_71:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: 45
   max_current_A: 15.0
   pid :
     position: [1000.0 , 0.0 , 30.0]
@@ -393,9 +393,9 @@ CentAcESC_76:
 # FrontRight Leg
     
 CentAcESC_41:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: -45
   max_current_A: 15.0
   pid :
     position: [1000.0 , 0.0 , 30.0]
@@ -403,7 +403,7 @@ CentAcESC_41:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_42:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -413,7 +413,7 @@ CentAcESC_42:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_43:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -423,7 +423,7 @@ CentAcESC_43:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_44:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -433,7 +433,7 @@ CentAcESC_44:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_45:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -457,9 +457,9 @@ CentAcESC_46:
 # HindLeft Leg
     
 CentAcESC_61:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: -45
   max_current_A: 15.0
   pid :
     position: [1000.0 , 0.0 , 30.0]
@@ -467,7 +467,7 @@ CentAcESC_61:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_62:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -477,7 +477,7 @@ CentAcESC_62:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_63:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -487,7 +487,7 @@ CentAcESC_63:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_64:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -497,7 +497,7 @@ CentAcESC_64:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_65:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -521,9 +521,9 @@ CentAcESC_66:
 # HindRight Leg
 
 CentAcESC_51:
-  control_mode: idle
-  sign: -1
-  pos_offset: 0
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 45
   max_current_A: 15.0
   pid :
     position: [1000.0 , 0.0 , 30.0]
@@ -531,8 +531,8 @@ CentAcESC_51:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_52:
-  control_mode: idle
-  sign: -1
+  control_mode: pos_3b
+  sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
@@ -541,7 +541,7 @@ CentAcESC_52:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_53:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -551,7 +551,7 @@ CentAcESC_53:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_54:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -561,7 +561,7 @@ CentAcESC_54:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_55:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
