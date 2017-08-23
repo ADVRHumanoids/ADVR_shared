@@ -18,7 +18,7 @@ RobotInterfaceROS:
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
   ft_topic_names: []
-  imu_topic_names: ["/xbotcore/centauro/imu/imu_link"]
+  imu_topic_names: [] #["/xbotcore/centauro/imu/imu_link"]
 
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
@@ -26,7 +26,7 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkMotionControl"]
+  plugins: ["HomingExample"]
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -83,20 +83,11 @@ GazeboXBotPlugin:
     ankle_pitch_2: {p: 4000, d: 40}
     ankle_pitch_3: {p: 4000, d: 40}
     ankle_pitch_4: {p: 4000, d: 40}
-
-
-x_bot_core:
-  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
-  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf
-  joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml
-
-x_bot_ecat:
-  name: XBotCore
-  sdo_xddp_prefix :
-  # periodic - priority if needed here
-
-
-#
+    
+    
+##############################################################
+##############################################################
+##############################################################
 ec_board_ctrl:
   eth_iface: rteth0
   #eth_iface: eth1
@@ -326,4 +317,259 @@ CentAcESC_15:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+    
+##############################
+# FrontLeft Leg
+    
+CentAcESC_71:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_72:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_73:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_74:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_75:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_76:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [30.0 , 0.0 , 0.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+
+##############################
+# FrontRight Leg
+    
+CentAcESC_41:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_42:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_43:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_44:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_45:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_46:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [30.0 , 0.0 , 0.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+
+##############################
+# HindLeft Leg
+    
+CentAcESC_61:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_62:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_63:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_64:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_65:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_66:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [30.0 , 0.0 , 0.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+    
+##############################
+# HindRight Leg
+
+CentAcESC_51:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_52:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_53:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_54:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_55:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [1000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+
+CentAcESC_56:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 10.0
+  pid :
+    position: [30.0 , 0.0 , 0.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0] 
 
