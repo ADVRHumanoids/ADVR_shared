@@ -832,6 +832,86 @@
     <axis xyz="0 0 1"/>
     <limit effort="35" velocity="20.0"/>
   </joint>
+
+  <joint name="j_fl_foot_ft" type="fixed">
+    <parent link="ankle2_1"/>
+    <child link="fl_foot_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="fl_foot_ft">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="j_fr_foot_ft" type="fixed">
+    <parent link="ankle2_2"/>
+    <child link="fr_foot_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="fr_foot_ft">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="j_hr_foot_ft" type="fixed">
+    <parent link="ankle2_4"/>
+    <child link="hr_foot_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="hr_foot_ft">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="j_hl_foot_ft" type="fixed">
+    <parent link="ankle2_3"/>
+    <child link="hl_foot_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="hl_foot_ft">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
   <!-- /actuators -->
   <!-- /legs -->
 </robot>
