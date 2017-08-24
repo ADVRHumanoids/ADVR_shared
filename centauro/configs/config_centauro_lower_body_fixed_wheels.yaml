@@ -9,7 +9,7 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  is_model_floating_base: "true"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -379,14 +379,14 @@ CentAcESC_75:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_76:
-  control_mode: idle
+  control_mode: vel_71
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [30.0 , 0.0 , 0.0]
+    position: [10.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
 
 
 ##############################
@@ -443,14 +443,14 @@ CentAcESC_45:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_46:
-  control_mode: idle
+  control_mode: vel_71
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [30.0 , 0.0 , 0.0]
+    position: [10.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
 
 
 ##############################
@@ -507,14 +507,14 @@ CentAcESC_65:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_66:
-  control_mode: idle
+  control_mode: vel_71
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [30.0 , 0.0 , 0.0]
+    position: [10.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
 
     
 ##############################
@@ -571,12 +571,12 @@ CentAcESC_55:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_56:
-  control_mode: idle
+  control_mode: vel_71
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [30.0 , 0.0 , 0.0]
+    position: [10.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0] 
+    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0] 
 
