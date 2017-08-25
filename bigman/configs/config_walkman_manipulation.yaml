@@ -1,7 +1,7 @@
 # WALKMAN 
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_floating_base.urdf"
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
   srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
   joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
@@ -10,7 +10,7 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "true"
+  is_model_floating_base: "false"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -27,10 +27,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "DoorFinalDemo", "ManipulationExample", "Hose_Task", "DebrisRemovalTask"]
-  #io_plugins: ["IkRosIo"]
-  io_plugins: ["IkRosIo", "OdomPublisher"]
+  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  io_plugins: ["IkRosIo"]
   
 NRTPlugins:
   plugins: [ "ManipulationPlugin"]
@@ -43,20 +41,20 @@ CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
   subclass_factory_name: "customcmnd_control_message"
-  joint_service_name: "/bigman/position_controller/get_joint_names"
-  command_topic_name: "/bigman/position_controller/command"
+  joint_service_name: "/centauro/position_controller/get_joint_names"
+  command_topic_name: "/centauro/position_controller/command"
 
 JointState:
   subclass_name: "JointStateMessage"
   path_to_shared_lib: "libJointStateMessage.so"
   subclass_factory_name: "jointstate_jointstate_message"
-  joint_state_topic_name: "/bigman/joint_states"
+  joint_state_topic_name: "/centauro/joint_states"
 
 AdvrCommandMessage:
   subclass_name: "CommandAdvr"
   path_to_shared_lib: "libAdvrCommandMessage.so"
   subclass_factory_name: "advrcommandmessage_control_message"
-  joint_service_name: "/bigman/position_controller/get_joint_names"
+  joint_service_name: "/centauro/position_controller/get_joint_names"
   command_topic_name: "/xbotcore/bigman/command"
 
 AdvrJointStateMessage:
@@ -103,6 +101,11 @@ GazeboXBotPlugin:
     LAnkSag:  {p: 15000, d: 80}
     LAnkLat:  {p: 15000, d: 80}
 
+x_bot_core:
+  urdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/urdf/bigman.urdf
+  srdf_path: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/srdf/bigman.srdf
+  joint_map_config: /home/lucamuratore/src/robotology-superbuild/configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml
+  
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix : 
@@ -308,9 +311,9 @@ HpESC_11:
 
 # RA_SH_2 = 12
 HpESC_12:
-  control_mode: mix_pos_3c
-  sign: 1
-  pos_offset: -90
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
   #pos_offset: -90 NOTE it was not working for the left_arm joint
   pid :
     position: [40.0 , 0.0 , 1.0]
@@ -385,9 +388,9 @@ HpESC_21:
 
 # LA_SH_2 = 22
 HpESC_22:
-  control_mode: mix_pos_3c
-  sign: 1
-  pos_offset : 90
+  control_mode: idle
+  sign: -1
+  pos_offset : 0
   #pos_offset: 90 NOTE it was not working for the left_arm joint
   pid :
     position: [40.0 , 0.0 , 1.0]
