@@ -27,7 +27,7 @@ RobotInterfaceXBotRT:
 
 XBotRTPlugins:
   plugins: ["Homing", "IkRosSMPub", "OpenSotIk"]
-  io_plugins: []
+  io_plugins: ["IkRosIo"]
 
 NRTPlugins:
   plugins: [] 
