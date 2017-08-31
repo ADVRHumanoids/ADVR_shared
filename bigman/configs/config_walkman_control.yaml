@@ -28,9 +28,9 @@ RobotInterfaceXBotRT:
 
 XBotRTPlugins:
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "DebrisRemovalTask", "ManipulationExample"]
-  plugins: ["HomingExample", "IkRosSMPub", "OpenSotIk", "Grasp", "chengxu_walking"]
+  plugins: ["HomingExample"]
   #io_plugins: ["IkRosIo"]
-  io_plugins: ["IkRosIo", "OdomPublisher", "FHRosIo"]
+  io_plugins: []
   
 NRTPlugins:
   plugins: [ "ManipulationPlugin"]
