@@ -1,7 +1,7 @@
 # WALKMAN 
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman.urdf"
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_floating_base.urdf"
   srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
   joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
 
@@ -27,7 +27,7 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk", "chengxu_walking"]
   io_plugins: ["IkRosIo"]
   
 NRTPlugins:
