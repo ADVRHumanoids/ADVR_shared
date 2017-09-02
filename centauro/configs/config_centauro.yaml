@@ -88,11 +88,6 @@ GazeboXBotPlugin:
     j_arm2_6: {p: 2000, d: 5}
     torso_yaw: {p: 5000, d: 30}
 
-x_bot_core:
-  urdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/urdf/centauro_bonn_review.urdf
-  srdf_path: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/srdf/centauro_bonn_review.srdf
-  joint_map_config: /home/embedded/robotology-superbuild/configs/ADVR_shared/centauro/joint_map/centauro_bonn_review.yaml
-
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix :
@@ -173,59 +168,59 @@ CentAcESC_X:
 #############################
 
 CentAcESC_1:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 15.0
   pid :
     position:   [180.0 , 0.0 , 1.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
+    impedance:  [50.0, 0.0, 5.5, 0.003, 1.0]
 
 
 ##############################
 # Right Arm
 
 CentAcESC_2:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_3:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_4:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_5:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_6:
   control_mode: pos_3b
@@ -235,7 +230,7 @@ CentAcESC_6:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_7:
   control_mode: pos_3b
@@ -245,7 +240,7 @@ CentAcESC_7:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_8:
   control_mode: pos_3b
@@ -255,50 +250,50 @@ CentAcESC_8:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
 
 ##############################
 # Left Arm
 
 CentAcESC_9:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_10:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_11:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_12:
-  control_mode: pos_3b
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
+    impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
 
 CentAcESC_13:
   control_mode: pos_3b
@@ -308,7 +303,7 @@ CentAcESC_13:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_14:
   control_mode: pos_3b
@@ -318,7 +313,7 @@ CentAcESC_14:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_15:
   control_mode: pos_3b
@@ -328,5 +323,4 @@ CentAcESC_15:
   pid :
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
-
+    impedance: [400.0, 3.0, 1.0, 0.001, 0.0]
