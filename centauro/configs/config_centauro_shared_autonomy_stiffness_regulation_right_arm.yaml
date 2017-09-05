@@ -32,8 +32,8 @@ XBotRTPlugins:
 NRTPlugins:
   plugins: [] 
   
-JointConfiguration: ["before_high_power_contact", "high_power_contact", "after_high_power_contact"]
-JointConfigurationTime: ["5.0", "2.0", "10.0"]
+JointConfiguration: ["gym_pose", "before_high_power_contact", "high_power_contact", "after_high_power_contact"]
+JointConfigurationTime: ["10.0", "5.0", "2.0", "10.0"]
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -191,6 +191,7 @@ CentAcESC_2:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
+    #impedance: [550.0, 5.0, 5.5, 0.003, 1.0]
 
 CentAcESC_3:
   control_mode: impedance_d4
@@ -201,6 +202,7 @@ CentAcESC_3:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
+    #impedance: [550.0, 5.0, 5.5, 0.003, 1.0]
 
 CentAcESC_4:
   control_mode: impedance_d4
@@ -211,6 +213,7 @@ CentAcESC_4:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
+    #impedance: [550.0, 5.0, 5.5, 0.003, 1.0]
 
 CentAcESC_5:
   control_mode: impedance_d4
@@ -221,6 +224,7 @@ CentAcESC_5:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
+    #impedance: [550.0, 5.0, 5.5, 0.003, 1.0]
 
 CentAcESC_6:
   control_mode: impedance_d4

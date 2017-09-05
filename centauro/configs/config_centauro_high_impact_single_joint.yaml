@@ -211,7 +211,7 @@ CentAcESC_4:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance: [50.0, 1.0, 5.5, 0.003, 1.0]
-    #impedance: [250.0, 1.0, 5.5, 0.003, 1.0]
+    #impedance: [550.0, 5.0, 5.5, 0.003, 1.0]
 
 CentAcESC_5:
   control_mode: pos_3b
