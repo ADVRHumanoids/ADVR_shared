@@ -1,0 +1,11 @@
+# map between the joint robot id and the joint name 
+joint_map:
+  0: Link1
+  1: Link2
+  2: Link3
+  2: Link4
+  4: Link5
+  5: Link6
+  6: Link7
+
+
