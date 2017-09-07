@@ -1,0 +1,17 @@
+# icub config
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/icub/urdf/icub.urdf"
+  srdf_path: "configs/ADVR_shared/icub/srdf/icub.srdf"
+  joint_map_path: "configs/ADVR_shared/icub/joint_map/joint_map.yaml"
+  
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "false"
+
+ModelInterfaceRBDL:
+  subclass_name: "ModelInterfaceRBDL"
+  path_to_shared_lib: "libModelInterfaceRBDL.so"
+  subclass_factory_name: "model_interface_rbdl"
+
+

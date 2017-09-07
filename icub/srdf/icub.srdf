@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<robot name="icub_description" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+<group name="base">
+    <link name="waist"/>
+  </group>
+
+  <group name="neck">
+    <chain base_link="chest" tip_link="head"/>
+  </group>
+  <group name="left_arm">
+    <chain base_link="chest" tip_link="l_hand"/>
+  </group>
+  <group name="right_arm">
+    <chain base_link="chest" tip_link="r_hand"/>
+  </group>
+  <group name="torso">
+    <chain base_link="waist" tip_link="chest"/>
+  </group>
+  <group name="left_leg">
+    <chain base_link="waist" tip_link="l_ankle_2"/>
+  </group>
+  <group name="right_leg">
+    <chain base_link="waist" tip_link="r_ankle_2"/>
+  </group>
+
+  <group name="chains">
+    <group name="neck"/>
+    <group name="left_arm"/>
+    <group name="right_arm"/>
+    <group name="torso"/>
+    <group name="left_leg"/>
+    <group name="right_leg"/>
+  </group>
+</robot>
+
