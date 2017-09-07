@@ -26,7 +26,7 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["Homing", "IkRosSMPub", "OpenSotIk", "Poses"]
+  plugins: ["Homing", "IkRosSMPub", "OpenSotIk", "Poses", "SharedControlPlugin"]
   io_plugins: ["IkRosIo"]
 
 NRTPlugins:
