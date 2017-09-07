@@ -8,7 +8,7 @@
   <!-- Robot kinematic chains -->
   <!-- CONSTRAINT: specify the chain inside a group: only one chain per group -->
   <group name="arm1">
-    <chain base_link="world" tip_link="kuka_lwr_7_link"/>
+    <chain base_link="kuka_lwr_base_link" tip_link="kuka_lwr_7_link"/>
   </group>
  <!-- Disabled Joint -->
   <!--     <disabled_joint name="LShSag"/> -->
