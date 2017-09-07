@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="kuka_lwr" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find lwr_description)/model/kuka_lwr.urdf.xacro"/>
+
+<xacro:kuka_lwr name="kuka_lwr" base_link="world"/>
+
+</robot>
