@@ -19,13 +19,14 @@
     </group>
         
     <group name="force_torque_sensors">
+<!--         <joint name="j_ft_arm2"/> -->
     </group>
     
     <group name="imu_sensors">
     </group>
     
     <group name="hands">
-        <joint name="j_arm1_8"/>
+<!--         <joint name="j_arm1_8"/> -->
     </group>
 
     <group name="chains">
@@ -56,9 +57,9 @@
         
     </group_state>
     
-    <group_state name="before_high_power_contact" group="chains">
+    <group_state name="gym_pose" group="chains">
         
-        <joint name="torso_yaw" value="0.0"/>
+        <joint name="torso_yaw" value="0.6"/>
         
         <joint name="j_arm1_1" value="0.0"/>
         <joint name="j_arm1_2" value="-0.3"/>
@@ -69,7 +70,29 @@
         <joint name="j_arm1_7" value="0.0"/>
         
         <joint name="j_arm2_1" value="0.0"/>
-        <joint name="j_arm2_2" value="0.4"/>
+        <joint name="j_arm2_2" value="0.0"/>
+        <joint name="j_arm2_3" value="0.35"/>
+        <joint name="j_arm2_4" value="1.8"/>
+        <joint name="j_arm2_5" value="0.0"/>
+        <joint name="j_arm2_6" value="0.0"/>
+        <joint name="j_arm2_7" value="0.0"/>
+        
+    </group_state>
+    
+    <group_state name="before_high_power_contact" group="chains">
+        
+        <joint name="torso_yaw" value="0.6"/>
+        
+        <joint name="j_arm1_1" value="0.0"/>
+        <joint name="j_arm1_2" value="-0.3"/>
+        <joint name="j_arm1_3" value="-0.8"/>
+        <joint name="j_arm1_4" value="-0.8"/>
+        <joint name="j_arm1_5" value="-0.0"/>
+        <joint name="j_arm1_6" value="-0.8"/>
+        <joint name="j_arm1_7" value="0.0"/>
+        
+        <joint name="j_arm2_1" value="0.0"/>
+        <joint name="j_arm2_2" value="0.0"/>
         <joint name="j_arm2_3" value="0.35"/>
         <joint name="j_arm2_4" value="1.5"/>
         <joint name="j_arm2_5" value="0.0"/>
@@ -80,7 +103,7 @@
     
     <group_state name="high_power_contact" group="chains">
         
-        <joint name="torso_yaw" value="0.0"/>
+        <joint name="torso_yaw" value="0.6"/>
         
         <joint name="j_arm1_1" value="0.0"/>
         <joint name="j_arm1_2" value="-0.3"/>
@@ -91,8 +114,8 @@
         <joint name="j_arm1_7" value="0.0"/>
         
         <joint name="j_arm2_1" value="0.0"/>
-        <joint name="j_arm2_2" value="0.4"/>
-        <joint name="j_arm2_3" value="1.55"/>
+        <joint name="j_arm2_2" value="0.0"/>
+        <joint name="j_arm2_3" value="1.95"/>
         <joint name="j_arm2_4" value="1.5"/>
         <joint name="j_arm2_5" value="0.0"/>
         <joint name="j_arm2_6" value="0.0"/>
@@ -102,7 +125,7 @@
     
     <group_state name="after_high_power_contact" group="chains">
         
-        <joint name="torso_yaw" value="0.0"/>
+        <joint name="torso_yaw" value="0.6"/>
         
         <joint name="j_arm1_1" value="0.0"/>
         <joint name="j_arm1_2" value="-0.3"/>
@@ -113,7 +136,7 @@
         <joint name="j_arm1_7" value="0.0"/>
         
         <joint name="j_arm2_1" value="0.0"/>
-        <joint name="j_arm2_2" value="0.4"/>
+        <joint name="j_arm2_2" value="0.0"/>
         <joint name="j_arm2_3" value="0.6"/>
         <joint name="j_arm2_4" value="1.5"/>
         <joint name="j_arm2_5" value="0.0"/>
