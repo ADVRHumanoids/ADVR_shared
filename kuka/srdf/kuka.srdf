@@ -33,7 +33,14 @@
   </group>
   <!-- END CHAINS -->
 
-  <group_state group="chains" name="00 zero positions">
+  <group_state group="chains" name="home">
+      <joint name="kuka_lwr_0_joint" value="0.5"/>
+      <joint name="kuka_lwr_1_joint" value="0.6"/>
+      <joint name="kuka_lwr_2_joint" value="-0.4"/>
+      <joint name="kuka_lwr_3_joint" value="1.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.5"/>
+      <joint name="kuka_lwr_5_joint" value="-0.5"/>
+      <joint name="kuka_lwr_6_joint" value="0.3"/>
   </group_state>
 
 
