@@ -29,6 +29,7 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
+  #plugins: ["HomingExample"]
   plugins: ["HomingExample", "ik_twolayer"]
   io_plugins: []
   #io_plugins: ["IkRosIo"]
