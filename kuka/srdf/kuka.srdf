@@ -34,14 +34,83 @@
   <!-- END CHAINS -->
 
   <group_state group="chains" name="home">
-      <joint name="kuka_lwr_0_joint" value="0.5"/>
-      <joint name="kuka_lwr_1_joint" value="0.6"/>
-      <joint name="kuka_lwr_2_joint" value="-0.4"/>
-      <joint name="kuka_lwr_3_joint" value="1.0"/>
-      <joint name="kuka_lwr_4_joint" value="0.5"/>
-      <joint name="kuka_lwr_5_joint" value="-0.5"/>
-      <joint name="kuka_lwr_6_joint" value="0.3"/>
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
   </group_state>
 
+<group_state group="chains" name="home1">
+      <joint name="kuka_lwr_0_joint" value="1.57"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home2">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="1.57"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home3">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="1.57"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home4">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="1.57"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home5">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="1.57"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home6">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="1.57"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home7">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="1.57"/>
+  </group_state>
 
 </robot>
