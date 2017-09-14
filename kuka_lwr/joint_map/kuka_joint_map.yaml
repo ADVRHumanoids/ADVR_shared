@@ -1,0 +1,11 @@
+# map between the joint robot id and the joint name 
+joint_map:
+  0: kuka_lwr_0_joint
+  1: kuka_lwr_1_joint
+  2: kuka_lwr_2_joint
+  3: kuka_lwr_3_joint
+  4: kuka_lwr_4_joint
+  5: kuka_lwr_5_joint
+  6: kuka_lwr_6_joint
+
+
