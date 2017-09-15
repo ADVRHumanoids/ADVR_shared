@@ -1,9 +1,9 @@
 # WALKMAN 
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/kuka/urdf/kuka.urdf"
-  srdf_path: "configs/ADVR_shared/kuka/srdf/kuka.srdf"
-  joint_map_path: "configs/ADVR_shared/kuka/joint_map/kuka_joint_map.yaml"
+  urdf_path: "configs/ADVR_shared/kuka_lwr/urdf/kuka.urdf"
+  srdf_path: "configs/ADVR_shared/kuka_lwr/srdf/kuka.srdf"
+  joint_map_path: "configs/ADVR_shared/kuka_lwr/joint_map/kuka_joint_map.yaml"
 
 RobotInterface:
   framework_name: "ROS"
