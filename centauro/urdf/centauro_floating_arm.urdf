@@ -9,12 +9,12 @@
      Also all the parameter dependencies are resolved-->
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
-  <!--xacro:if value="${arm_sensors}">
+  <xacro:if value="${arm_sensors}">
   <xacro:force-torque_sensor joint="j_arm1_7" robot="centauro"/>
   <xacro:if value="${arms}">
     <xacro:force-torque_sensor joint="j_arm2_7" robot="centauro"/>
   </xacro:if>
-</xacro:if-->
+</xacro:if>
   <gazebo reference="j_arm1_7">
     <sensor name="left_arm_ft" type="force_torque">
       <force_torque>

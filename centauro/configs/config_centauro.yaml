@@ -19,7 +19,7 @@ RobotInterfaceROS:
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
   # ft_topic_names: ["/ft_foot_1", "/ft_foot_2", "/ft_foot_3", "/ft_foot_4"]
-  ft_topic_names: ["centauro/j_arm1_7_ft_sensor", "centauro/j_arm2_7_ft_sensor"]
+  ft_topic_names: ["/xbotcore/centauro/ft/left_arm_ft", "/xbotcore/centauro/ft/right_arm_ft"]
   imu_topic_names: []#["/imu_1_data", "/imu_2_data"]
 
 RobotInterfaceXBotRT:
