@@ -3,19 +3,19 @@
 
 
    <group name="front_left_leg">
-      <chain base_link="pelvis" tip_link="wheel_1"/>
+      <chain base_link="pelvis" tip_link="ankle2_1"/>
    </group>
 
    <group name="front_right_leg">
-      <chain base_link="pelvis" tip_link="wheel_2"/>
+      <chain base_link="pelvis" tip_link="ankle2_2"/>
    </group>
 
    <group name="rear_right_leg">
-      <chain base_link="pelvis" tip_link="wheel_4"/>
+      <chain base_link="pelvis" tip_link="ankle2_4"/>
    </group>
 
    <group name="rear_left_leg">
-      <chain base_link="pelvis" tip_link="wheel_3"/>
+      <chain base_link="pelvis" tip_link="ankle2_3"/>
    </group>
    
     <group name="left_arm">
