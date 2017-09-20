@@ -26,11 +26,11 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
-  io_plugins: []
+  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
+  io_plugins: ["IkRosIo"]
 
 NRTPlugins:
-  plugins: [] 
+  plugins: ["Pholus_demo_W"] 
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -384,9 +384,9 @@ CentAcESC_76:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [10.0 , 0.0 , 0.0]
+    position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
+    impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
 
 
 ##############################
@@ -448,9 +448,9 @@ CentAcESC_46:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [10.0 , 0.0 , 0.0]
+    position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
+    impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
 
 
 ##############################
@@ -512,9 +512,9 @@ CentAcESC_66:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [10.0 , 0.0 , 0.0]
+    position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0]
+    impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
 
     
 ##############################
@@ -576,7 +576,7 @@ CentAcESC_56:
   pos_offset: 0
   max_current_A: 10.0
   pid :
-    position: [10.0 , 0.0 , 0.0]
+    position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [10.0, 0.0, 0.0, 0.0, 0.0] 
+    impedance:  [20.0, 0.0, 0.0, 0.0, 0.0] 
 
