@@ -79,6 +79,18 @@ GazeboXBotPlugin:
     knee_pitch_2: {p: 8000, d: 50}
     knee_pitch_3: {p: 8000, d: 50}
     knee_pitch_4: {p: 8000, d: 50}
+    ankle_pitch_1: {p: 4000, d: 40}
+    ankle_pitch_2: {p: 4000, d: 40}
+    ankle_pitch_3: {p: 4000, d: 40}
+    ankle_pitch_4: {p: 4000, d: 40}
+    ankle_yaw_1: {p: 4000, d: 40}
+    ankle_yaw_2: {p: 4000, d: 40}
+    ankle_yaw_3: {p: 4000, d: 40}
+    ankle_yaw_4: {p: 4000, d: 40}
+    j_wheel_1: {p: 600, d: 10}
+    j_wheel_2: {p: 600, d: 10}
+    j_wheel_3: {p: 600, d: 10}
+    j_wheel_4: {p: 600, d: 10}
 
 
 x_bot_core:

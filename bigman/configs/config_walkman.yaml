@@ -10,7 +10,7 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  is_model_floating_base: "true"
 
 RobotInterfaceROS:
   subclass_name: "RobotInterfaceROS"
@@ -30,7 +30,7 @@ XBotRTPlugins:
   #plugins: ["ExoskeletonCommunicationPlugin", "TwoPriorityRtIkPlugin"]
   #plugins: ["ExoskeletonCommunicationPlugin", "HomingExample"]
   #plugins: ["HomingExample", "IkRosSharedMemoryPublisher", "OpenSotIk"]
-  plugins: ["HomingExample"]
+  plugins: ["HomingExample", "MplIkControl"]
   #io_plugins: ["IkRosIo"]
   #plugins: ["ExoskeletonCommunicationPlugin"]
   #plugins: ["PlayJointSpaceDemo"] #, "TwoPriorityRtIkPlugin"]
@@ -76,30 +76,30 @@ ModelInterfaceRBDL:
 
 GazeboXBotPlugin:
   gains:
-    RShSag: {p: 5000, d: 30}
-    RShLat: {p: 8000, d: 50}
-    RShYaw: {p: 5000, d: 30}
-    RElbj: {p: 5000, d: 30}
+    RShSag: {p: 5000, d: 100}
+    RShLat: {p: 8000, d: 100}
+    RShYaw: {p: 5000, d: 100}
+    RElbj: {p: 5000, d: 100}
     RWrj1: {p: 2000, d: 5}
-    LShSag: {p: 5000, d: 30}
-    LShLat: {p: 8000, d: 50}
-    LShYaw: {p: 5000, d: 30}
-    LElbj: {p: 5000, d: 30}
+    LShSag: {p: 5000, d: 100}
+    LShLat: {p: 8000, d: 100}
+    LShYaw: {p: 5000, d: 100}
+    LElbj: {p: 5000, d: 100}
     LWrj1: {p: 2000, d: 5}
-    WaistYaw: {p: 5000, d: 30}
-    WaistSag: {p: 8000, d: 50}
-    WaistLat: {p: 5000, d: 30}
-    RHipLat: {p: 8000, d: 30}
-    RHipYaw: {p: 5000, d: 50}
-    RHipSag: {p: 5000, d: 30}
-    RKneeSag: {p: 5000, d: 30}
-    RAnkSag: {p: 5000, d: 30}
+    WaistYaw: {p: 5000, d: 100}
+    WaistSag: {p: 8000, d: 100}
+    WaistLat: {p: 5000, d: 100}
+    RHipLat: {p: 8000, d: 100}
+    RHipYaw: {p: 5000, d: 100}
+    RHipSag: {p: 5000, d: 100}
+    RKneeSag: {p: 5000, d: 100}
+    RAnkSag: {p: 5000, d: 100}
     RAnkLat: {p: 2000, d: 5}
-    LHipLat: {p: 8000, d: 30}
-    LHipYaw: {p: 5000, d: 50}
-    LHipSag: {p: 8000, d: 30}
-    LKneeSag: {p: 5000, d: 30}
-    LAnkSag: {p: 5000, d: 30}
+    LHipLat: {p: 8000, d: 100}
+    LHipYaw: {p: 5000, d: 100}
+    LHipSag: {p: 8000, d: 100}
+    LKneeSag: {p: 5000, d: 100}
+    LAnkSag: {p: 5000, d: 100}
     LAnkLat: {p: 2000, d: 5}
 
 x_bot_core:

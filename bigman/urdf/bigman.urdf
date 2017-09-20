@@ -188,7 +188,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       </geometry>
     </collision>
   </link>
-  <joint name="base_joint" type="fixed">
+  <joint name="base_joint" type="floating">
     <parent link="base_link"/>
     <child link="Waist"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -300,7 +300,7 @@ and to define the end effectors of the robot-->
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="backpack_collision">
         <box size="0.16 0.3 0.22"/>
-      </geometry>
+        </geometry>
     </collision>
   </link>
   <!-- JOINTS -->
