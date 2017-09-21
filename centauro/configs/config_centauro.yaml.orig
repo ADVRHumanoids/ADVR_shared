@@ -26,8 +26,13 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
+<<<<<<< HEAD
+  plugins: ["HomingExample","Pholus_demo_W"]
+  io_plugins: []
+=======
   plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
   io_plugins: ["IkRosIo"]
+>>>>>>> 39d1f38d6e2426249a4c17f6a32d984fb3357001
 
 NRTPlugins:
   plugins: ["Pholus_demo_W"] 
@@ -72,6 +77,8 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 GazeboXBotPlugin:
+  gains:
+    GazeboXBotPlugin:
   gains:
     j_arm1_1: {p: 5000, d: 30}
     j_arm1_2: {p: 8000, d: 50}
