@@ -43,8 +43,10 @@
     </group>
 
     <group name="force_torque_sensors">
-<!--        <joint name="j_ft_arm1"/>
-        <joint name="j_ft_arm2"/>-->
+        <joint name="j_fl_foot_ft"/>
+        <joint name="j_fr_foot_ft"/>
+        <joint name="j_hl_foot_ft"/>
+        <joint name="j_hr_foot_ft"/>
     </group>
 
     <group name="imu_sensors">
