@@ -40,4 +40,4 @@ joint_map:
   55: ankle_yaw_4
   56: j_wheel_4
   80: j_ft_arm2
-  99: imu_joint
+  18: imu_joint

@@ -53,7 +53,7 @@
     </group>
 
     <group name="imu_sensors">
-<!--         <link name="imu_link"/> -->
+        <link name="imu_link"/>
     </group>
 
    <group name="chains">
