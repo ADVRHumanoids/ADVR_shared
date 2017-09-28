@@ -1,4 +1,9 @@
 # CENTAURO config
+
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro.srdf"
