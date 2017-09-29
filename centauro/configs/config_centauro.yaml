@@ -5,6 +5,7 @@ XBotInterface:
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
 
 RobotInterface:
+#  framework_name: "ROS"
   framework_name: "ROS"
 
 ModelInterface:
@@ -26,11 +27,14 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
-  io_plugins: ["IkRosIo"]
+  plugins: ["HomingExample", "Pholus_demo_W"]
+#  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
+#  io_plugins: ["IkRosIo"]
+  io_plugins: []
 
 NRTPlugins:
-  plugins: ["Pholus_demo_W"] 
+  plugins: []
+#  plugins: ["Pholus_demo_W"]  
 
 MasterCommunicationInterface:
   framework_name: "ROS"
