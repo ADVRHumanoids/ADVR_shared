@@ -37,6 +37,13 @@ AdvrCommandMessage:
   subclass_factory_name: "advrcommandmessage_control_message"
   joint_service_name: "/cogimon/position_controller/get_joint_names"
   command_topic_name: "/xbotcore/cogimon/command"
+  
+AdvrJointStateMessage:
+  subclass_name: "AdvrJointState"
+  path_to_shared_lib: "libAdvrJointStateMessage.so"
+  subclass_factory_name: "advrjointstate_jointstate_message"
+  joint_state_topic_name: "/xbotcore/cogimon/joint_states"
+  
 
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"

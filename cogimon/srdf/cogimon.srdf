@@ -76,16 +76,16 @@
   </rtt-gazebo>
   <group_state group="chains" name="home">
     <joint name="LHipLat" value="0.0"/>
-    <joint name="LHipSag" value="0.0"/>
+    <joint name="LHipSag" value="-0.4"/>
     <joint name="LHipYaw" value="0.0"/>
-    <joint name="LKneePitch" value="0.0"/>
-    <joint name="LAnklePitch" value="0.0"/>
+    <joint name="LKneePitch" value="0.4"/>
+    <joint name="LAnklePitch" value="-0.4"/>
     <joint name="LAnkleRoll" value="0.0"/>
     <joint name="RHipLat" value="0.0"/>
-    <joint name="RHipSag" value="0.0"/>
+    <joint name="RHipSag" value="-0.4"/>
     <joint name="RHipYaw" value="0.0"/>
-    <joint name="RKneePitch" value="0.0"/>
-    <joint name="RAnklePitch" value="0.0"/>
+    <joint name="RKneePitch" value="0.4"/>
+    <joint name="RAnklePitch" value="-0.4"/>
     <joint name="RAnkleRoll" value="0.0"/>
   </group_state>
 </robot>
