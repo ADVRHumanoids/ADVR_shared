@@ -41,3 +41,6 @@ joint_map:
   56: j_wheel_4
   80: j_ft_arm2
   18: imu_joint
+  101: neck_yaw
+  102: neck_pitch
+  103: neck_velodyne
