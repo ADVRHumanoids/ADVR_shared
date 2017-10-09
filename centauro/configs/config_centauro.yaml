@@ -23,7 +23,7 @@ RobotInterfaceROS:
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
   ft_topic_names: []
-  imu_topic_names: []
+  imu_topic_names: ["/xbotcore/centauro/imu/imu_link"]
 
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
@@ -31,8 +31,8 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub", "Pholus_demo_W"]
-  io_plugins: ["IkRosIo"]
+  plugins: ["HomingExample"]
+  io_plugins: []
 
 NRTPlugins:
   plugins: [] 
@@ -77,6 +77,7 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 GazeboXBotPlugin:
+  control_rate: 0.005
   gains:
     j_arm1_1: {p: 5000, d: 30}
     j_arm1_2: {p: 8000, d: 50}
