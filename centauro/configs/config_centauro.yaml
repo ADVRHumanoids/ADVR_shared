@@ -1,11 +1,20 @@
 # CENTAURO config
+
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+
+WebServer:
+  enable: "true"
+  address: "10.24.4.100"
+  port: "8081"
+
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro.urdf"
   srdf_path: "configs/ADVR_shared/centauro/srdf/centauro.srdf"
   joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
 
 RobotInterface:
-#  framework_name: "ROS"
   framework_name: "ROS"
 
 ModelInterface:
@@ -19,7 +28,7 @@ RobotInterfaceROS:
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
   ft_topic_names: []
-  imu_topic_names: []
+  imu_topic_names: ["/xbotcore/centauro/imu/imu_link"]
 
 RobotInterfaceXBotRT:
   subclass_name: "RobotInterfaceXBotRT"
@@ -76,6 +85,7 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 GazeboXBotPlugin:
+  control_rate: 0.005
   gains:
     j_arm1_1: {p: 5000, d: 30}
     j_arm1_2: {p: 8000, d: 50}
@@ -408,7 +418,7 @@ CentAcESC_75:
 
 CentAcESC_76:
   control_mode: vel_71
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -472,7 +482,7 @@ CentAcESC_45:
 
 CentAcESC_46:
   control_mode: vel_71
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -536,7 +546,7 @@ CentAcESC_65:
     
 CentAcESC_66:
   control_mode: vel_71
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -600,7 +610,7 @@ CentAcESC_55:
 
 CentAcESC_56:
   control_mode: vel_71
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
