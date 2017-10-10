@@ -417,7 +417,7 @@ CentAcESC_76:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 6.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -481,7 +481,7 @@ CentAcESC_46:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 6.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -545,7 +545,7 @@ CentAcESC_66:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 6.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -609,9 +609,36 @@ CentAcESC_56:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 6.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0] 
 
+
+LpESC_101:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 7.0
+  pid:
+    position: [100000.0, 0.0, 1.0]
+    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+LpESC_102:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 7.0
+  pid:
+    position: [100000.0, 0.0, 1.0]
+    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+LpESC_103:
+  control_mode: vel_71
+  sign: 1
+  pos_offset: 0
+  max_current_A: 7.0
+  pid:
+    position: [0.0, 0.0, 0.0]
+    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
