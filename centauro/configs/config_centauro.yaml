@@ -36,11 +36,14 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["HomingExample", "Pholus_demo_W"]
+#  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
+#  io_plugins: ["IkRosIo"]
   io_plugins: []
 
 NRTPlugins:
-  plugins: [] 
+  plugins: []
+#  plugins: ["Pholus_demo_W"]  
 
 MasterCommunicationInterface:
   framework_name: "ROS"
