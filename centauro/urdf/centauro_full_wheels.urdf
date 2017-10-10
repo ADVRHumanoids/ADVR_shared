@@ -1105,7 +1105,7 @@
   <joint name="j_foot_fl" type="fixed">
     <parent link="ankle2_1"/>
     <child link="foot_fl"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.30"/>
+    <origin rpy="3.1415 0.0 3.1415" xyz="0.0 0.0 0.30"/>
   </joint>
   <link name="foot_fl">
     <inertial>
@@ -1144,7 +1144,7 @@
   <joint name="j_foot_fr" type="fixed">
     <parent link="ankle2_2"/>
     <child link="foot_fr"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.30"/>
+    <origin rpy="3.1415 0.0 0.0" xyz="0.0 0.0 0.30"/>
   </joint>
   <link name="foot_fr">
     <inertial>
@@ -1399,7 +1399,7 @@
   <joint name="j_foot_hl" type="fixed">
     <parent link="ankle2_3"/>
     <child link="foot_hl"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.30"/>
+    <origin rpy="3.1415 0.0 3.1415" xyz="0.0 0.0 0.30"/>
   </joint>
   <link name="foot_hl">
     <inertial>
@@ -1654,7 +1654,7 @@
   <joint name="j_foot_hr" type="fixed">
     <parent link="ankle2_4"/>
     <child link="foot_hr"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.30"/>
+    <origin rpy="3.1415 0.0 0.0" xyz="0.0 0.0 0.30"/>
   </joint>
   <link name="foot_hr">
     <inertial>
