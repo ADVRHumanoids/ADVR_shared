@@ -83,19 +83,23 @@ board_ctrl:
 
 # assume boards of same type have the same policy bc_rate !!! 
 
+#mc_board:
+  #policy: 0x893F
+  #extra_policy: 0x0001
+  #bc_rate: 10
+  #motor_config_mask : 0x4803
+  #pid:
+    #position: [50000,2000,50]
+    #velocity: [2000,0,500]
+    #torque:   [445,22,0]
+    
+    
 mc_board:
-  policy: 0x893F
-  extra_policy: 0x0001
-  bc_rate: 10
-  motor_config_mask : 0x4803
-  pid:
-    position: [50000,2000,50]
-    velocity: [2000,0,500]
-    torque:   [445,22,0]
+  bc_rate: 1
 
 ft_board:
-  policy: 0x2
-  bc_rate: 10
+  #policy: 0x2
+  bc_rate: 1
   calibrate_offset: true
 
 # specific board config
