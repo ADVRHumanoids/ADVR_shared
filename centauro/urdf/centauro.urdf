@@ -1851,4 +1851,68 @@
   </transmission>
   <!-- /actuators -->
   <!-- /legs -->
+
+<link name="ft_arm1">
+	    <inertial>
+	      <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
+	      <mass value="0.15"/>
+	      <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
+	      <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
+	    </inertial>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+		<mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
+	      </geometry>
+	      <material name="grey"/>
+	    </visual>
+	    <collision>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+		<mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
+	      </geometry>
+	    </collision>
+	  </link>
+	  <!-- /links -->
+	  <!-- joints -->
+	  <joint name="j_ft_arm1" type="fixed">
+	    <parent link="arm1_7"/>
+	    <child link="ft_arm1"/>
+	    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+	    <axis xyz="1 0 0"/>
+	    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
+	  </joint>
+
+
+
+	<link name="ft_arm2">
+	    <inertial>
+	      <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
+	      <mass value="0.15"/>
+	      <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
+	      <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
+	    </inertial>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+		<mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
+	      </geometry>
+	      <material name="grey"/>
+	    </visual>
+	    <collision>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+		<mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
+	      </geometry>
+	    </collision>
+	  </link>
+	  <!-- /links -->
+	  <!-- joints -->
+	  <joint name="j_ft_arm2" type="fixed">
+	    <parent link="arm2_7"/>
+	    <child link="ft_arm2"/>
+	    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+	    <axis xyz="1 0 0"/>
+	    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
+	  </joint>
 </robot>

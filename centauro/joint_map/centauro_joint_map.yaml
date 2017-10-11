@@ -14,7 +14,7 @@ joint_map:
   13: j_arm1_5
   14: j_arm1_6
   15: j_arm1_7
-  53: j_arm1_8
+  20: j_arm1_8
   71: hip_yaw_1
   72: hip_pitch_1
   73: knee_pitch_1
@@ -40,6 +40,7 @@ joint_map:
   55: ankle_yaw_4
   56: j_wheel_4
   80: j_ft_arm2
+  81: j_ft_arm1
   18: imu_joint
   101: neck_yaw
   102: neck_pitch

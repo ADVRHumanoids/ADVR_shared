@@ -618,6 +618,8 @@ CentAcESC_56:
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0] 
 
+#####################################################
+# Neck
 
 LpESC_101:
   control_mode: pos_3b
