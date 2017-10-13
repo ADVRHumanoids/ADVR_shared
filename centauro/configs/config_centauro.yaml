@@ -5,7 +5,7 @@ HALInterface:
   lib_name: "ETHERCAT"
 
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "10.24.4.100"
   port: "8081"
 
@@ -27,7 +27,7 @@ RobotInterfaceROS:
   subclass_factory_name: "robot_interface_ros"
   control_message_type: "AdvrCommandMessage"
   jointstate_message_type: "AdvrJointStateMessage"
-  ft_topic_names: []
+  ft_topic_names: ["/xbotcore/centauro/ft/ft_arm1"]
   imu_topic_names: ["/xbotcore/centauro/imu/imu_link"]
 
 RobotInterfaceXBotRT:
@@ -36,14 +36,12 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "Pholus_demo_W"]
-#  plugins: ["HomingExample", "OpenSotIk", "CirclePublisher", "IkRosSMPub"]
-#  io_plugins: ["IkRosIo"]
+  plugins: ["HomingExample", "ExoskeletonCommunicationPlugin", "OpenSotIk"]
+  #plugins: ["HomingExample", "CirclePublisher", "OpenSotIk"]
   io_plugins: []
 
 NRTPlugins:
-  plugins: []
-#  plugins: ["Pholus_demo_W"]  
+  plugins: [] 
 
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -420,7 +418,7 @@ CentAcESC_76:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 6.0
+  max_current_A: 10.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -484,7 +482,7 @@ CentAcESC_46:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 6.0
+  max_current_A: 10.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -548,7 +546,7 @@ CentAcESC_66:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 6.0
+  max_current_A: 10.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -612,38 +610,9 @@ CentAcESC_56:
   control_mode: vel_71
   sign: -1
   pos_offset: 0
-  max_current_A: 6.0
+  max_current_A: 10.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0] 
 
-#####################################################
-# Neck
-
-LpESC_101:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [100000.0, 0.0, 1.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
-
-LpESC_102:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [100000.0, 0.0, 1.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
-
-LpESC_103:
-  control_mode: vel_71
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [0.0, 0.0, 0.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
