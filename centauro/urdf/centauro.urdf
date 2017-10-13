@@ -408,7 +408,7 @@
     <child link="arm1_2"/>
     <origin xyz="-0.09115 0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="-3.49" upper="0" velocity="5.7"/>
+    <limit effort="147" lower="-3.49" upper="-0.25" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->
@@ -738,7 +738,7 @@
     <child link="arm2_2"/>
     <origin xyz="-0.09115 -0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="0" upper="3.49" velocity="5.7"/>
+    <limit effort="147" lower="0.25" upper="3.49" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->

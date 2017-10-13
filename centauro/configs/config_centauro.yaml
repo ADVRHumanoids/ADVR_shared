@@ -5,7 +5,7 @@ HALInterface:
   lib_name: "ETHERCAT"
 
 WebServer:
-  enable: "false"
+  enable: "true"
   address: "10.24.4.100"
   port: "8081"
 
@@ -36,7 +36,7 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "ExoskeletonCommunicationPlugin", "OpenSotIk"]
+  plugins: ["HomingExample", "AlexCommunication", "OpenSotIk"]
   #plugins: ["HomingExample", "CirclePublisher", "OpenSotIk"]
   io_plugins: []
 
