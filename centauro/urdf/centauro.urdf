@@ -197,7 +197,7 @@
     <limit effort="35" lower="-0.34906585" upper="0.78539816" velocity="5.7"/>
     <!-- TODO -->
   </joint>
-  <joint name="neck_velodyne" type="revolute">
+  <joint name="neck_velodyne" type="continuous">
     <parent link="torso_2"/>
     <origin xyz="0.055 0.0 0.473262"/>
     <child link="neck_3"/>
