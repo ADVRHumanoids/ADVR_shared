@@ -104,18 +104,18 @@
         <joint name="WaistLat" value="0.0"/>
         <joint name="WaistSag" value="0.0"/>
         <joint name="WaistYaw" value="0.0"/>
-        <joint name="RShSag" value="1.10"/>
-        <joint name="RShLat" value="-0.20"/>
+        <joint name="RShSag" value="0.5"/>
+        <joint name="RShLat" value="-0.5"/>
         <joint name="RShYaw" value="0.30"/>
-        <joint name="RElbj" value="-2.0"/>
-        <joint name="RForearmPlate" value="0"/>
+        <joint name="RElbj" value="-1.57"/>
+        <joint name="RForearmPlate" value="0.0"/>
         <joint name="RWrj1" value="-0.0"/>
         <joint name="RWrj2" value="-0.0"/>
-        <joint name="LShSag" value="1.10"/>
-        <joint name="LShLat" value="0.20"/>
+        <joint name="LShSag" value="0.5"/>
+        <joint name="LShLat" value="0.5"/>
         <joint name="LShYaw" value="-0.30"/>
-        <joint name="LElbj" value="-2.0"/>
-        <joint name="LForearmPlate" value="0"/>
+        <joint name="LElbj" value="-1.57"/>
+        <joint name="LForearmPlate" value="0.0"/>
         <joint name="LWrj1" value="0.0"/>
         <joint name="LWrj2" value="-0.0"/>
         <joint name="RHipLat" value="0.06"/>

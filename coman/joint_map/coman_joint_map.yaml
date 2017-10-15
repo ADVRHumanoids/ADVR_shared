@@ -18,20 +18,20 @@ joint_map:
   31: LWrj2
   37: l_arm_ft_joint
   33: l_handj
-  3: WaistYaw
+  1: WaistYaw
   2: WaistSag
-  1: WaistLat
-  4: RHipLat
-  6: RHipYaw
-  7: RHipSag
+  3: WaistLat
+  6: RHipLat
+  7: RHipYaw
+  4: RHipSag
   8: RKneeSag
-  10: RAnkSag
-  9: RAnkLat
+  9: RAnkSag
+  10: RAnkLat
   24: r_leg_ft_joint
-  5: LHipLat
-  11: LHipYaw
-  12: LHipSag
+  11: LHipLat
+  12: LHipYaw
+  5: LHipSag
   13: LKneeSag
-  15: LAnkSag
-  14: LAnkLat
+  14: LAnkSag
+  15: LAnkLat
   25: l_leg_ft_joint
