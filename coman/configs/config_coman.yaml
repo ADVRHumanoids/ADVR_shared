@@ -31,7 +31,7 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["Homing"]
   #plugins: []
   io_plugins: []
   
@@ -45,27 +45,27 @@ CustomCmnd:
   subclass_name: "CustomCmndMessage"
   path_to_shared_lib: "libCustomCmndMessage.so"
   subclass_factory_name: "customcmnd_control_message"
-  joint_service_name: "/bigman/position_controller/get_joint_names"
-  command_topic_name: "/bigman/position_controller/command"
+  joint_service_name: "/coman/position_controller/get_joint_names"
+  command_topic_name: "/coman/position_controller/command"
 
 JointState:
   subclass_name: "JointStateMessage"
   path_to_shared_lib: "libJointStateMessage.so"
   subclass_factory_name: "jointstate_jointstate_message"
-  joint_state_topic_name: "/bigman/joint_states"
+  joint_state_topic_name: "/coman/joint_states"
 
 AdvrCommandMessage:
   subclass_name: "CommandAdvr"
   path_to_shared_lib: "libAdvrCommandMessage.so"
   subclass_factory_name: "advrcommandmessage_control_message"
-  joint_service_name: "/bigman/position_controller/get_joint_names"
-  command_topic_name: "/xbotcore/bigman/command"
+  joint_service_name: "/coman/position_controller/get_joint_names"
+  command_topic_name: "/xbotcore/coman/command"
 
 AdvrJointStateMessage:
   subclass_name: "AdvrJointState"
   path_to_shared_lib: "libAdvrJointStateMessage.so"
   subclass_factory_name: "advrjointstate_jointstate_message"
-  joint_state_topic_name: "/xbotcore/bigman/joint_states"
+  joint_state_topic_name: "/xbotcore/coman/joint_states"
 
 RobotInterfaceDUMMY:
   subclass_name: "RobotInterfaceDUMMY"
@@ -78,38 +78,15 @@ ModelInterfaceRBDL:
   subclass_factory_name: "model_interface_rbdl"
 
 board_ctrl:
-  eth_iface: eth1
+  eth_iface: pippo # does not taken into account -> rteth0
   boards_num: 35 #27 # 23 mcs + 2 fts
 
 # assume boards of same type have the same policy bc_rate !!! 
 
-#mc_board:
-  #policy: 0x893F
-  #extra_policy: 0x0001
-  #bc_rate: 10
-  #motor_config_mask : 0x4803
-  #pid:
-    #position: [50000,2000,50]
-    #velocity: [2000,0,500]
-    #torque:   [445,22,0]
-    
-    
 mc_board:
-  bc_rate: 1
+  bc_rate: 2 # NOTE 2 is 1 kHz
 
 ft_board:
-  #policy: 0x2
-  bc_rate: 1
+  bc_rate: 2 # NOTE 2 is 1 kHz
   calibrate_offset: true
-
-# specific board config
-
-
-#board_x:
-  #impedance_control :
-  #motor_config_mask : 0x4803
-  #pid:
-    #position: [50000,2000,50]
-    #velocity: [2000,0,500]
-    #torque:   [445,22,0]
 

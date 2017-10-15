@@ -48,7 +48,7 @@
   </group>
   <group name="imu_sensors">
     <!-- NEAREST JOINT TO IMU -->
-    <link name="imu_link"/>
+<!--     <link name="imu_link"/> -->
   </group>
   <group name="left_arm">
     <chain base_link="DWYTorso" tip_link="l_wrist"/>
@@ -97,6 +97,43 @@
     <group name="right_leg"/>
     <group name="torso"/>
   </group>
+  
+  
+  
+  <group_state group="chains" name="home">
+        <joint name="WaistLat" value="0.0"/>
+        <joint name="WaistSag" value="0.0"/>
+        <joint name="WaistYaw" value="0.0"/>
+        <joint name="RShSag" value="1.10"/>
+        <joint name="RShLat" value="-0.20"/>
+        <joint name="RShYaw" value="0.30"/>
+        <joint name="RElbj" value="-2.0"/>
+        <joint name="RForearmPlate" value="0"/>
+        <joint name="RWrj1" value="-0.0"/>
+        <joint name="RWrj2" value="-0.0"/>
+        <joint name="LShSag" value="1.10"/>
+        <joint name="LShLat" value="0.20"/>
+        <joint name="LShYaw" value="-0.30"/>
+        <joint name="LElbj" value="-2.0"/>
+        <joint name="LForearmPlate" value="0"/>
+        <joint name="LWrj1" value="0.0"/>
+        <joint name="LWrj2" value="-0.0"/>
+        <joint name="RHipLat" value="0.06"/>
+        <joint name="RHipYaw" value="0.0"/>
+        <joint name="RHipSag" value="-0.45"/>
+        <joint name="RKneeSag" value="0.90"/>
+        <joint name="RAnkSag" value="-0.45"/>
+        <joint name="RAnkLat" value="-0.06"/>
+        <joint name="LHipLat" value="-0.06"/>
+        <joint name="LHipYaw" value="0.0"/>
+        <joint name="LHipSag" value="-0.45"/>
+        <joint name="LKneeSag" value="0.90"/>
+        <joint name="LAnkSag" value="-0.45"/>
+        <joint name="LAnkLat" value="0.06"/>
+  </group_state>
+  
+  
+  <!-- OROCOS STUFFS -->
   <rtt-gazebo reference="torso">
     <controller type="JointPositionCtrl">
       <gains D="0.1" I="0." P="1000." reference="WaistLat"/>
