@@ -11,3 +11,4 @@ joint_map:
   10: RKneePitch
   11: RAnklePitch
   12: RAnkleRoll
+  13: WaistLat
