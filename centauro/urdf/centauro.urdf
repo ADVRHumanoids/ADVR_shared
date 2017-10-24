@@ -1878,7 +1878,7 @@
 	  <joint name="j_ft_arm1" type="fixed">
 	    <parent link="arm1_7"/>
 	    <child link="ft_arm1"/>
-	    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+	    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
 	    <axis xyz="1 0 0"/>
 	    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
 	  </joint>
@@ -1911,7 +1911,7 @@
 	  <joint name="j_ft_arm2" type="fixed">
 	    <parent link="arm2_7"/>
 	    <child link="ft_arm2"/>
-	    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+	    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
 	    <axis xyz="1 0 0"/>
 	    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
 	  </joint>
