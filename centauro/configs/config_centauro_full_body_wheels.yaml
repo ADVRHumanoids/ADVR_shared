@@ -26,7 +26,11 @@ RobotInterfaceXBotRT:
   subclass_factory_name: "robot_interface_xbot_rt"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["HomingExample", "MplIkControl"]
+  io_plugins: ["OdomPublisher", "MplIo"]
+
+NRTPlugins:
+  plugins: ["HomingExample", "MplIkControl"]
 
 MasterCommunicationInterface:
   framework_name: "ROS"
