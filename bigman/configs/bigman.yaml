@@ -28,6 +28,11 @@ GazeboXBotPlugin:
     LAnkSag:  {p: 15000, d: 80}
     LAnkLat:  {p: 15000, d: 80}
 
+    
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+  
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix : 

@@ -1,14 +1,5 @@
 RobotName: "centauro"
 
-#HALInterface:
-  #lib_file: "libXBotEcat"
-  #lib_name: "ETHERCAT"
-
-#WebServer:
-  #enable: "true"
-  #address: "10.24.4.100"
-  #port: "8081"
-
 GazeboXBotPlugin:
   control_rate: 0.005
   gains:
@@ -47,7 +38,12 @@ GazeboXBotPlugin:
     j_wheel_2: *wheel
     j_wheel_3: *wheel
     j_wheel_4: *wheel 
-   
+
+ 
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+
     
 x_bot_ecat:
   name: XBotCore
