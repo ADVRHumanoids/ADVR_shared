@@ -1,0 +1,37 @@
+# map between the joint robot id and the joint name for all the ecat slaves
+joint_map:
+  16: RShSag
+  17: RShLat
+  18: RShYaw
+  19: RElbj
+  26: RForearmPlate
+  27: RWrj1
+  28: RWrj2
+  36: r_arm_ft_joint
+  32: r_handj
+  20: LShSag
+  21: LShLat
+  22: LShYaw
+  23: LElbj
+  29: LForearmPlate
+  30: LWrj1
+  31: LWrj2
+  37: l_arm_ft_joint
+  33: l_handj
+  1: WaistYaw
+  2: WaistSag
+  3: WaistLat
+  6: RHipLat
+  7: RHipYaw
+  4: RHipSag
+  8: RKneeSag
+  9: RAnkSag
+  10: RAnkLat
+  24: r_leg_ft_joint
+  11: LHipLat
+  12: LHipYaw
+  5: LHipSag
+  13: LKneeSag
+  14: LAnkSag
+  15: LAnkLat
+  25: l_leg_ft_joint
