@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<robot name="kuka_lwr" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+  <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+  <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+  <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+  <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+  <!-- Robot kinematic chains -->
+  <!-- CONSTRAINT: specify the chain inside a group: only one chain per group -->
+  <group name="arm1">
+    <chain base_link="kuka_lwr_base_link" tip_link="kuka_lwr_7_link"/>
+  </group>
+ <!-- Disabled Joint -->
+  <!--     <disabled_joint name="LShSag"/> -->
+  <!--     <disabled_joint name="LShLat"/> -->
+  <!--     <disabled_joint name="LShYaw"/>  -->
+  <!--     <disabled_joint name="LElbj"/> -->
+  <!--     <disabled_joint name="LForearmPlate"/> -->
+  <!--     <disabled_joint name="LWrj1"/> -->
+  <!-- END Disabled Joint -->
+
+  <!-- CONSTRAINT: first left then right -->
+  <group name="arms">
+    <group name="arm1"/>
+  </group>
+  <group name="legs">
+  </group>
+
+  <!-- CHAINS -->
+  <!-- CONSTRAINT: keep it in the end, it refers to already defined groups -->
+  <group name="chains">
+    <group name="arm1"/>
+  </group>
+  <!-- END CHAINS -->
+
+  <group_state group="chains" name="home">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home1">
+      <joint name="kuka_lwr_0_joint" value="1.57"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home2">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="1.57"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home3">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="1.57"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home4">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="1.57"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home5">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="1.57"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home6">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="1.57"/>
+      <joint name="kuka_lwr_6_joint" value="0.0"/>
+  </group_state>
+
+<group_state group="chains" name="home7">
+      <joint name="kuka_lwr_0_joint" value="0.0"/>
+      <joint name="kuka_lwr_1_joint" value="0.0"/>
+      <joint name="kuka_lwr_2_joint" value="0.0"/>
+      <joint name="kuka_lwr_3_joint" value="0.0"/>
+      <joint name="kuka_lwr_4_joint" value="0.0"/>
+      <joint name="kuka_lwr_5_joint" value="0.0"/>
+      <joint name="kuka_lwr_6_joint" value="1.57"/>
+  </group_state>
+
+</robot>
