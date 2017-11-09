@@ -24,7 +24,9 @@ NRTPlugins:
   plugins: ["HomingExample"]
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
-  
+
+SimulationOptions:
+  verbose_mode: "false"    
