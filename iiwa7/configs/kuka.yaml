@@ -1,0 +1,6 @@
+RobotName: "kuka"
+
+HALInterface:
+  lib_file: "libXBotKuka"
+  lib_name: "KUKA"
+
