@@ -19,6 +19,7 @@
     </group>
         
     <group name="force_torque_sensors">
+        <joint name="j_ft_arm2"/>
     </group>
     
     <group name="imu_sensors">
@@ -32,6 +33,7 @@
         <group name="left_arm"/>
         <group name="right_arm"/>
         <group name="torso"/>
+        
     </group>
 
     
@@ -39,20 +41,20 @@
         
         <joint name="torso_yaw" value="0.0"/>
         
-        <joint name="j_arm1_1" value="0.5"/>
-        <joint name="j_arm1_2" value="-1.5"/>
+        <joint name="j_arm1_1" value="0.0"/>
+        <joint name="j_arm1_2" value="-0.3"/>
         <joint name="j_arm1_3" value="-0.8"/>
-        <joint name="j_arm1_4" value="-1.8"/>
+        <joint name="j_arm1_4" value="-0.8"/>
         <joint name="j_arm1_5" value="0.0"/>
-        <joint name="j_arm1_6" value="-0.2"/>
-        <joint name="j_arm1_7" value="-0.6"/>
+        <joint name="j_arm1_6" value="-0.8"/>
+        <joint name="j_arm1_7" value="0.0"/>
         
-        <joint name="j_arm2_1" value="-0.5"/>
-        <joint name="j_arm2_2" value="1.5"/>
+        <joint name="j_arm2_1" value="0.0"/>
+        <joint name="j_arm2_2" value="0.3"/>
         <joint name="j_arm2_3" value="0.8"/>
-        <joint name="j_arm2_4" value="1.8"/>
+        <joint name="j_arm2_4" value="0.8"/>
         <joint name="j_arm2_5" value="0.0"/>
-        <joint name="j_arm2_6" value="0.2"/>
+        <joint name="j_arm2_6" value="0.8"/>
         <joint name="j_arm2_7" value="0.0"/>
         
     </group_state>
@@ -98,6 +100,73 @@
         <joint name="j_arm2_5" value="1"/>
         <joint name="j_arm2_6" value="0.8"/>
         <joint name="j_arm2_7" value="-0.5"/>
+        
+    </group_state>
+    
+    <group_state name="navvab_start" group="chains">
+        
+        <joint name="torso_yaw" value="0.12"/>
+        
+        <joint name="j_arm1_1" value="-0.63"/>
+        <joint name="j_arm1_2" value="-0.35"/>
+        <joint name="j_arm1_3" value="-0.38"/>
+        <joint name="j_arm1_4" value="-1.38"/>
+        <joint name="j_arm1_5" value="-0.08"/>
+        <joint name="j_arm1_6" value="-1.08"/>
+        <joint name="j_arm1_7" value="0.0"/>
+        
+        <joint name="j_arm2_1" value="0.64"/>
+        <joint name="j_arm2_2" value="0.17"/>
+        <joint name="j_arm2_3" value="0.28"/>
+        <joint name="j_arm2_4" value="1.48"/>
+        <joint name="j_arm2_5" value="-0.03"/>
+        <joint name="j_arm2_6" value="1.02"/>
+        <joint name="j_arm2_7" value="-0.37"/>
+        
+    </group_state>    
+    
+    <group_state name="navvab_start_temp" group="chains">
+        
+        <joint name="torso_yaw" value="0.0"/>
+        
+        <joint name="j_arm1_1" value="-0.5"/>
+        <joint name="j_arm1_2" value="-0.4"/>
+        <joint name="j_arm1_3" value="-0.5"/>
+        <joint name="j_arm1_4" value="-1.55"/>
+        <joint name="j_arm1_5" value="-0.1"/>
+        <joint name="j_arm1_6" value="-1.0"/>
+        <joint name="j_arm1_7" value="0.0"/>
+        
+        <joint name="j_arm2_1" value="0.5"/>
+        <joint name="j_arm2_2" value="0.4"/>
+        <joint name="j_arm2_3" value="0.5"/>
+        <joint name="j_arm2_4" value="1.55"/>
+        <joint name="j_arm2_5" value="0.1"/>
+        <joint name="j_arm2_6" value="1.0"/>
+        <joint name="j_arm2_7" value="0.0"/>
+        
+    </group_state>        
+    
+    
+    <group_state name="ZERO_POSE" group="chains">
+        
+        <joint name="torso_yaw" value="0.0"/>
+        
+        <joint name="j_arm1_1" value=" 0.0"/>
+        <joint name="j_arm1_2" value=" 0.0"/>
+        <joint name="j_arm1_3" value=" 0.0"/>
+        <joint name="j_arm1_4" value=" 0.0"/>
+        <joint name="j_arm1_5" value=" 0.0"/>
+        <joint name="j_arm1_6" value=" 0.0"/>
+        <joint name="j_arm1_7" value=" 0.0"/>
+        
+        <joint name="j_arm2_1" value=" 0.0"/>
+        <joint name="j_arm2_2" value=" 0.0"/>
+        <joint name="j_arm2_3" value=" 0.0"/>
+        <joint name="j_arm2_4" value=" 0.0"/>
+        <joint name="j_arm2_5" value=" 0.0"/>
+        <joint name="j_arm2_6" value=" 0.0"/>
+        <joint name="j_arm2_7" value=" 0.0"/>
         
     </group_state>
 
