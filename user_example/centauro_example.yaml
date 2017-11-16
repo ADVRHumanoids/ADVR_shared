@@ -17,7 +17,7 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["HomingExample","Pholus_demo_W"]
   io_plugins: []
   
 NRTPlugins:
