@@ -100,7 +100,7 @@ firmware_update:
 #############################
 
 LpESC_X:
-  control_mode: idle
+  control_mode: pos_3b
   sign: 1
   pos_offset: 0
   max_current_A: 6.0

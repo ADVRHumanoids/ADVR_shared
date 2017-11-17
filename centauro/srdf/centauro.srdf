@@ -31,19 +31,19 @@
     
     <group name="right_arm">
         <chain base_link="torso_2" tip_link="arm2_7"/>
-    </group>-->
+    </group>
     
     <group name="torso">
         <chain base_link="pelvis" tip_link="torso_2"/>
     </group>
     
     <group name="arms">
-        <group name="left_arm"/>
+	<group name="left_arm"/> 
         <group name="right_arm"/>
     </group>
         
     <group name="hands">
-	    <!-- <joint name="j_arm1_8"/>-->
+	 <joint name="j_arm1_8"/>		 
     </group>
 
 
@@ -56,8 +56,8 @@
 
 
     <group name="force_torque_sensors">
-	     <!-- <joint name="j_ft_arm1"/>-->
-	    <!-- <joint name="j_ft_arm2"/>-->
+	    <!-- <joint name="j_ft_arm1"/> -->
+	    <!-- <joint name="j_ft_arm2"/> -->
     </group>
 
     <group name="imu_sensors">
