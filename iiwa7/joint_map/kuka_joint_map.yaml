@@ -1,0 +1,11 @@
+# map between the joint robot id and the joint name 
+joint_map:
+  0: iiwa_joint_1
+  1: iiwa_joint_2
+  2: iiwa_joint_3
+  3: iiwa_joint_4
+  4: iiwa_joint_5
+  5: iiwa_joint_6
+  6: iiwa_joint_7
+
+
