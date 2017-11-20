@@ -37,15 +37,13 @@ GazeboXBotPlugin:
     j_wheel_1: &wheel {p: 0, d: 10}
     j_wheel_2: *wheel
     j_wheel_3: *wheel
-    j_wheel_4: *wheel
-
-
+    j_wheel_4: *wheel 
 
  
 HALInterface:
   lib_file: "libXBotEcat"
   lib_name: "ETHERCAT"
- 
+
     
 x_bot_ecat:
   name: XBotCore
@@ -100,7 +98,7 @@ firmware_update:
 #############################
 
 LpESC_X:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 6.0
@@ -130,7 +128,7 @@ CentAcESC_X:
 #############################
 
 CentAcESC_1:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -145,7 +143,7 @@ CentAcESC_1:
 # Right Arm
 
 CentAcESC_2:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
@@ -155,7 +153,7 @@ CentAcESC_2:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_3:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
@@ -165,7 +163,7 @@ CentAcESC_3:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_4:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -175,7 +173,7 @@ CentAcESC_4:
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
 
 CentAcESC_5:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -185,7 +183,7 @@ CentAcESC_5:
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
 
 CentAcESC_6:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -195,7 +193,7 @@ CentAcESC_6:
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_7:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -205,7 +203,7 @@ CentAcESC_7:
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
 CentAcESC_8:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 6.0
@@ -218,7 +216,7 @@ CentAcESC_8:
 # Left Arm
 
 CentAcESC_9:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
@@ -228,7 +226,7 @@ CentAcESC_9:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_10:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
@@ -238,7 +236,7 @@ CentAcESC_10:
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
 
 CentAcESC_11:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -248,7 +246,7 @@ CentAcESC_11:
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
 
 CentAcESC_12:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 15.0
@@ -258,7 +256,7 @@ CentAcESC_12:
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
 
 CentAcESC_13:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -268,7 +266,7 @@ CentAcESC_13:
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_14:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -278,7 +276,7 @@ CentAcESC_14:
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
 CentAcESC_15:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 6.0
@@ -291,47 +289,47 @@ CentAcESC_15:
 # FrontLeft Leg
     
 CentAcESC_71:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_72:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_73:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.003, 1.0]
 
 CentAcESC_74:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 20.0
+  max_current_A: 10.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_75:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -341,8 +339,8 @@ CentAcESC_75:
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_76:
-  control_mode: vel_71
-  sign: 1
+  control_mode: idle
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -355,47 +353,47 @@ CentAcESC_76:
 # FrontRight Leg
     
 CentAcESC_41:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_42:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_43:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_44:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 20.0
+  max_current_A: 10.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_45:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -405,8 +403,8 @@ CentAcESC_45:
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_46:
-  control_mode: vel_71
-  sign: 1
+  control_mode: idle
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -419,47 +417,47 @@ CentAcESC_46:
 # HindLeft Leg
     
 CentAcESC_61:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: -45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_62:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_63:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_64:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 20.0
+  max_current_A: 10.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_65:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -469,8 +467,8 @@ CentAcESC_65:
     impedance:  [100.0, 2.0, 5.5, 0.005, 1.0]
     
 CentAcESC_66:
-  control_mode: vel_71
-  sign: 1
+  control_mode: idle
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
@@ -483,47 +481,47 @@ CentAcESC_66:
 # HindRight Leg
 
 CentAcESC_51:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 45
   max_current_A: 15.0
   pid :
-    position: [1000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 5.5, 0.003, 1.0]
 
 CentAcESC_52:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_53:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 30.0
+  max_current_A: 15.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_54:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 20.0
+  max_current_A: 10.0
   pid :
-    position: [3000.0 , 0.0 , 50.0]
+    position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
 
 CentAcESC_55:
-  control_mode: pos_3b
+  control_mode: idle
   sign: 1
   pos_offset: 0
   max_current_A: 10.0
@@ -533,40 +531,12 @@ CentAcESC_55:
     impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
 
 CentAcESC_56:
-  control_mode: vel_71
-  sign: 1
+  control_mode: idle
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   pid :
     position: [20.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0] 
-
-
-LpESC_101:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [100000.0, 0.0, 1.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
-
-LpESC_102:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [100000.0, 0.0, 1.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
-
-LpESC_103:
-  control_mode: vel_71
-  sign: 1
-  pos_offset: 0
-  max_current_A: 7.0
-  pid:
-    position: [0.0, 0.0, 0.0]
-    impedance: [0.0, 0.0, 0.0, 0.0, 0.0]
 
