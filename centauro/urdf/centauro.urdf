@@ -1878,7 +1878,7 @@
       <joint name="j_ft_arm1" type="fixed">
         <parent link="arm1_7"/>
         <child link="ft_arm1"/>
-        <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+        <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
         <axis xyz="1 0 0"/>
         <limit effort="0" lower="0.0" upper="0" velocity="0"/>
       </joint>
@@ -1911,12 +1911,12 @@
       <joint name="j_ft_arm2" type="fixed">
         <parent link="arm2_7"/>
         <child link="ft_arm2"/>
-        <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+        <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
         <axis xyz="1 0 0"/>
         <limit effort="0" lower="0.0" upper="0" velocity="0"/>
       </joint>
-      
-      
+
+
   <joint name="j_foot_fl" type="fixed">
     <parent link="ankle2_1"/>
     <child link="foot_fl"/>
@@ -1935,8 +1935,8 @@
       </geometry>
     </visual>
   </link>
-      
-  
+
+
   <joint name="j_foot_fr" type="fixed">
     <parent link="ankle2_2"/>
     <child link="foot_fr"/>
@@ -1955,7 +1955,7 @@
       </geometry>
     </visual>
   </link>
-      
+
   <joint name="j_foot_hr" type="fixed">
     <parent link="ankle2_4"/>
     <child link="foot_hr"/>
@@ -1974,7 +1974,7 @@
       </geometry>
     </visual>
   </link>
-  
+
   <joint name="j_foot_hl" type="fixed">
     <parent link="ankle2_3"/>
     <child link="foot_hl"/>
@@ -1993,5 +1993,5 @@
       </geometry>
     </visual>
   </link>
-      
+
 </robot>
