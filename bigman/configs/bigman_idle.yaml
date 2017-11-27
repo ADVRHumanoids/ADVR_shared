@@ -26,6 +26,10 @@ GazeboXBotPlugin:
     LAnkSag:  {p: 0, d: 0}
     LAnkLat:  {p: 0, d: 0}
 
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix : 
@@ -38,7 +42,7 @@ ec_board_ctrl:
   power_off_boards: true
 
 ec_boards_base:
-  create_pipes: true
+  use_pipes: false
   
 #############################
 # HEAD
@@ -46,7 +50,7 @@ ec_boards_base:
 
 #
 LpESC_1:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
@@ -55,7 +59,7 @@ LpESC_1:
 
 #
 LpESC_2:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :

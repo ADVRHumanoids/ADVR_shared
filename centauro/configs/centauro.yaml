@@ -63,6 +63,7 @@ ec_board_ctrl:
   #sync_cycle_time_ns: 0
   sync_cycle_offset_ns: 1000000000
   power_off_boards: false
+  use_pipes: false
 
 #
 ec_boards_base:
