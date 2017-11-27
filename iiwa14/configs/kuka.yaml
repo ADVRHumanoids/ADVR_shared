@@ -1,5 +1,15 @@
 RobotName: "kuka"
 
+GazeboXBotPlugin:
+  gains:
+    iiwa_joint_1:   {p: 1000, d: 30}
+    iiwa_joint_2:   {p: 1000, d: 30}
+    iiwa_joint_3:   {p: 1000, d: 30}
+    iiwa_joint_4:   {p: 1000, d: 30}
+    iiwa_joint_5:   {p: 1000, d: 50}
+    iiwa_joint_6:   {p: 1000, d: 10}
+    iiwa_joint_7:   {p: 1000, d: 10}
+
 HALInterface:
   lib_file: "libXBotKuka"
   lib_name: "KUKA"

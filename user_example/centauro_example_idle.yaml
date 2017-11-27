@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/centauro/configs/centauro.yaml"
+  config_path: "configs/ADVR_shared/centauro/configs/centauro_idle.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro.urdf"
@@ -17,14 +17,14 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"] #, "Grasp"] #,"OpenSotIk", "IkRosSMPub", "CirclePublisher"]
+  plugins: ["HomingExample"]
   io_plugins: []
   
 NRTPlugins:
-  plugins: []
+  plugins: ["HomingExample"]
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
 

@@ -17,14 +17,14 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"] #, "Grasp"] #,"OpenSotIk", "IkRosSMPub", "CirclePublisher"]
+  plugins: ["HomingExample"]
   io_plugins: []
   
 NRTPlugins:
-  plugins: []
+  plugins: ["HomingExample"]
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
 

@@ -17,11 +17,11 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "DebrisRemovalTask", "OpenSotIk", "IkRosSMPub"]
-  io_plugins: ["IkRosIo", "OdomPublisher"] 
+  plugins: ["HomingExample"]
+  io_plugins: []
   
 NRTPlugins:
-  plugins: ["ManipulationPlugin"]
+  plugins: ["HomingExample"]
   
 WebServer:
   enable: "true"
@@ -29,4 +29,4 @@ WebServer:
   port: "8081"
 
 SimulationOptions:
-  verbose_mode: "false"
+  verbose_mode: "false"  
