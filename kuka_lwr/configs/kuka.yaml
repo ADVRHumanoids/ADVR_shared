@@ -15,3 +15,9 @@ HALInterface:
   lib_file: "libXBotKuka"
   lib_name: "KUKA"
 
+#0 position
+#1 impedance
+#2 impedancewithtorque
+#3 torque  
+controlMode: 1
+gains: {p: 1000, d: 10}
