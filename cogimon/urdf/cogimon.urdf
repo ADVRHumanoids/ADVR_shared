@@ -395,7 +395,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <limit effort="153" lower="-1.5707963268" upper="0.558505360638" velocity="4.9"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
-  <joint name="RKneePitch" type="fixed">
+  <joint name="RKneePitch" type="revolute">
     <parent link="RThighLowLeg"/>
     <child link="RLowLeg"/>
     <origin rpy="0 0 0" xyz="-0.039 -0.0641 -0.0607"/>
@@ -404,7 +404,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <dynamics damping="3.0" friction="0"/>
   </joint>
   <!-- Here we do an assumption: Ankle Pitch can go -50/+40 while Ankle Roll -15/+15-->
-  <joint name="RAnklePitch" type="fixed">
+  <joint name="RAnklePitch" type="revolute">
     <parent link="RLowLeg"/>
     <child link="RFootmot"/>
     <origin rpy="0 0 0" xyz="0.039 0.0616 -0.425294"/>
@@ -412,7 +412,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <limit effort="179" lower="-0.872664625997" upper="0.698131700798" velocity="4.9"/>
     <dynamics damping="0.1" friction="0"/>
   </joint>
-  <joint name="RAnkleRoll" type="fixed">
+  <joint name="RAnkleRoll" type="revolute">
     <parent link="RFootmot"/>
     <child link="RFoot"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>

@@ -102,7 +102,7 @@ CentAcESC_X:
 
 CentAcESC_45:
   control_mode: idle
-  sign: -1
+  sign: 1
   pos_offset: 0
   max_current_A: 10.0
   enable_sandbox: false
@@ -115,7 +115,7 @@ CentAcESC_45:
 
 CentAcESC_46:
   control_mode: idle
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   enable_sandbox: false
@@ -132,7 +132,7 @@ CentAcESC_46:
 
 CentAcESC_55:
   control_mode: idle
-  sign: -1
+  sign: 1
   pos_offset: 0
   max_current_A: 10.0
   enable_sandbox: false
@@ -145,7 +145,7 @@ CentAcESC_55:
 
 CentAcESC_56:
   control_mode: idle
-  sign: 1
+  sign: -1
   pos_offset: 0
   max_current_A: 10.0
   enable_sandbox: false

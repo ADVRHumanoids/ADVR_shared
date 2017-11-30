@@ -11,6 +11,7 @@ joint_map:
   54: LKneePitch
   55: LAnklePitch
   56: LAnkleRoll
-  61: r_leg_ft_joint
   157: l_leg_ft_joint
+  147: r_leg_ft_joint
   32: WaistLat
+  
