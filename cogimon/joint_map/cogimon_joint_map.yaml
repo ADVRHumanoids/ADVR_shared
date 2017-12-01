@@ -14,4 +14,4 @@ joint_map:
   157: l_leg_ft_joint
   147: r_leg_ft_joint
   32: WaistLat
-  
+  99: imu_joint
