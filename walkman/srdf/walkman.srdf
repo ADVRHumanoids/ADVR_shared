@@ -30,6 +30,12 @@
   <group name="torso">
     <chain base_link="Waist" tip_link="DWYTorso"/>
   </group>
+  <group name="left_arm">
+    <chain base_link="DWYTorso" tip_link="l_wrist"/>
+  </group>
+  <group name="right_arm">
+    <chain base_link="DWYTorso" tip_link="r_wrist"/>
+  </group>
   <group name="head">
     <chain base_link="DWYTorso" tip_link="NeckPitch"/>
   </group>
@@ -38,6 +44,8 @@
     <group name="left_leg"/>
     <group name="right_leg"/>
     <group name="torso"/>
+    <group name="left_arm"/>
+    <group name="right_arm"/>
     <group name="head"/>
   </group>
 </robot>

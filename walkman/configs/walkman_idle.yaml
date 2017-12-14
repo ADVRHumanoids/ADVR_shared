@@ -2,16 +2,16 @@ RobotName: "walkman"
 
 GazeboXBotPlugin:
   gains:
-    #RShSag:   {p: 0, d: 0}
-    #RShLat:   {p: 0, d: 0}
-    #RShYaw:   {p: 0, d: 0}
-    #RElbj:    {p: 0, d: 0}
-    #RWrj1:    {p: 0, d: 0}
-    #LShSag:   {p: 0, d: 0}
-    #LShLat:   {p: 0, d: 0}
-    #LShYaw:   {p: 0, d: 0}
-    #LElbj:    {p: 0, d: 0}
-    #LWrj1:    {p: 0, d: 0}
+    RShSag:   {p: 0, d: 0}
+    RShLat:   {p: 0, d: 0}
+    RShYaw:   {p: 0, d: 0}
+    RElbj:    {p: 0, d: 0}
+    RWrj1:    {p: 0, d: 0}
+    LShSag:   {p: 0, d: 0}
+    LShLat:   {p: 0, d: 0}
+    LShYaw:   {p: 0, d: 0}
+    LElbj:    {p: 0, d: 0}
+    LWrj1:    {p: 0, d: 0}
     WaistYaw: {p: 0, d: 0}
     WaistLat: {p: 0, d: 0}
     LHipYaw:  {p: 0, d: 0}
