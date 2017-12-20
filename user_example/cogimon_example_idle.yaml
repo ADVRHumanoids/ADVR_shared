@@ -1,0 +1,32 @@
+XBotCore:
+  config_path: "configs/ADVR_shared/cogimon/configs/cogimon_idle.yaml"
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
+  srdf_path: "configs/ADVR_shared/cogimon/srdf/cogimon.srdf"
+  joint_map_path: "configs/ADVR_shared/cogimon/joint_map/cogimon_joint_map.yaml"
+
+RobotInterface:
+  framework_name: "ROS"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "true"
+  
+MasterCommunicationInterface:
+  framework_name: "ROS"
+
+XBotRTPlugins:
+  plugins: ["HomingExample"]
+  io_plugins: []
+  
+NRTPlugins:
+  plugins: []
+  
+WebServer:
+  enable: "false"
+  address: "127.0.0.1"
+  port: "8081"
+
+SimulationOptions:
+  verbose_mode: "false"

@@ -1,10 +1,10 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/centauro/configs/centauro.yaml"
+  config_path: "configs/ADVR_shared/walkman/configs/walkman.yaml"
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/centauro/urdf/centauro.urdf"
-  srdf_path: "configs/ADVR_shared/centauro/srdf/centauro.srdf"
-  joint_map_path: "configs/ADVR_shared/centauro/joint_map/centauro_joint_map.yaml"
+  urdf_path: "configs/ADVR_shared/walkman/urdf/walkman.urdf"
+  srdf_path: "configs/ADVR_shared/walkman/srdf/walkman.srdf"
+  joint_map_path: "configs/ADVR_shared/walkman/joint_map/walkman_ecat_joint_map.yaml"
 
 RobotInterface:
   framework_name: "ROS"
@@ -29,4 +29,4 @@ WebServer:
   port: "8081"
 
 SimulationOptions:
-  verbose_mode: "false"    
+  verbose_mode: "false"  
