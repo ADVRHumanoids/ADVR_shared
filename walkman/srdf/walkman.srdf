@@ -49,6 +49,11 @@
     <group name="head"/>
   </group>
 
+  <group name="imu_sensors">
+    <link name="imu_link"/>
+    <link name="imu_link2"/>
+  </group>
+
   <group_state group="chains" name="home">
         <joint name="NeckYawj" value="0.0"/>
         <joint name="NeckPitchj" value="0.6"/>
