@@ -21,6 +21,10 @@
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
   </group>
+  <group name="imu_sensors">
+    <link name="imu_link"/>
+    <link name="imu_link2"/>
+  </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="l_sole"/>
   </group>
@@ -49,10 +53,7 @@
     <group name="head"/>
   </group>
 
-  <group name="imu_sensors">
-    <link name="imu_link"/>
-    <link name="imu_link2"/>
-  </group>
+  
 
   <group_state group="chains" name="home">
         <joint name="NeckYawj" value="0.0"/>
