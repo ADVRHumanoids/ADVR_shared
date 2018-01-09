@@ -7,7 +7,6 @@
   <!-- /constants -->
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
-  <!-- dependend arguments -->
   <material name="grey">
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
@@ -25,14 +24,14 @@
   </material>
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
-  <!-- dependend arguments -->
+  <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
-  <!-- dependend arguments -->
+  <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- load proper collision model -->
   <!-- load proper collision model -->
@@ -73,7 +72,7 @@
     <child link="imu_link"/>
   </joint>
   <joint name="reference" type="floating">
-    <origin xyz="0.0 0.0 0.9256"/>
+    <origin xyz="0.0 0.0 0.93445"/>
     <parent link="world"/>
     <child link="pelvis"/>
   </joint>
@@ -109,18 +108,6 @@
     <!-- TODO -->
   </joint>
   <!-- /torso joints -->
-  <transmission name="t_torso_yaw">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="torso_yaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_torso_yaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <!-- /torso actuators -->
   <!-- head links -->
   <link name="neck_1">
     <inertial>
@@ -180,6 +167,44 @@
     </collision>
   </link>
   <!-- /head links -->
+  <!-- sensors links -->
+  <link name="camera_central">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <link name="camera_left">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <link name="camera_right">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <link name="kinect">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <link name="kinect2_rgb_optical_frame"/>
+  <link name="velodyne_mount">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <!-- /sensors links -->
   <!-- head joints -->
   <joint name="neck_yaw" type="revolute">
     <parent link="torso_2"/>
@@ -202,44 +227,42 @@
     <origin xyz="0.055 0.0 0.473262"/>
     <child link="neck_3"/>
     <axis xyz="0 0 1"/>
-    <limit effort="35" velocity="5.7" lower="-1000000000000000" upper="1000000000000000"/>
+    <limit effort="35" velocity="5.7"/>
     <!-- TODO -->
   </joint>
   <!-- /head joints -->
-  <transmission name="t_neck_yaw">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="neck_yaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_neck_yaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_neck_pitch">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="neck_pitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_neck_pitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_neck_velodyne">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="neck_velodyne">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_neck_velodyne">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <!-- /torso actuators -->
+  <!-- sensors transformations -->
+  <joint name="j_camera_central" type="fixed">
+    <parent link="torso_2"/>
+    <origin rpy="0.0 0.349065586018 0.0" xyz="0.0559593 5e-12 0.390626"/>
+    <child link="camera_central"/>
+  </joint>
+  <joint name="j_camera_left" type="fixed">
+    <parent link="torso_2"/>
+    <origin rpy="0.0 0.349065586018 1.2217302006" xyz="0.0191392 0.0525845 0.390626"/>
+    <child link="camera_left"/>
+  </joint>
+  <joint name="j_camera_right" type="fixed">
+    <parent link="torso_2"/>
+    <origin rpy="0.0 0.349065586018 -1.2217302006" xyz="0.0191392 -0.0525845 0.390626"/>
+    <child link="camera_right"/>
+  </joint>
+  <joint name="j_kinect" type="fixed">
+    <parent link="neck_2"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.03 -0.0596 0.045855"/>
+    <child link="kinect"/>
+  </joint>
+  <joint name="j_kinect_optical_frame" type="fixed">
+    <parent link="kinect"/>
+    <child link="kinect2_rgb_optical_frame"/>
+    <origin rpy=" -1.5707963268 0 -1.5707963268" xyz="0.050 -0.110 -0.035"/>
+  </joint>
+  <joint name="j_velodyne" type="fixed">
+    <parent link="neck_3"/>
+    <origin rpy="0.0 0.0 -3.14159265359" xyz="-0.138 0.0 -0.033"/>
+    <child link="velodyne_mount"/>
+  </joint>
+  <!-- /sensors transformations -->
   <!-- /torso -->
   <!-- LINKS -->
   <!-- shoulder yaw-roll-->
@@ -408,7 +431,7 @@
     <child link="arm1_2"/>
     <origin xyz="-0.09115 0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="-3.49" upper="-0.25" velocity="5.7"/>
+    <limit effort="147" lower="-3.49" upper="0" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->
@@ -457,85 +480,23 @@
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
-  <transmission name="t_j_arm1_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_5">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_5">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_5">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_6">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_6">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_6">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm1_7">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm1_7">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm1_7">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
   <!-- /actuators -->
-  <!-- end-effector -->
+  <!-- wrist pitch-->
+  <joint name="j_ft_1" type="fixed">
+    <parent link="arm1_7"/>
+    <child link="ft_arm1"/>
+    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
+  </joint>
+  <!-- wrist pitch-->
+  <link name="ft_arm1">
+    <inertial>
+      <origin xyz="0.0 -0.0 0.0"/>
+      <mass value="0.15"/>
+      <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+    </inertial>
+  </link>
   <!-- links -->
   <link name="arm1_8">
     <inertial>
@@ -561,11 +522,10 @@
   <!-- /links -->
   <!-- joints -->
   <joint name="j_arm1_8" type="fixed">
-    <parent link="arm1_7"/>
+    <parent link="ft_arm1"/>
+    <origin rpy="0.0 0.0 -1.5707963268" xyz="0.0 0.0 0.0"/>
     <child link="arm1_8"/>
-    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <axis xyz="1 0 0"/>
-    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
   </joint>
    --&gt;
 
@@ -738,7 +698,7 @@
     <child link="arm2_2"/>
     <origin xyz="-0.09115 -0.06106 0.010766"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="147" lower="0.25" upper="3.49" velocity="5.7"/>
+    <limit effort="147" lower="0" upper="3.49" velocity="5.7"/>
   </joint>
   <!-- /shoulder roll -->
   <!-- shoulder pitch-->
@@ -787,85 +747,23 @@
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
-  <transmission name="t_j_arm2_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_5">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_5">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_5">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_6">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_6">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_6">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_arm2_7">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_arm2_7">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_arm2_7">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
   <!-- /actuators -->
-  <!-- end-effector -->
+  <!-- wrist pitch-->
+  <joint name="j_ft_2" type="fixed">
+    <parent link="arm2_7"/>
+    <child link="ft_arm2"/>
+    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
+  </joint>
+  <!-- wrist pitch-->
+  <link name="ft_arm2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0"/>
+      <mass value="0.15"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+  </link>
   <!-- links -->
   <link name="arm2_8">
     <inertial>
@@ -891,11 +789,10 @@
   <!-- /links -->
   <!-- joints -->
   <joint name="j_arm2_8" type="fixed">
-    <parent link="arm2_7"/>
+    <parent link="ft_arm2"/>
+    <origin rpy="0.0 0.0 -1.5707963268" xyz="0.0 0.0 0.0"/>
     <child link="arm2_8"/>
-    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <axis xyz="1 0 0"/>
-    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
   </joint>
    --&gt;
 
@@ -911,14 +808,14 @@
       <!-- <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/> -->
     </inertial>
     <visual>
-      <origin rpy="0.0 0.0 4.15579005089" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro/centauro_urdf/meshes/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 4.15579005089" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -951,7 +848,7 @@
       <mass value="1.9356754"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -973,7 +870,7 @@
       <mass value="1.2380744"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0015610452" ixy="3.30597e-05" ixz="-0.0001314174" iyy="0.0037423211" iyz="-2.12589e-05" izz="0.0038312442"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1033,14 +930,14 @@
   <joint name="hip_yaw_1" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_1"/>
-    <origin rpy="3.14159265359 0.0 0.50709869865" xyz="0.25 0.125 -0.0566"/>
+    <origin rpy="3.14159265359 0.0 0.461416123228" xyz="0.25 0.125 -0.0566"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-1.13446401" upper="2.70526034" velocity="8.8"/>
   </joint>
   <joint name="hip_pitch_1" type="revolute">
     <parent link="hip1_1"/>
     <child link="hip2_1"/>
-    <origin rpy="1.57079632679 0.0 0.50709869865" xyz="0.0 0.0 0.059"/>
+    <origin rpy="1.57079632679 0.0 0.46141612323" xyz="0.0 0.0 0.0625"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.09439510" upper="2.09439510" velocity="8.8"/>
   </joint>
@@ -1068,76 +965,23 @@
   <joint name="j_wheel_1" type="continuous">
     <parent link="ankle2_1"/>
     <child link="wheel_1"/>
-    <origin rpy="1.57079632679 0.0 0.0" xyz="0.0 0.00085 0.235"/>
+    <origin rpy="1.57079632679 0.0 3.14159265359" xyz="0.0 0.00085 0.23735"/>
     <axis xyz="0 0 1"/>
-    <limit effort="35" velocity="20.0" lower="-1000000000000000" upper="1000000000000000"/>
+    <limit effort="35" velocity="20.0"/>
   </joint>
-  <transmission name="t_hip_yaw_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_yaw_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_yaw_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_hip_pitch_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_knee_pitch_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="knee_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_knee_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_pitch_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_pitch_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_yaw_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_yaw_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_yaw_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_wheel_1">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_wheel_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_wheel_1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
+  <joint name="j_ft_foot_1" type="fixed">
+    <parent link="ankle2_1"/>
+    <child link="ft_foot_1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.00085 0.23735"/>
+  </joint>
+  <link name="ft_foot_1">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <!-- org: 3.5, foot un modeled-->
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- /actuators -->
   <link name="hip1_2">
     <inertial>
@@ -1188,7 +1032,7 @@
       <mass value="1.9356754"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1210,7 +1054,7 @@
       <mass value="1.2380744"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0015610452" ixy="3.30597e-05" ixz="-0.0001314174" iyy="0.0037423211" iyz="-2.12589e-05" izz="0.0038312442"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1270,14 +1114,14 @@
   <joint name="hip_yaw_2" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_2"/>
-    <origin rpy="3.14159265359 0.0 -0.50709869865" xyz="0.25 -0.125 -0.0566"/>
+    <origin rpy="3.14159265359 0.0 -0.461416123228" xyz="0.25 -0.125 -0.0566"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.70526034" upper="1.13446401" velocity="8.8"/>
   </joint>
   <joint name="hip_pitch_2" type="revolute">
     <parent link="hip1_2"/>
     <child link="hip2_2"/>
-    <origin rpy="1.57079632679 0.0 2.63449395494" xyz="0.0 0.0 0.059"/>
+    <origin rpy="1.57079632679 0.0 2.68017653036" xyz="0.0 0.0 0.0625"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.09439510" upper="2.09439510" velocity="8.8"/>
   </joint>
@@ -1305,76 +1149,23 @@
   <joint name="j_wheel_2" type="continuous">
     <parent link="ankle2_2"/>
     <child link="wheel_2"/>
-    <origin rpy="1.57079632679 0.0 0.0" xyz="0.0 0.00085 0.235"/>
+    <origin rpy="1.57079632679 0.0 3.14159265359" xyz="0.0 0.00085 0.23735"/>
     <axis xyz="0 0 1"/>
-    <limit effort="35" velocity="20.0" lower="-1000000000000000" upper="1000000000000000"/>
+    <limit effort="35" velocity="20.0"/>
   </joint>
-  <transmission name="t_hip_yaw_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_yaw_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_yaw_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_hip_pitch_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_knee_pitch_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="knee_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_knee_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_pitch_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_pitch_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_yaw_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_yaw_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_yaw_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_wheel_2">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_wheel_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_wheel_2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
+  <joint name="j_ft_foot_2" type="fixed">
+    <parent link="ankle2_2"/>
+    <child link="ft_foot_2"/>
+    <origin rpy="0 0 0" xyz="0.0 0.00085 0.23735"/>
+  </joint>
+  <link name="ft_foot_2">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <!-- org: 3.5, foot un modeled-->
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- /actuators -->
   <link name="hip1_3">
     <inertial>
@@ -1425,7 +1216,7 @@
       <mass value="1.9356754"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1447,7 +1238,7 @@
       <mass value="1.2380744"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0015610452" ixy="3.30597e-05" ixz="-0.0001314174" iyy="0.0037423211" iyz="-2.12589e-05" izz="0.0038312442"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1507,14 +1298,14 @@
   <joint name="hip_yaw_3" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_3"/>
-    <origin rpy="3.14159265359 0.0 2.63449395494" xyz="-0.25 0.125 -0.0566"/>
+    <origin rpy="3.14159265359 0.0 2.68017653036" xyz="-0.25 0.125 -0.0566"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.70526034" upper="1.13446401" velocity="8.8"/>
   </joint>
   <joint name="hip_pitch_3" type="revolute">
     <parent link="hip1_3"/>
     <child link="hip2_3"/>
-    <origin rpy="1.57079632679 0.0 2.63449395494" xyz="0.0 0.0 0.059"/>
+    <origin rpy="1.57079632679 0.0 2.68017653036" xyz="0.0 0.0 0.0625"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.09439510" upper="2.09439510" velocity="8.8"/>
   </joint>
@@ -1542,76 +1333,23 @@
   <joint name="j_wheel_3" type="continuous">
     <parent link="ankle2_3"/>
     <child link="wheel_3"/>
-    <origin rpy="1.57079632679 0.0 0.0" xyz="0.0 0.00085 0.235"/>
+    <origin rpy="1.57079632679 0.0 3.14159265359" xyz="0.0 0.00085 0.23735"/>
     <axis xyz="0 0 1"/>
-    <limit effort="35" velocity="20.0" lower="-1000000000000000" upper="1000000000000000"/>
+    <limit effort="35" velocity="20.0"/>
   </joint>
-  <transmission name="t_hip_yaw_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_yaw_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_yaw_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_hip_pitch_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_knee_pitch_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="knee_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_knee_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_pitch_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_pitch_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_yaw_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_yaw_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_yaw_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_wheel_3">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_wheel_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_wheel_3">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
+  <joint name="j_ft_foot_3" type="fixed">
+    <parent link="ankle2_3"/>
+    <child link="ft_foot_3"/>
+    <origin rpy="0 0 0" xyz="0.0 0.00085 0.23735"/>
+  </joint>
+  <link name="ft_foot_3">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <!-- org: 3.5, foot un modeled-->
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- /actuators -->
   <link name="hip1_4">
     <inertial>
@@ -1622,14 +1360,14 @@
       <!-- <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/> -->
     </inertial>
     <visual>
-      <origin rpy="0.0 0.0 4.15579005089" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro/centauro_urdf/meshes/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 4.15579005089" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -1662,7 +1400,7 @@
       <mass value="1.9356754"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0030534242" ixy="-4.22079e-05" ixz="0.0013679297" iyy="0.019603321" iyz="6.9941e-06" izz="0.019849817"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1684,7 +1422,7 @@
       <mass value="1.2380744"/>
       <!-- org: 3.5, foot un modeled-->
       <inertia ixx="0.0015610452" ixy="3.30597e-05" ixz="-0.0001314174" iyy="0.0037423211" iyz="-2.12589e-05" izz="0.0038312442"/>
-      <!--  <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
+      <!--	<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01"/>  -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -1744,14 +1482,14 @@
   <joint name="hip_yaw_4" type="revolute">
     <parent link="pelvis"/>
     <child link="hip1_4"/>
-    <origin rpy="3.14159265359 0.0 3.64869135224" xyz="-0.25 -0.125 -0.0566"/>
+    <origin rpy="3.14159265359 0.0 3.60300877682" xyz="-0.25 -0.125 -0.0566"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-1.13446401" upper="2.70526034" velocity="8.8"/>
   </joint>
   <joint name="hip_pitch_4" type="revolute">
     <parent link="hip1_4"/>
     <child link="hip2_4"/>
-    <origin rpy="1.57079632679 0.0 0.50709869865" xyz="0.0 0.0 0.059"/>
+    <origin rpy="1.57079632679 0.0 0.46141612323" xyz="0.0 0.0 0.0625"/>
     <axis xyz="0 0 1"/>
     <limit effort="304" lower="-2.09439510" upper="2.09439510" velocity="8.8"/>
   </joint>
@@ -1779,219 +1517,23 @@
   <joint name="j_wheel_4" type="continuous">
     <parent link="ankle2_4"/>
     <child link="wheel_4"/>
-    <origin rpy="1.57079632679 0.0 0.0" xyz="0.0 0.00085 0.235"/>
+    <origin rpy="1.57079632679 0.0 3.14159265359" xyz="0.0 0.00085 0.23735"/>
     <axis xyz="0 0 1"/>
-    <limit effort="35" velocity="20.0" lower="-1000000000000000" upper="1000000000000000"/>
+    <limit effort="35" velocity="20.0"/>
   </joint>
-  <transmission name="t_hip_yaw_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_yaw_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_yaw_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_hip_pitch_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="hip_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_hip_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_knee_pitch_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="knee_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_knee_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_pitch_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_pitch_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_ankle_yaw_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="ankle_yaw_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_ankle_yaw_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
-  <transmission name="t_j_wheel_4">
-    <type> transmission_interface/SimpleTransmission</type>
-    <joint name="j_wheel_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_j_wheel_4">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <machanicalReduction>1</machanicalReduction>
-    </actuator>
-    <robotNamespace>/centauro</robotNamespace>
-  </transmission>
+  <joint name="j_ft_foot_4" type="fixed">
+    <parent link="ankle2_4"/>
+    <child link="ft_foot_4"/>
+    <origin rpy="0 0 0" xyz="0.0 0.00085 0.23735"/>
+  </joint>
+  <link name="ft_foot_4">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="0"/>
+      <!-- org: 3.5, foot un modeled-->
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- /actuators -->
   <!-- /legs -->
-
-<link name="ft_arm1">
-        <inertial>
-          <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
-          <mass value="0.15"/>
-          <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
-          <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
-        </inertial>
-        <visual>
-          <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-          <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
-          </geometry>
-          <material name="grey"/>
-        </visual>
-        <collision>
-          <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-          <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
-          </geometry>
-        </collision>
-      </link>
-      <!-- /links -->
-      <!-- joints -->
-      <joint name="j_ft_arm1" type="fixed">
-        <parent link="arm1_7"/>
-        <child link="ft_arm1"/>
-        <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
-        <axis xyz="1 0 0"/>
-        <limit effort="0" lower="0.0" upper="0" velocity="0"/>
-      </joint>
-
-
-
-    <link name="ft_arm2">
-        <inertial>
-          <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
-          <mass value="0.15"/>
-          <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
-          <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
-        </inertial>
-        <visual>
-          <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-          <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
-          </geometry>
-          <material name="grey"/>
-        </visual>
-        <collision>
-          <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-          <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/link9.stl" scale="0.001 0.001 -0.001"/>
-          </geometry>
-        </collision>
-      </link>
-      <!-- /links -->
-      <!-- joints -->
-      <joint name="j_ft_arm2" type="fixed">
-        <parent link="arm2_7"/>
-        <child link="ft_arm2"/>
-        <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
-        <axis xyz="1 0 0"/>
-        <limit effort="0" lower="0.0" upper="0" velocity="0"/>
-      </joint>
-
-
-  <joint name="j_foot_fl" type="fixed">
-    <parent link="ankle2_1"/>
-    <child link="foot_fl"/>
-    <origin rpy="3.1415 0.0 3.1415" xyz="0.0 0.0 0.30"/>
-  </joint>
-  <link name="foot_fl">
-    <inertial>
-      <origin xyz="0 0 0"/>
-      <mass value="0"/>
-      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="0.01 0.01 0.01"/>
-      </geometry>
-    </visual>
-  </link>
-
-
-  <joint name="j_foot_fr" type="fixed">
-    <parent link="ankle2_2"/>
-    <child link="foot_fr"/>
-    <origin rpy="3.1415 0.0 0.0" xyz="0.0 0.0 0.30"/>
-  </joint>
-  <link name="foot_fr">
-    <inertial>
-      <origin xyz="0 0 0"/>
-      <mass value="0"/>
-      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="0.01 0.01 0.01"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="j_foot_hr" type="fixed">
-    <parent link="ankle2_4"/>
-    <child link="foot_hr"/>
-    <origin rpy="3.1415 0.0 0.0" xyz="0.0 0.0 0.30"/>
-  </joint>
-  <link name="foot_hr">
-    <inertial>
-      <origin xyz="0 0 0"/>
-      <mass value="0"/>
-      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="0.01 0.01 0.01"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="j_foot_hl" type="fixed">
-    <parent link="ankle2_3"/>
-    <child link="foot_hl"/>
-    <origin rpy="3.1415 0.0 3.1415" xyz="0.0 0.0 0.30"/>
-  </joint>
-  <link name="foot_hl">
-    <inertial>
-      <origin xyz="0 0 0"/>
-      <mass value="0"/>
-      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="0.01 0.01 0.01"/>
-      </geometry>
-    </visual>
-  </link>
-
 </robot>
