@@ -1,0 +1,32 @@
+XBotCore:
+  config_path: "configs/ADVR_shared/bigman/configs/bigman.yaml"
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/bigman/urdf/bigman_floating_base.urdf"
+  srdf_path: "configs/ADVR_shared/bigman/srdf/bigman.srdf"
+  joint_map_path: "configs/ADVR_shared/bigman/joint_map/bigman_ecat_joint_map.yaml"
+
+RobotInterface:
+  framework_name: "ROS"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "true"
+  
+MasterCommunicationInterface:
+  framework_name: "ROS"
+
+XBotRTPlugins:
+  plugins: ["HomingExample", "DebrisRemovalTask", "OpenSotIk", "IkRosSMPub"]
+  io_plugins: ["IkRosIo", "OdomPublisher"] 
+  
+NRTPlugins:
+  plugins: ["ManipulationPlugin"]
+  
+WebServer:
+  enable: "true"
+  address: "127.0.0.1"
+  port: "8081"
+
+SimulationOptions:
+  verbose_mode: "false"

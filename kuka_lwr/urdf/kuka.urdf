@@ -55,14 +55,14 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_base.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_base.dae"/>
       </geometry>
       <material name="Kuka/Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0.055"/>
       <geometry>
-        <!-- <mesh filename="package://lwr_description/meshes/convex/arm_base_convex.stl"/> -->
+        <!-- <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_base_convex.stl"/> -->
         <cylinder length="0.11" radius="0.07"/>
       </geometry>
     </collision>
@@ -86,14 +86,14 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_segment_a.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_segment_a.dae"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <!--mesh filename="package://lwr_description/meshes/convex/arm_segment_a_convex.stl"/-->
+        <!--mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_segment_a_convex.stl"/-->
         <sphere radius="0.07"/>
       </geometry>
     </collision>
@@ -129,14 +129,14 @@
     <visual>
       <origin rpy="3.14159265359 0 3.14159265359" xyz="0 0 0.2"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_segment_b.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_segment_b.dae"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.2"/>
       <geometry>
-        <!--mesh filename="package://lwr_description/meshes/convex/arm_segment_b_convex.stl"/-->
+        <!--mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_segment_b_convex.stl"/-->
         <sphere radius="0.07"/>
       </geometry>
     </collision>
@@ -172,14 +172,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_segment_a.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_segment_a.dae"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <!--mesh filename="package://lwr_description/meshes/convex/arm_segment_a_convex.stl"/-->
+        <!--mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_segment_a_convex.stl"/-->
         <sphere radius="0.07"/>
       </geometry>
     </collision>
@@ -215,14 +215,14 @@
     <visual>
       <origin rpy="0 3.14159265359 3.14159265359" xyz="0 0 0.2"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_segment_b.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_segment_b.dae"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.2"/>
       <geometry>
-        <!--mesh filename="package://lwr_description/meshes/convex/arm_segment_b_convex.stl"/-->
+        <!--mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_segment_b_convex.stl"/-->
         <sphere radius="0.07"/>
       </geometry>
     </collision>
@@ -258,14 +258,14 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry name="kuka_lwr_arm_5_geom">
-        <mesh filename="package://lwr_description/meshes_arm/arm_segment_last.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_segment_last.dae"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <!--mesh filename="package://lwr_description/meshes/convex/arm_segment_last_convex.stl"/-->
+        <!--mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_segment_last_convex.stl"/-->
         <sphere radius="0.07"/>
       </geometry>
     </collision>
@@ -301,14 +301,14 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes_arm/arm_wrist.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes_arm/arm_wrist.dae"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes/convex/arm_wrist_convex.stl"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/convex/arm_wrist_convex.stl"/>
       </geometry>
     </collision>
   </link>
@@ -331,7 +331,7 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://lwr_description/meshes/link_7.dae"/>
+        <mesh filename="package://iit-kuka_lwr-ros-pkg/meshes/link_7.dae"/>
       </geometry>
       <material name="Kuka/DarkGrey"/>
     </visual>
@@ -343,15 +343,12 @@
     </collision>
   </link>
   <gazebo>
-    <plugin filename="liblwr_hw_gazebo_plugin.so" name="kuka_lwr_lwr_hw_sim">
-      <robotNamespace>kuka_lwr</robotNamespace>
+    <!--<plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/iiwa</robotNamespace>
+    </plugin>-->
+	<plugin name='xbot_plugin_handler' filename='libGazeboXBotPlugin.so'>
     </plugin>
   </gazebo>
-  <!--gazebo>
-  	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-   	<robotNamespace>${name}</robotNamespace>
- 	</plugin>
-	</gazebo-->
   <gazebo reference="kuka_lwr_base_link">
     <gravity>true</gravity>
   </gazebo>

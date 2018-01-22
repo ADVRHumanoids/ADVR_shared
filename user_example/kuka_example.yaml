@@ -1,0 +1,32 @@
+XBotCore:
+  config_path: "configs/ADVR_shared/kuka_lwr/configs/kuka.yaml"
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/kuka_lwr/urdf/kuka.urdf"
+  srdf_path: "configs/ADVR_shared/kuka_lwr/srdf/kuka.srdf"
+  joint_map_path: "configs/ADVR_shared/kuka_lwr/joint_map/kuka_joint_map.yaml"
+
+RobotInterface:
+  framework_name: "ROS"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "false"
+  
+MasterCommunicationInterface:
+  framework_name: "ROS"
+
+XBotRTPlugins:
+  plugins: ["HomingExample"]
+  io_plugins: []
+  
+NRTPlugins:
+  plugins: [] #["HomingExample"]
+  
+WebServer:
+  enable: "true"
+  address: "127.0.0.1"
+  port: "8081"
+
+SimulationOptions:
+  verbose_mode: "false"    

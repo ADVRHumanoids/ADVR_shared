@@ -1,0 +1,23 @@
+RobotName: "kuka"
+
+GazeboXBotPlugin:
+  gains:
+    kuka_lwr_0_joint:   {p: 4000, d: 30}
+    kuka_lwr_1_joint:   {p: 3000, d: 30}
+    kuka_lwr_2_joint:   {p: 3000, d: 20}
+    kuka_lwr_3_joint:   {p: 3000, d: 20}
+    kuka_lwr_4_joint:   {p: 1500, d: 10}
+    kuka_lwr_5_joint:   {p: 4000, d: 30}
+    kuka_lwr_6_joint:   {p: 3000, d: 30}
+   
+
+HALInterface:
+  lib_file: "libXBotKuka"
+  lib_name: "KUKA"
+
+#0 position
+#1 impedance
+#2 impedancewithtorque
+#3 torque  
+controlMode: 1
+gains: {p: 1000, d: 10}

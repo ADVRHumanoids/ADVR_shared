@@ -31,11 +31,11 @@ and to define the end effectors of the robot.
 The coordinate frame called gaze defines the head position and orientation. The orientation indicates in which direction the head appears to be looking regardless of any sensors (camera for instance). -->
   <!--link name="gaze"/>
 
-        <joint name="gaze_joint" type="fixed">
-                <parent link="torso"/>
-                <child link="gaze"/>
-                <origin xyz="0 0 0.1" rpy="0 0 0" />
-        </joint-->
+    <joint name="gaze_joint" type="fixed">
+        <parent link="torso"/>
+        <child link="gaze"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+    </joint-->
   <!-- NECK -->
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/neck.urdf.xacro" /-->
   <!-- 
@@ -78,6 +78,18 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <child link="Waist"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
+  <joint name="imu_joint" type="fixed">
+    <parent link="Waist"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- LINKS -->
   <link name="LHipMot">
     <inertial>

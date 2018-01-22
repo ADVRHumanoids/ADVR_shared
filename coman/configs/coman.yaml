@@ -1,0 +1,19 @@
+RobotName: "coman"
+
+HALInterface:
+  lib_file: "libXBotEthernet"
+  lib_name: "XBotEthernet"
+
+board_ctrl:
+  eth_iface: pippo # does not taken into account -> rteth0
+  boards_num: 35 #27 # 23 mcs + 2 fts
+
+# assume boards of same type have the same policy bc_rate !!! 
+
+mc_board:
+  bc_rate: 2 # NOTE 2 is 1 kHz
+
+ft_board:
+  bc_rate: 2 # NOTE 2 is 1 kHz
+  calibrate_offset: true
+
