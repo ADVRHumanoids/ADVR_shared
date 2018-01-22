@@ -1120,21 +1120,6 @@ and to define the end effectors of the robot-->
     <child link="TCP_R"/>
     <origin rpy="-1.57079632679 0 0" xyz="0.0 0.0 0.0"/>
   </joint>
-  
-<link name="l_arm_ft"/>
-<link name="r_arm_ft"/>
-
-<joint name="l_arm_ft_joint" type="fixed">
-    <parent link="LWrMot3"/>
-    <child link="l_arm_ft"/>
-    <origin xyz="0 0 -0.0565" rpy="0 0 0" /> 
-</joint>
-
-<joint name="r_arm_ft_joint" type="fixed">
-    <parent link="RWrMot3"/>
-    <child link="r_arm_ft"/>
-    <origin xyz="0 0 -0.0565" rpy="0 0 0" /> 
-</joint>
 
   <link name="world"/>
   <joint name="reference" type="floating">
@@ -1154,6 +1139,18 @@ and to define the end effectors of the robot-->
     <child link="r_leg_ft"/>
     <origin rpy="0 0 0" xyz="0.005 0 -0.107"/>
   </joint>
+  <link name="l_arm_ft"/>
+  <link name="r_arm_ft"/>
+  <joint name="l_arm_ft_joint" type="fixed">
+    <parent link="LWrMot3"/>
+    <child link="l_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0235"/>
+  </joint>
+  <joint name="r_arm_ft_joint" type="fixed">
+    <parent link="RWrMot3"/>
+    <child link="r_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0235"/>
+  </joint>
   <link name="imu_link">
     <inertial>
       <mass value="0.01"/>
@@ -1167,11 +1164,10 @@ and to define the end effectors of the robot-->
       </geometry>
     </visual>
   </link>
-  <!-- TODO: CHANGE THE ORIGIN OF THE SENSOR ACCORDING TO THE REAL ONE -->
   <joint name="imu_joint" type="fixed">
     <parent link="Waist"/>
     <child link="imu_link"/>
-    <origin rpy="0 0 0" xyz="0.116998 2.83129e-05 -0.0478857"/>
+    <origin rpy="0 0 0" xyz="0.117 0.0 -0.0477493"/>
   </joint>
 </robot>
 
