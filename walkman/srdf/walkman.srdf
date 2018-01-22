@@ -26,6 +26,12 @@
   <group name="imu_sensors">
     <link name="imu_link"/>
   </group>
+  
+  <group name="hands">
+    <joint name="r_handj"/>
+    <joint name="l_handj"/>
+  </group>
+
   <group name="left_leg">
     <chain base_link="Waist" tip_link="l_sole"/>
   </group>
@@ -63,14 +69,14 @@
         <joint name="WaistYaw" value="0.0"/>
         <joint name="RShSag" value="1.10"/>
         <joint name="RShLat" value="-0.20"/>
-        <joint name="RShYaw" value="0.30"/>
+        <joint name="RShYaw" value="-1.50"/>
         <joint name="RElbj" value="-2.0"/>
         <joint name="RForearmPlate" value="0"/>
         <joint name="RWrj1" value="-0.0"/>
         <joint name="RWrj2" value="-0.0"/>
         <joint name="LShSag" value="1.10"/>
         <joint name="LShLat" value="0.20"/>
-        <joint name="LShYaw" value="-0.30"/>
+        <joint name="LShYaw" value="1.5"/>
         <joint name="LElbj" value="-2.0"/>
         <joint name="LForearmPlate" value="0"/>
         <joint name="LWrj1" value="0.0"/>
