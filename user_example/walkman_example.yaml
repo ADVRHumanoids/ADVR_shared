@@ -18,7 +18,7 @@ MasterCommunicationInterface:
 
 XBotRTPlugins:
   plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub"]
-  io_plugins: ["IkRosIo"] 
+  io_plugins: ["IkRosIo", "OdomPublisher"] 
   
 NRTPlugins:
   plugins: ["ManipulationPlugin"]
