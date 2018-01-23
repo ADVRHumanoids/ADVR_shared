@@ -20,8 +20,8 @@ joint_map:
   27: LWrj2
   28: l_arm_ft_joint
   29: l_handj
-  31: WaistYaw
-  32: WaistLat
+  32: WaistYaw
+  31: WaistLat
   41: RHipLat
   42: RHipYaw
   43: RHipSag
