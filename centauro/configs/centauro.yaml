@@ -34,7 +34,7 @@ GazeboXBotPlugin:
     ankle_yaw_2: *ankle_yaw
     ankle_yaw_3: *ankle_yaw
     ankle_yaw_4: *ankle_yaw
-    j_wheel_1: &wheel {p: 0, d: 10}
+    j_wheel_1: &wheel {p: 100, d: 10}
     j_wheel_2: *wheel
     j_wheel_3: *wheel
     j_wheel_4: *wheel
