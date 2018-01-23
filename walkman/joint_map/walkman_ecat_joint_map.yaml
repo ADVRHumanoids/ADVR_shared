@@ -21,8 +21,7 @@ joint_map:
   28: l_arm_ft_joint
   29: l_handj
   31: WaistYaw
-  32: WaistSag
-  33: WaistLat
+  32: WaistLat
   41: RHipLat
   42: RHipYaw
   43: RHipSag
@@ -37,3 +36,4 @@ joint_map:
   55: LAnkSag
   56: LAnkLat
   57: l_leg_ft_joint
+  91: imu_joint
