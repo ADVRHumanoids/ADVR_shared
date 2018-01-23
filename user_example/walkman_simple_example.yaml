@@ -18,7 +18,7 @@ MasterCommunicationInterface:
 
 XBotRTPlugins:
   plugins: ["HomingExample"]
-  io_plugins: []
+  io_plugins: ["JointStateRemapper"]
   
 NRTPlugins:
   plugins: []
