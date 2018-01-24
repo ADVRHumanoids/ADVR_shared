@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/walkman/configs/walkman.yaml"
+  config_path: "configs/ADVR_shared/walkman/configs/walkman_idle.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/walkman/urdf/walkman.urdf"
@@ -18,7 +18,7 @@ MasterCommunicationInterface:
 
 XBotRTPlugins:
   plugins: ["HomingExample"]
-  io_plugins: ["JointStateRemapper"]
+  io_plugins: ["JointStateRemapper"] 
   
 NRTPlugins:
   plugins: []
@@ -29,4 +29,4 @@ WebServer:
   port: "8081"
 
 SimulationOptions:
-  verbose_mode: "false"
+  verbose_mode: "false"  
