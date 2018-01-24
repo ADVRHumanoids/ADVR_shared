@@ -28,8 +28,8 @@
   </group>
   
   <group name="hands">
-    <joint name="r_handj"/>
-    <joint name="l_handj"/>
+    <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/>
   </group>
 
   <group name="left_leg">
