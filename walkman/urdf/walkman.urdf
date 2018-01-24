@@ -728,16 +728,20 @@ and to define the end effectors of the robot-->
       <inertia ixx="0.00014415192" ixy="9.8651826e-08" ixz="0" iyy="0.0001441701" iyz="0" izz="6.0500616e-05"/>
     </inertial>
     <visual>
+      <!--origin xyz="0 0 0" rpy="0 0 0"/-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot3_visual">
-        <mesh filename="package://walkman_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
+        <!--mesh filename="package://walkman_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001" /-->
+        <box size="0.1 0.1 0.01"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
+      <!--origin xyz="0 0 0" rpy="0 0 0"/-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot3_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
+        <!--mesh filename="package://walkman_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 0.001 0.001" /-->
+        <box size="0.1 0.1 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -925,16 +929,20 @@ and to define the end effectors of the robot-->
       <inertia ixx="0.00014415192" ixy="9.8651826e-08" ixz="0" iyy="0.0001441701" iyz="0" izz="6.0500616e-05"/>
     </inertial>
     <visual>
+      <!--origin xyz="0 0 0" rpy="0 0 0"/-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot3_visual">
-        <mesh filename="package://walkman_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
+        <!--mesh filename="package://walkman_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001" /-->
+        <box size="0.1 0.1 0.01"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
+      <!--origin xyz="0 0 0" rpy="0 0 0"/-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot3_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
+        <!--mesh filename="package://walkman_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 -0.001 0.001" /-->
+        <box size="0.1 0.1 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -1023,6 +1031,18 @@ and to define the end effectors of the robot-->
     <parent link="RFoot"/>
     <child link="r_leg_ft"/>
     <origin rpy="0 0 0" xyz="0.005 0 -0.107"/>
+  </joint>
+  <link name="l_arm_ft"/>
+  <link name="r_arm_ft"/>
+  <joint name="l_arm_ft_joint" type="fixed">
+    <parent link="LWrMot3"/>
+    <child link="l_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
+  </joint>
+  <joint name="r_arm_ft_joint" type="fixed">
+    <parent link="RWrMot3"/>
+    <child link="r_arm_ft"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0565"/>
   </joint>
   <link name="imu_link">
     <inertial>
