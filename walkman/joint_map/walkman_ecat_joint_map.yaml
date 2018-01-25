@@ -10,7 +10,7 @@ joint_map:
   16: RWrj1
   17: RWrj2
   18: r_arm_ft_joint
-  19: r_handj
+  19: r_wrist_joint
   21: LShSag
   22: LShLat
   23: LShYaw
@@ -19,7 +19,7 @@ joint_map:
   26: LWrj1
   27: LWrj2
   28: l_arm_ft_joint
-  29: l_handj
+  29: l_wrist_joint
   32: WaistYaw
   31: WaistLat
   41: RHipLat

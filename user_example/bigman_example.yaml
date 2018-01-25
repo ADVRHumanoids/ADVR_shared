@@ -17,7 +17,7 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "DebrisRemovalTask", "OpenSotIk", "IkRosSMPub"]
+  plugins: ["HomingExample", "DebrisRemovalTask", "OpenSotIk", "IkRosSMPub","Grasp"]
   io_plugins: ["IkRosIo", "OdomPublisher"] 
   
 NRTPlugins:
