@@ -2,30 +2,34 @@ RobotName: "walkman"
 
 GazeboXBotPlugin:
   gains:
-    RShSag:   {p: 4000, d: 10}
-    RShLat:   {p: 3000, d: 10}
-    RShYaw:   {p: 3000, d: 10}
-    RElbj:    {p: 3000, d: 10}
-    RWrj1:    {p: 1500, d: 10}
-    LShSag:   {p: 4000, d: 10}
-    LShLat:   {p: 3000, d: 10}
-    LShYaw:   {p: 3000, d: 10}
-    LElbj:    {p: 3000, d: 10}
-    LWrj1:    {p: 1500, d: 10}
-    WaistYaw: {p: 8000, d: 30}
-    WaistLat: {p: 8000, d: 30}
-    LHipYaw:  {p: 3000, d: 10}
-    RHipYaw:  {p: 3000, d: 10}
-    RHipLat:  {p: 8000, d: 30}
-    RHipSag:  {p: 8000, d: 30}
-    RKneeSag: {p: 8000, d: 30}
-    RAnkSag:  {p: 8000, d: 30}
-    RAnkLat:  {p: 8000, d: 30}
-    LHipLat:  {p: 8000, d: 30}
-    LHipSag:  {p: 8000, d: 30}
-    LKneeSag: {p: 8000, d: 30}
-    LAnkSag:  {p: 8000, d: 30}
-    LAnkLat:  {p: 8000, d: 30}
+    RShSag:        {p: 4000, d: 10}
+    RShLat:        {p: 3000, d: 10}
+    RShYaw:        {p: 3000, d: 10}
+    RElbj:         {p: 3000, d: 10}
+    #RForearmPlate: {p: 1500, d: 10}
+    RWrj1:         {p: 1500, d: 10}
+    #RWrj2:         {p: 1500, d: 10}
+    LShSag:        {p: 4000, d: 10}
+    LShLat:        {p: 3000, d: 10}
+    LShYaw:        {p: 3000, d: 10}
+    LElbj:         {p: 3000, d: 10}
+    #LForearmPlate: {p: 1500, d: 10}
+    LWrj1:         {p: 1500, d: 10}
+    #LWrj2:         {p: 1500, d: 10}
+    WaistYaw:      {p: 8000, d: 30}
+    WaistLat:      {p: 8000, d: 30}
+    LHipYaw:       {p: 3000, d: 10}
+    RHipYaw:       {p: 3000, d: 10}
+    RHipLat:       {p: 8000, d: 30}
+    RHipSag:       {p: 8000, d: 30}
+    RKneeSag:      {p: 8000, d: 30}
+    RAnkSag:       {p: 8000, d: 30}
+    RAnkLat:       {p: 8000, d: 30}
+    LHipLat:       {p: 8000, d: 30}
+    LHipSag:       {p: 8000, d: 30}
+    LKneeSag:      {p: 8000, d: 30}
+    LAnkSag:       {p: 8000, d: 30}
+    LAnkLat:       {p: 8000, d: 30}
 
     
 HALInterface:
