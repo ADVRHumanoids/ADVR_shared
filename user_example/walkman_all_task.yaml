@@ -17,8 +17,8 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub", "Grasp", "ValveTask", "chengxu_walking", "DoorFinalDemo", "DebrisRemovalTask"]
-  io_plugins: ["IkRosIo", "OdomPublisher"] 
+  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub", "Grasp",  "chengxu_walking", "DebrisRemovalTask", "DoorFinalDemo", "ValveTask"]
+  io_plugins: ["IkRosIo", "OdomPublisher", "JointStateRemapper"] 
   
 NRTPlugins:
   plugins: ["ManipulationPlugin"]
