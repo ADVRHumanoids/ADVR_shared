@@ -20,8 +20,8 @@
   <group name="force_torque_sensors">
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
-    <joint name="l_arm_ft_joint"/>
-    <joint name="r_arm_ft_joint"/>
+    <!-- <joint name="l_arm_ft_joint"/> 
+    <joint name="r_arm_ft_joint"/> -->
   </group>
   <group name="imu_sensors">
     <link name="imu_link"/>
@@ -62,7 +62,7 @@
   
   <group_state group="chains" name="home">
         <joint name="NeckYawj" value="0.0"/>
-        <joint name="NeckPitchj" value="0.0"/>
+        <joint name="NeckPitchj" value="0.28"/>
         <joint name="WaistYaw" value="0.0"/>
         <joint name="WaistLat" value="0.0"/>
         <joint name="RShSag" value="0.959931"/>
