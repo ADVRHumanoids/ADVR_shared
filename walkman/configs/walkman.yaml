@@ -56,7 +56,7 @@ ec_board_ctrl:
 
 #
 LpESC_1:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
@@ -64,7 +64,7 @@ LpESC_1:
 
 #
 LpESC_2:
-  control_mode: idle
+  control_mode: pos_3b
   sign: -1
   pos_offset: 0
   pid :
@@ -94,9 +94,9 @@ LpESC_29:
 HpESC_41:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: -0.1
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [200.0, 20.0, 5.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 4.0, 0.01, 0.8]
@@ -105,7 +105,7 @@ HpESC_41:
 HpESC_42:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: 0.138
   pid :
     position: [800.0 , 0.0 , 20.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -115,9 +115,9 @@ HpESC_42:
 HpESC_43:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: 1.3788
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
 
@@ -125,9 +125,9 @@ HpESC_43:
 HpESC_44:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: -1.8275
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
 
@@ -135,9 +135,9 @@ HpESC_44:
 HpESC_45:
   control_mode: pos_3b
   sign: -1
-  pos_offset: -20
+  pos_offset: 1.5654
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
 
@@ -145,7 +145,7 @@ HpESC_45:
 HpESC_46:
   control_mode: pos_3b
   sign: -1
-  pos_offset: 0
+  pos_offset: -2.0637
   pid :
     position: [800.0 , 0.0 , 20.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -159,9 +159,9 @@ HpESC_46:
 HpESC_51:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: -0.07317
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
 
@@ -179,9 +179,9 @@ HpESC_52:
 HpESC_53:
   control_mode: pos_3b
   sign: -1
-  pos_offset: 0
+  pos_offset: 1.0128
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
 
@@ -189,9 +189,9 @@ HpESC_53:
 HpESC_54:
   control_mode: pos_3b
   sign: -1
-  pos_offset: 0
+  pos_offset: -2.8575
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
     #impedance:  [0.0, 0.0, 5.0, 0.01, 0.8]
@@ -200,9 +200,9 @@ HpESC_54:
 HpESC_55:
   control_mode: pos_3b
   sign: 1
-  pos_offset: 0
+  pos_offset: 1.2914
   pid :
-    position: [1500.0 , 0.0 , 40.0]
+    position: [2000.0 , 0.0 , 40.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
 
@@ -210,7 +210,7 @@ HpESC_55:
 HpESC_56:
   control_mode: pos_3b
   sign: -1
-  pos_offset: 0
+  pos_offset: -0.49221
   pid :
     position: [800.0 , 0.0 , 20.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
@@ -285,11 +285,11 @@ CentAcESC_16:
   control_mode: pos_3b
   sign: -1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 5.0
   enable_sandbox: false
   enable_pos_filter: true
   pid :
-    position: [150.0 , 0.0 , 5.0]
+    position: [100.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
@@ -373,11 +373,11 @@ CentAcESC_26:
   control_mode: pos_3b
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 5.0
   enable_sandbox: false
   enable_pos_filter: true
   pid :
-    position: [150.0 , 0.0 , 5.0]
+    position: [100.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
@@ -405,7 +405,7 @@ CentAcESC_31:
   enable_sandbox: false
   enable_pos_filter: true
   pid :
-    position: [300.0 , 0.0 , 10.0]
+    position: [500.0 , 0.0 , 10.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
