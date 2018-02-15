@@ -26,11 +26,11 @@
    </group>
    
     <group name="left_arm">
-        <chain base_link="torso_2" tip_link="arm1_7"/>
+        <chain base_link="torso_2" tip_link="arm1_8"/>
     </group>
     
     <group name="right_arm">
-        <chain base_link="torso_2" tip_link="arm2_7"/>
+        <chain base_link="torso_2" tip_link="arm2_8"/>
     </group>
     
     <group name="torso">
@@ -38,12 +38,13 @@
     </group>
     
     <group name="arms">
-	<group name="left_arm"/> 
+        <group name="left_arm"/> 
         <group name="right_arm"/>
     </group>
         
     <group name="hands">
-	 <joint name="j_arm1_8"/>		 
+         <joint name="j_arm1_8"/>
+         <joint name="j_arm2_8"/>
     </group>
 
 
