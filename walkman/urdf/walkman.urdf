@@ -600,6 +600,12 @@ and to define the end effectors of the robot-->
     <limit effort="120" lower="-0.261799387799" upper="1.0471975512" velocity="6.283"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
+  <link name="gaze"/>
+  <joint name="gaze_joint" type="fixed">
+    <parent link="NeckPitch"/>
+    <child link="gaze"/>
+    <origin rpy="0 0 0" xyz="0 -0.03425 0"/>
+  </joint>
   <!-- RIGHT ARM -->
   <link name="RShp">
     <inertial>
@@ -1120,7 +1126,6 @@ and to define the end effectors of the robot-->
     <child link="TCP_R"/>
     <origin rpy="-1.57079632679 0 0" xyz="0.0 0.0 0.0"/>
   </joint>
-
   <link name="world"/>
   <joint name="reference" type="floating">
     <origin xyz="0.0 0.0 0.0"/>

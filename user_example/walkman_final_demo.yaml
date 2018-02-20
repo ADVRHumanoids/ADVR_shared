@@ -17,11 +17,11 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub", "Grasp", "chengxu_walking"]
-  io_plugins: ["IkRosIo", "OdomPublisher"] 
+  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub", "Grasp",  "chengxu_walking", "DebrisRemovalTask", "DoorFinalDemo", "ValveTask", "Hose_Task"]
+  io_plugins: ["IkRosIo", "OdomPublisher", "JointStateRemapper"] 
   
 NRTPlugins:
-  plugins: ["DebrisRemovalTask", "ManipulationPlugin"]
+  plugins: ["ManipulationPlugin"]
   
 WebServer:
   enable: "true"
