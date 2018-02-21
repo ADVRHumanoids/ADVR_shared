@@ -17,11 +17,11 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
-  io_plugins: []
+  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub"]
+  io_plugins: ["IkRosIo"] 
   
 NRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["ManipulationPlugin"]
   
 WebServer:
   enable: "true"
