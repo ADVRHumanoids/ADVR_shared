@@ -46,6 +46,10 @@ HALInterface:
   lib_file: "libXBotEcat"
   lib_name: "ETHERCAT"
 
+SCPLog:
+  remote_username: "centauro"
+  remote_ip_address: "10.24.4.77"
+  remote_log_folder_path: "/home/centauro/CENTAURO_LOG"
 
 x_bot_ecat:
   name: XBotCore
@@ -132,7 +136,7 @@ CentAcESC_1:
   pos_offset: 0
   max_current_A: 20.0
   pid :
-    position:   [180.0 , 0.0 , 1.0]
+    position:   [150.0 , 0.0 , 15.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
