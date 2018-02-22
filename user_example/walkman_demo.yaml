@@ -32,4 +32,4 @@ SimulationOptions:
   verbose_mode: "true"
 
 JointConfiguration:     ["home",    "pose_1", "pose_2", "pose_3", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", "salud_1", "salud_2", ]
-JointConfigurationTime: ["5.0",     "3.0",    "3.0",    "6.0",    "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0"    ]  
+JointConfigurationTime: ["5.0",     "5.0",    "5.0",    "8.0",    "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0",     "4.0"    ]  
