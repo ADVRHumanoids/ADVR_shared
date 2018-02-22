@@ -28,8 +28,8 @@
   </group>
   
   <group name="hands">
-    <joint name="r_wrist_joint"/>
-    <joint name="l_wrist_joint"/>
+    <!-- <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/> -->
   </group>
 
   <group name="left_leg">
@@ -236,7 +236,7 @@
         <joint name="LShSag" value="-0.45"/>
         <joint name="LShLat" value="1.65"/>
         <joint name="LShYaw" value="0.75"/>
-        <joint name="LElbj" value="-0.5"/>
+        <joint name="LElbj" value="-1.2"/>
         <joint name="LForearmPlate" value="-0.35"/>
         <joint name="LWrj1" value="-0.45"/>
         <joint name="LWrj2" value="0.0"/>
@@ -268,7 +268,7 @@
        <joint name="LShSag" value="-0.45"/>
         <joint name="LShLat" value="1.65"/>
         <joint name="LShYaw" value="0.75"/>
-        <joint name="LElbj" value="-1.2"/>
+        <joint name="LElbj" value="-2.0"/>
         <joint name="LForearmPlate" value="-0.35"/>
         <joint name="LWrj1" value="-0.45"/>
         <joint name="LWrj2" value="0.0"/>
