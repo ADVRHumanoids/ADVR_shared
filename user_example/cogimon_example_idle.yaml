@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/cogimon/configs/cogimon_idle.yaml"
+  config_path: "configs/ADVR_shared/cogimon/configs/cogimon_impedance.yaml" #"configs/ADVR_shared/cogimon/configs/cogimon_idle.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
@@ -17,14 +17,17 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: ["HomingExample", "CompliantHoming"] 
   io_plugins: []
+  
+TransmissionPlugins:
+  plugins: ["CogimonAnkles"]   
   
 NRTPlugins:
   plugins: []
   
 WebServer:
-  enable: "false"
+  enable: "true"
   address: "127.0.0.1"
   port: "8081"
 

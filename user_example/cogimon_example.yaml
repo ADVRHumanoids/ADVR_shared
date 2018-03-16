@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/cogimon/configs/cogimon.yaml"
+  config_path: "configs/ADVR_shared/cogimon/configs/cogimon_impedance.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
@@ -17,7 +17,7 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "Poses", "chengxu_walking"]
+  plugins: ["HomingExample", "Poses", "chengxu_walking", "yw_walking_rt_plugin"] #, "chengxu_walking"
   io_plugins: []
   
 NRTPlugins:
@@ -34,5 +34,5 @@ WebServer:
 SimulationOptions:
   verbose_mode: "false"
 
-JointConfiguration: ["home", "home_2"]
+JointConfiguration: ["zero", "home"]
 JointConfigurationTime: ["5.0", "5.0"]
