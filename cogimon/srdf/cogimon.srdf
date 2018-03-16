@@ -52,7 +52,7 @@
   <disabled_joint name="RAnklePitch"/>
   <disabled_joint name="RAnkleRoll"/>-->
   
-  <group_state name="home" group="chains">
+  <group_state name="zero" group="chains">
 
     <joint name="LHipLat" value="0.0"/>
     <joint name="LHipSag" value="0.0"/>

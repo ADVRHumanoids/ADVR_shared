@@ -87,71 +87,144 @@ CentAcESC_X:
   control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 15.0
   enable_sandbox: false
   enable_pos_filter: false
   pid :
-    position: [2500.0 , 0.0 , 30.0]
+    position: [5000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]
+    
+
 
 
 #############################
 # Right tibia
 #############################
-
-CentAcESC_45:
-  control_mode: idle
-  sign: -1
-  pos_offset: 0
-  max_current_A: 10.0
-  enable_sandbox: false
-  enable_pos_filter: false
-  pid :
-    position:   [2000.0 , 0.0 , 30.0]
-    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
-
-CentAcESC_46:
+CentAcESC_41:
   control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 15.0
   enable_sandbox: false
   enable_pos_filter: false
   pid :
-    position:   [2000.0 , 0.0 , 30.0]
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
+
+CentAcESC_42:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]
+    
+CentAcESC_43:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]    
+
+CentAcESC_44:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
+
+CentAcESC_45:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
+
+CentAcESC_46:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
 
 #############################
 # Left tibia
 #############################
-
-CentAcESC_55:
-  control_mode: idle
-  sign: -1
-  pos_offset: 0
-  max_current_A: 10.0
-  enable_sandbox: false
-  enable_pos_filter: false
-  pid :
-    position:   [2000.0 , 0.0 , 30.0]
-    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
-
-CentAcESC_56:
+CentAcESC_51:
   control_mode: idle
   sign: 1
   pos_offset: 0
-  max_current_A: 10.0
+  max_current_A: 15.0
   enable_sandbox: false
   enable_pos_filter: false
   pid :
-    position:   [2000.0 , 0.0 , 30.0]
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
+
+
+CentAcESC_53:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
+
+CentAcESC_55:
+  control_mode: idle
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
+
+CentAcESC_56:
+  control_mode: idle
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
