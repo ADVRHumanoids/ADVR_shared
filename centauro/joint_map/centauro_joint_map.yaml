@@ -7,6 +7,7 @@ joint_map:
   6: j_arm2_5
   7: j_arm2_6
   8: j_arm2_7
+  29: j_arm2_8
   9: j_arm1_1
   10: j_arm1_2
   11: j_arm1_3
@@ -14,7 +15,7 @@ joint_map:
   13: j_arm1_5
   14: j_arm1_6
   15: j_arm1_7
-  20: j_arm1_8
+  19: j_arm1_8
   71: hip_yaw_1
   72: hip_pitch_1
   73: knee_pitch_1
@@ -39,9 +40,9 @@ joint_map:
   54: ankle_pitch_4
   55: ankle_yaw_4
   56: j_wheel_4
-  80: j_ft_arm2
-  81: j_ft_arm1
-  18: imu_joint
+  18: j_ft_arm2
+  28: j_ft_arm1
+  104: imu_joint
   101: neck_yaw
   102: neck_pitch
   103: neck_velodyne
