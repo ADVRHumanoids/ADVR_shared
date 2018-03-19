@@ -1,4 +1,18 @@
 joint_map:
+  11: RShSag
+  12: RShLat
+  13: RShYaw
+  14: RElbj
+  15: RForearmPlate
+  16: RWrj1
+  17: RWrj2
+  21: LShSag
+  22: LShLat
+  23: LShYaw
+  24: LElbj
+  25: LForearmPlate
+  26: LWrj1
+  27: LWrj2
   41: RHipLat
   42: RHipSag
   43: RHipYaw
@@ -11,7 +25,7 @@ joint_map:
   54: LKneePitch
   55: LAnklePitch
   56: LAnkleRoll
+  31: WaistLat
+  32: WaistYaw
   157: l_leg_ft_joint
   147: r_leg_ft_joint
-  32: WaistLat
-  99: imu_joint
