@@ -41,7 +41,10 @@
     <chain base_link="DWYTorso" tip_link="RWrMot3"/>
   </group>
  
-  
+  <group name="hands">
+    <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/>
+  </group>
   <group name="legs">
     <group name="left_leg"/>
     <group name="right_leg"/>
@@ -71,14 +74,14 @@
     <joint name="WaistYaw" value="0.0"/>
     <joint name="WaistLat" value="0.0"/>
     <joint name="RShSag" value="0.959931"/>
-    <joint name="RShLat" value="-0.087266"/>
+    <joint name="RShLat" value="-0.007266"/>
     <joint name="RShYaw" value="-0.0"/>
     <joint name="RElbj" value="-1.919862"/>
     <joint name="RForearmPlate" value="0.0"/>
     <joint name="RWrj1" value="-0.523599"/>
     <joint name="RWrj2" value="-0.0"/>
     <joint name="LShSag" value="0.959931"/>
-    <joint name="LShLat" value="0.087266"/>
+    <joint name="LShLat" value="0.007266"/>
     <joint name="LShYaw" value="-0.0"/>
     <joint name="LElbj" value="-1.919862"/>
     <joint name="LForearmPlate" value="0.0"/>

@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/cogimon/configs/cogimon.yaml" #configs/ADVR_shared/cogimon/configs/cogimon.yaml
+  config_path: "configs/ADVR_shared/cogimon/configs/cogimon.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
@@ -17,11 +17,11 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "chengxu_walking"] #, "XBotRTCommunication"] 
-  io_plugins: ["JointStateRemapper"]
+  plugins: ["HomingExample", "chengxu_walking", "IkRosSMPub", "Grasp"] #, "XBotRTCommunication"] 
+  io_plugins: ["JointStateRemapper", "IkRosIo"]
   
 NRTPlugins:
-  plugins: [] #"HomingExample"]
+  plugins: [] 
   
 TransmissionPlugins:
   plugins: ["CogimonAnkles"] #CogimonImpedanceAnkles CogimonAnkles
