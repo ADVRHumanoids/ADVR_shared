@@ -24,7 +24,7 @@ NRTPlugins:
   plugins: [] 
   
 TransmissionPlugins:
-  plugins: ["CogimonAnkles"] #CogimonImpedanceAnkles CogimonAnkles
+  plugins: ["CogimonImpedanceAnkles"] #CogimonImpedanceAnkles CogimonAnkles
   
 WebServer:
   enable: "true"

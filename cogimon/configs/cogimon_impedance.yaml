@@ -164,7 +164,7 @@ CentAcESC_44:
     impedance:  [500.0, 10.0, 6.0, 0.002, 1.0]
 
 CentAcESC_45:
-  control_mode: idle
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 20.0
@@ -177,7 +177,7 @@ CentAcESC_45:
     impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
 
 CentAcESC_46:
-  control_mode: idle
+  control_mode: impedance_d4
   sign: -1
   pos_offset: 0
   max_current_A: 20.0
@@ -242,7 +242,7 @@ CentAcESC_54:
     impedance:  [500.0, 10.0, 6.0, 0.002, 1.0]    
 
 CentAcESC_55:
-  control_mode: idle
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
   max_current_A: 20.0
@@ -255,7 +255,7 @@ CentAcESC_55:
     impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
 
 CentAcESC_56:
-  control_mode: idle
+  control_mode: impedance_d4
   sign: -1
   pos_offset: 0
   max_current_A: 20.0
