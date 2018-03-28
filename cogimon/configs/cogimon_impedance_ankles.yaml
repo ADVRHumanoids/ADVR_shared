@@ -1,6 +1,7 @@
-RobotName: "walkman"
+RobotName: "cogimon"
 
 GazeboXBotPlugin:
+  control_rate: 0.001
   gains:
     RShSag:        {p: 4000, d: 10}
     RShLat:        {p: 3000, d: 10}
@@ -17,205 +18,230 @@ GazeboXBotPlugin:
     LWrj1:         {p: 1500, d: 10}
     LWrj2:         {p: 1500, d: 10}
     WaistYaw:      {p: 8000, d: 30}
-    WaistLat:      {p: 8000, d: 30}
-    LHipYaw:       {p: 3000, d: 10}
-    RHipYaw:       {p: 3000, d: 10}
-    RHipLat:       {p: 8000, d: 30}
-    RHipSag:       {p: 8000, d: 30}
-    RKneeSag:      {p: 8000, d: 30}
-    RAnkSag:       {p: 8000, d: 30}
-    RAnkLat:       {p: 8000, d: 30}
-    LHipLat:       {p: 8000, d: 30}
-    LHipSag:       {p: 8000, d: 30}
-    LKneeSag:      {p: 8000, d: 30}
-    LAnkSag:       {p: 8000, d: 30}
-    LAnkLat:       {p: 8000, d: 30}
+    WaistLat: {p: 1000, d: 1}
+    LHipLat: {p: 1000, d: 1}
+    LHipSag: {p: 1000, d: 1}
+    LHipYaw: {p: 1000, d: 1}
+    LKneePitch: {p: 1000, d: 1}
+    LAnklePitch: {p: 1000, d: 1}
+    LAnkleRoll: {p: 1000, d: 1}
+    RHipLat: {p: 1000, d: 1}
+    RHipSag: {p: 1000, d: 1}
+    RHipYaw: {p: 1000, d: 1}
+    RKneePitch: {p: 1000, d: 1}
+    RAnklePitch: {p: 1000, d: 1}
+    RAnkleRoll: {p: 1000, d: 1}
 
-    
+
 HALInterface:
   lib_file: "libXBotEcat"
   lib_name: "ETHERCAT"
-  
+
+
 x_bot_ecat:
   name: XBotCore
-  sdo_xddp_prefix : 
+  sdo_xddp_prefix :
   # periodic - priority if needed here
-
+#
 ec_board_ctrl:
   eth_iface: rteth0
+  #eth_iface: eth1
+  #sync_cycle_time_ns: 500000
   sync_cycle_time_ns: 1000000
-  sync_cycle_offset_ns: 0
+  #sync_cycle_time_ns: 2000000
+  #sync_cycle_time_ns: 5000000
+  #sync_cycle_time_ns: 10000000
+  #sync_cycle_time_ns: 0
+  sync_cycle_offset_ns: 1000000000
   power_off_boards: false
   use_pipes: false
+
+#
+ec_boards_base:
+  robot_name : cogimon
+  urdf_config_file : ../configs/cogimon_urdf.yaml
+  joints_poses_file : ../configs/cogimon_poses.yaml
+
+firmware_update:
+  #
+  fw_path: ../examples/fw_update/fw_test/
+  # all esc
+  #slave_pos_list: [1]
+  # all CentAC motor
+  slave_pos_list: [-4]
   
+  cent_AC:
+    m3:
+      bin_file: cent_AC_m3.bin
+      passwd: 0xA550
+    c28:
+      bin_file: cent_AC_c28.bin
+      passwd: 0xDAD0
+  power_f28m36:
+    m3:
+      bin_file: pow_m3.bin
+      passwd: 0xF2F2
+    c28:
+      bin_file: pow_c28.bin
+      passwd: 0xF3F3    
+
+#############################
+# GENERIC ESC config
+#############################
+
+LpESC_X:
+  sign: 1
+  pos_offset: 0
+
+HpESC_X:
+  sign: 1
+  pos_offset: 0
+
+CentAcESC_X:
+  control_mode: pos_3b
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]
     
 
+
+
 #############################
-# HEAD & HANDS
+# Right tibia
 #############################
-
-#
-LpESC_1:
-  control_mode: pos_3b
-  sign: -1
-  pos_offset: 0
-  pid :
-    position: [100000.0 , 0.0 , 0.0]
-
-#
-LpESC_2:
-  control_mode: pos_3b
-  sign: -1
-  pos_offset: 0
-  pid :
-    position: [100000.0 , 0.0 , 0.0]
-
-# RA_HA = 19
-LpESC_19:
+CentAcESC_41:
   control_mode: pos_3b
   sign: 1
   pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
   pid :
-    position: [100000.0 , 0.0 , 0.0]
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
 
-# LA_HA = 29
-LpESC_29:
+CentAcESC_42:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]
+    
+CentAcESC_43:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]    
+
+CentAcESC_44:
+  control_mode: pos_3b
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position: [5000.0 , 0.0 , 30.0]
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [1000.0, 50.0, 6.0, 0.002, 1.0]
+
+CentAcESC_45:
+  control_mode: impedance_d4
+  sign: 1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
+
+CentAcESC_46:
+  control_mode: impedance_d4
+  sign: -1
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
+  pid :
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
+    #  .... tor_K divided by 10000 to respect the int range [0..65536]
+    impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
+
+#############################
+# Left tibia
+#############################
+CentAcESC_51:
   control_mode: pos_3b
   sign: 1
   pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
   pid :
-    position: [100000.0 , 0.0 , 0.0]
-
-#############################
-# RIGHT LEG
-#############################
-
-# RL_H_R = 41
-HpESC_41:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: -0.1
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
+    position: [5000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [200.0, 20.0, 5.0, 0.01, 0.8]
-    #impedance:  [0.0, 0.0, 4.0, 0.01, 0.8]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
 
-# RL_H_Y = 42
-HpESC_42:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 0.138
-  pid :
-    position: [800.0 , 0.0 , 20.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
 
-# RL_H_P = 43
-HpESC_43:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 1.3788
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
-
-# RL_K = 44
-HpESC_44:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: -1.8275
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
-
-# RL_A_P = 45
-HpESC_45:
+CentAcESC_53:
   control_mode: pos_3b
   sign: -1
-  pos_offset: 1.5654
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
   pid :
-    position: [2000.0 , 0.0 , 40.0]
+    position: [5000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
+    impedance:  [0.0, 0.0, 1.0, 0.002, 0.0] 
 
-# RL_A_R = 46
-HpESC_46:
-  control_mode: pos_3b
-  sign: -1
-  pos_offset: -2.0637
-  pid :
-    position: [800.0 , 0.0 , 20.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
-
-#############################
-# LEFT LEG
-#############################
-
-# LL_H_R = 51
-HpESC_51:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: -0.07317
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
-
-# LL_H_Y = 52
-HpESC_52:
-  control_mode: pos_3b
+CentAcESC_55:
+  control_mode: impedance_d4
   sign: 1
   pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
   pid :
-    position: [800.0 , 0.0 , 20.0]
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
+    impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
 
-# LL_H_P = 53
-HpESC_53:
-  control_mode: pos_3b
+CentAcESC_56:
+  control_mode: impedance_d4
   sign: -1
-  pos_offset: 1.0128
+  pos_offset: 0
+  max_current_A: 15.0
+  enable_sandbox: false
+  enable_pos_filter: false
   pid :
-    position: [2000.0 , 0.0 , 40.0]
+    position:   [5000.0 , 0.0 , 20.0]
+    # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [300.0, 60.0, 5.0, 0.01, 0.8]
-
-# LL_K = 54
-HpESC_54:
-  control_mode: pos_3b
-  sign: -1
-  pos_offset: -2.8575
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
-    #impedance:  [0.0, 0.0, 5.0, 0.01, 0.8]
-
-# LL_A_P = 55
-HpESC_55:
-  control_mode: pos_3b
-  sign: 1
-  pos_offset: 1.2914
-  pid :
-    position: [2000.0 , 0.0 , 40.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
-
-# LL_A_R = 56
-HpESC_56:
-  control_mode: pos_3b
-  sign: -1
-  pos_offset: -0.49221
-  pid :
-    position: [800.0 , 0.0 , 20.0]
-    #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [100.0, 10.0, 5.0, 0.01, 0.8]
-
+    impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
 
 ##############################
 # RIGHT ARM
@@ -420,6 +446,4 @@ CentAcESC_32:
     position: [150.0 , 0.0 , 5.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
-
-
 
