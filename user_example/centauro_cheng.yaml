@@ -17,14 +17,14 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample","centauro_upperbody_cheng"]
-  io_plugins: ["JointStateRemapper"]
+  plugins: ["HomingExample","centauro_upperbody_cheng","IkRosSMPub"]
+  io_plugins: ["JointStateRemapper","IkRosIo"]
   
 NRTPlugins:
-  plugins: ["iXSens"]
+  plugins: ["EMG","UDP_Teleoperation","iXSens"]
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
 
