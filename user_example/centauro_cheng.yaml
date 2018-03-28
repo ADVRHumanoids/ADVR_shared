@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/centauro/configs/centauro.yaml"
+  config_path: "configs/ADVR_shared/centauro/configs/centauro_rarm_impedance.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro_no_floating_base.urdf"
