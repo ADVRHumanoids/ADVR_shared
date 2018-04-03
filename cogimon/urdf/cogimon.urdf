@@ -910,55 +910,62 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <limit effort="20" lower="-2.55" upper="2.55" velocity="6.283"/>
     <dynamics damping="0.03" friction="0"/>
   </joint>
-  <link name="l_wrist">
+  <!-- LINKS -->
+  <link name="Neck">
     <inertial>
-      <origin rpy="0 0 0" xyz="8.2161929e-05 0.0026334189 -0.016465877"/>
-      <mass value="3.7827821e-01"/>
-      <inertia ixx="0.00023321716" ixy="2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="3.158829e-05" izz="0.00027399881"/>
+      <origin rpy="0 0 0" xyz="0.019525578 8.7785097e-05 0.073374976 "/>
+      <mass value="2.3794941e-01"/>
+      <inertia ixx="0.00028460315" ixy="-5.4194691e-07" ixz="-7.3250232e-05" iyy="0.0004530875" iyz="-9.4474115e-08" izz="0.00027675534"/>
     </inertial>
     <visual>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="LShp_visual">
-        <mesh filename="package://walkman_urdf/meshes/Wrist.STL" scale="0.001 -0.001 0.001"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_visual">
+        <mesh filename="package://cogimon_urdf/meshes/NeckFixed.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="LShp_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/Wrist.STL" scale="0.001 -0.001 0.001"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/NeckFixed.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="r_wrist">
+  <link name="HeadHokuyo">
+    <!-- TODO: CHECK THESE VALUES!!! -->
     <inertial>
-      <origin rpy="0 0 0" xyz="8.2161929e-05 -0.0026334189 -0.016465877"/>
-      <mass value="3.7827821e-01"/>
-      <inertia ixx="0.00023321716" ixy="-2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="-3.158829e-05" izz="0.00027399881"/>
+      <origin rpy="0 0 0" xyz="0.055322369 0.018472201 -0.018483703 "/>
+      <mass value="5.4611797e-01"/>
+      <inertia ixx="0.0019756996" ixy="-0.00011287972" ixz="0.00011284571" iyy="0.0044030675" iyz="0.00049540219" izz="0.0044027914"/>
     </inertial>
     <visual>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="RShp_visual">
-        <mesh filename="package://walkman_urdf/meshes/Wrist.STL" scale="0.001 0.001 0.001"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_visual">
+        <mesh filename="package://cogimon_urdf/meshes/HeadRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="RShp_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/Wrist.STL" scale="0.001 0.001 0.001"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/HeadRoll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <joint name="l_wrist_joint" type="fixed">
-    <parent link="LWrMot3"/>
-    <child link="l_wrist"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+  <!-- JOINTS -->
+  <joint name="neck_frame" type="fixed">
+    <parent link="DWYTorso"/>
+    <child link="Neck"/>
+    <origin rpy="0 0 0" xyz="0.016 0.0 0.1965"/>
   </joint>
-  <joint name="r_wrist_joint" type="fixed">
-    <parent link="RWrMot3"/>
-    <child link="r_wrist"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+  <joint name="head_roll" type="revolute">
+    <parent link="Neck"/>
+    <child link="HeadHokuyo"/>
+    <origin rpy="0 0 0" xyz="0.0496 0.0 0.09"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="20" lower="-2.5" upper="2.5" velocity="6.283"/>
+    <!-- TODO: CHECK THESE VALUES!!! -->
+    <dynamics damping="3.0" friction="0"/>
   </joint>
   <link name="l_ankle"/>
   <link name="l_sole"/>

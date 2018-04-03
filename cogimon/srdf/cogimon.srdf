@@ -21,9 +21,15 @@
   <group name="base">
     <link name="Waist"/>
   </group>
-<group name="force_torque_sensors">
+  <group name="force_torque_sensors">
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
+  </group>
+  <group name="imu_sensors">
+    <link name="imu_link"/>
+  </group>
+  <group name="neck">
+    <chain base_link="Neck" tip_link="HeadHokuyo"/>
   </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="LFoot"/>
@@ -42,8 +48,8 @@
   </group>
  
   <group name="hands">
-    <joint name="r_wrist_joint"/>
-    <joint name="l_wrist_joint"/>
+<!--    <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/>-->
   </group>
   <group name="legs">
     <group name="left_leg"/>
@@ -55,6 +61,7 @@
   </group>
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
+    <group name="neck"/>
     <group name="left_leg"/>
     <group name="right_leg"/>
     <group name="torso"/>
@@ -71,6 +78,7 @@
   </group_state>
   
   <group_state name="home" group="chains">
+    <joint name="head_roll" value="0.0"/>
     <joint name="WaistYaw" value="0.0"/>
     <joint name="WaistLat" value="0.0"/>
     <joint name="RShSag" value="0.959931"/>
