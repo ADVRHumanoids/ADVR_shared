@@ -6,6 +6,7 @@ joint_map:
   15: RForearmPlate
   16: RWrj1
   17: RWrj2
+  18: r_arm_ft_joint
   19: r_wrist_joint
   21: LShSag
   22: LShLat
@@ -14,6 +15,7 @@ joint_map:
   25: LForearmPlate
   26: LWrj1
   27: LWrj2
+  28: l_arm_ft_joint
   29: l_wrist_joint
   41: RHipLat
   42: RHipSag
@@ -27,8 +29,8 @@ joint_map:
   54: LKneePitch
   55: LAnklePitch
   56: LAnkleRoll
-  31: WaistLat
-  32: WaistYaw
+  32: WaistLat
+  31: WaistYaw
   157: l_leg_ft_joint
   147: r_leg_ft_joint
   105: head_roll
