@@ -21,9 +21,18 @@
   <group name="base">
     <link name="Waist"/>
   </group>
-<group name="force_torque_sensors">
+  <group name="hands">
+    <joint name="r_wrist_joint"/>
+    <joint name="l_wrist_joint"/>
+  </group>
+  <group name="force_torque_sensors">
+    <joint name="l_arm_ft_joint"/>
+    <joint name="r_arm_ft_joint"/>
     <joint name="l_leg_ft_joint"/>
     <joint name="r_leg_ft_joint"/>
+  </group>
+  <group name="imu_sensors">
+    <link name="imu_link"/>
   </group>
   <group name="left_leg">
     <chain base_link="Waist" tip_link="LFoot"/>
@@ -32,18 +41,16 @@
     <chain base_link="Waist" tip_link="RFoot"/>
   </group>
   <group name="torso">
-        <chain base_link="Waist" tip_link="DWYTorso"/>
+    <chain base_link="Waist" tip_link="DWYTorso"/>
   </group>
-   <group name="left_arm">
+  <group name="left_arm">
     <chain base_link="DWYTorso" tip_link="LWrMot3"/>
   </group>
   <group name="right_arm">
     <chain base_link="DWYTorso" tip_link="RWrMot3"/>
   </group>
- 
-  <group name="hands">
-    <joint name="r_wrist_joint"/>
-    <joint name="l_wrist_joint"/>
+  <group name="neck">
+    <chain base_link="Neck" tip_link="HeadHokuyo"/>
   </group>
   <group name="legs">
     <group name="left_leg"/>
@@ -55,6 +62,7 @@
   </group>
   <group name="chains">
     <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
+    <group name="neck"/>
     <group name="left_leg"/>
     <group name="right_leg"/>
     <group name="torso"/>
@@ -71,6 +79,7 @@
   </group_state>
   
   <group_state name="home" group="chains">
+    <joint name="head_roll" value="0.0"/>
     <joint name="WaistYaw" value="0.0"/>
     <joint name="WaistLat" value="0.0"/>
     <joint name="RShSag" value="0.959931"/>
@@ -91,13 +100,13 @@
     <joint name="RHipSag" value="-0.363826"/>
     <joint name="RHipYaw" value="0.0"/>
     <joint name="RKneePitch" value="0.731245"/>
-    <joint name="RAnklePitch" value="-0.367420"/>
+    <joint name="RAnklePitch" value="-0.307420"/>
     <joint name="RAnkleRoll" value="-0.0"/>
     <joint name="LHipLat" value="-0.0"/>
     <joint name="LHipSag" value="-0.363826"/>
     <joint name="LHipYaw" value="0.0"/>
     <joint name="LKneePitch" value="0.731245"/>
-    <joint name="LAnklePitch" value="-0.367420"/>
+    <joint name="LAnklePitch" value="-0.307420"/>
     <joint name="LAnkleRoll" value="0.0"/>
   </group_state>
 

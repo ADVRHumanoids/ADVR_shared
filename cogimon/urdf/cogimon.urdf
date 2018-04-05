@@ -31,11 +31,11 @@ and to define the end effectors of the robot.
 The coordinate frame called gaze defines the head position and orientation. The orientation indicates in which direction the head appears to be looking regardless of any sensors (camera for instance). -->
   <!--link name="gaze"/>
 
-	<joint name="gaze_joint" type="fixed">
-		<parent link="torso"/>
-		<child link="gaze"/>
-		<origin xyz="0 0 0.1" rpy="0 0 0" />
-	</joint-->
+        <joint name="gaze_joint" type="fixed">
+                <parent link="torso"/>
+                <child link="gaze"/>
+                <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </joint-->
   <!-- NECK -->
   <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/neck.urdf.xacro" /-->
   <!-- 
@@ -81,14 +81,20 @@ The coordinate frame called base_link is rigidly attached to the robot root body
   <joint name="imu_joint" type="fixed">
     <parent link="Waist"/>
     <child link="imu_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.146332 0 -0.03875"/>
   </joint>
   <link name="imu_link">
     <inertial>
-      <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
-      <mass value="0"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0E-6" ixy="0" ixz="0" iyy="1.0E-6" iyz="0" izz="1.0E-6"/>
     </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
   </link>
   <!-- LINKS -->
   <link name="LHipMot">
@@ -193,19 +199,19 @@ The coordinate frame called base_link is rigidly attached to the robot root body
   </link>
   <link name="LFoot">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0086960323 -6.6741928e-05 -0.041675435"/>
-      <mass value="1.7819594e+00"/>
-      <inertia ixx="0.0019182691" ixy="5.7926583e-06" ixz="0.00032836542" iyy="0.0053518735" iyz="-3.0518008e-06" izz="0.0064063918"/>
+      <origin rpy="0 0 0" xyz="-0.0077094563 -6.5520742e-05 -0.043453782"/>
+      <mass value="2.0663292"/>
+      <inertia ixx="0.0026932116" ixy="4.2852647e-06" ixz="0.00037001167" iyy="0.0071293752" iyz="-2.5956611e-06" izz="0.0086807822"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LFoot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cogimon_urdf/meshes/Foot2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 -0.046"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.061"/>
       <geometry>
         <box size="0.21 0.11 0.015"/>
       </geometry>
@@ -364,19 +370,19 @@ The coordinate frame called base_link is rigidly attached to the robot root body
   </link>
   <link name="RFoot">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0086960323 -6.6741928e-05 -0.041675435"/>
-      <mass value="1.7819594e+00"/>
-      <inertia ixx="0.0019182691" ixy="5.7926583e-06" ixz="0.00032836542" iyy="0.0053518735" iyz="-3.0518008e-06" izz="0.0064063918"/>
+      <origin rpy="0 0 0" xyz="-0.0077094563 -6.5520742e-05 -0.043453782"/>
+      <mass value="2.0663292"/>
+      <inertia ixx="0.0026932116" ixy="4.2852647e-06" ixz="0.00037001167" iyy="0.0071293752" iyz="-2.5956611e-06" izz="0.0086807822"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry name="RFoot_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Foot.stl" scale="0.001 0.001 0.001"/>
+      <geometry name="LFoot_visual">
+        <mesh filename="package://cogimon_urdf/meshes/Foot2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 -0.046"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.061"/>
       <geometry>
         <box size="0.21 0.11 0.015"/>
       </geometry>
@@ -516,6 +522,9 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <limit effort="120" lower="-1.74532925199" upper="1.74532925199" velocity="6.283"/>
     <dynamics damping="3.0" friction="0"/>
   </joint>
+  <!--xacro:property name="PI" value="3.14159265359" />
+<xacro:property name="mmTom" value="0.001" />
+<xacro:property name="mm2Tom2" value="${0.001*0.001}" /-->
   <!-- RIGHT ARM -->
   <link name="RShp">
     <inertial>
@@ -657,6 +666,26 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       </geometry>
     </collision>
   </link>
+  <link name="r_wrist">
+    <inertial>
+      <origin rpy="0 0 0" xyz="8.2161929e-05 -0.0026334189 -0.016465877"/>
+      <mass value="3.7827821e-01"/>
+      <inertia ixx="0.00023321716" ixy="-2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="-3.158829e-05" izz="0.00027399881"/>
+    </inertial>
+    <visual>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry name="RShp_visual">
+        <mesh filename="package://cogimon_urdf/meshes/Wrist.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry name="RShp_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/Wrist.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
   <joint name="RShSag" type="revolute">
     <parent link="DWYTorso"/>
     <child link="RShp"/>
@@ -712,6 +741,11 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <axis xyz="0 0 1"/>
     <limit effort="20" lower="-2.55" upper="2.55" velocity="6.283"/>
     <dynamics damping="0.03" friction="0"/>
+  </joint>
+  <joint name="r_wrist_joint" type="fixed">
+    <parent link="RWrMot3"/>
+    <child link="r_wrist"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <!-- LEFT ARM -->
   <link name="LShp">
@@ -854,6 +888,26 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       </geometry>
     </collision>
   </link>
+  <link name="l_wrist">
+    <inertial>
+      <origin rpy="0 0 0" xyz="8.2161929e-05 0.0026334189 -0.016465877"/>
+      <mass value="3.7827821e-01"/>
+      <inertia ixx="0.00023321716" ixy="2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="3.158829e-05" izz="0.00027399881"/>
+    </inertial>
+    <visual>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry name="LShp_visual">
+        <mesh filename="package://cogimon_urdf/meshes/Wrist.STL" scale="0.001 -0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry name="LShp_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/Wrist.STL" scale="0.001 -0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
   <joint name="LShSag" type="revolute">
     <parent link="DWYTorso"/>
     <child link="LShp"/>
@@ -910,55 +964,145 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <limit effort="20" lower="-2.55" upper="2.55" velocity="6.283"/>
     <dynamics damping="0.03" friction="0"/>
   </joint>
-  <link name="l_wrist">
-    <inertial>
-      <origin rpy="0 0 0" xyz="8.2161929e-05 0.0026334189 -0.016465877"/>
-      <mass value="3.7827821e-01"/>
-      <inertia ixx="0.00023321716" ixy="2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-    <visual>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="LShp_visual">
-        <mesh filename="package://walkman_urdf/meshes/Wrist.STL" scale="0.001 -0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="LShp_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/Wrist.STL" scale="0.001 -0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="r_wrist">
-    <inertial>
-      <origin rpy="0 0 0" xyz="8.2161929e-05 -0.0026334189 -0.016465877"/>
-      <mass value="3.7827821e-01"/>
-      <inertia ixx="0.00023321716" ixy="-2.3681435e-06" ixz="-1.8039102e-06" iyy="0.00020626291" iyz="-3.158829e-05" izz="0.00027399881"/>
-    </inertial>
-    <visual>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="RShp_visual">
-        <mesh filename="package://walkman_urdf/meshes/Wrist.STL" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="dark_grey"/>
-    </visual>
-    <collision>
-      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
-      <geometry name="RShp_collision">
-        <mesh filename="package://walkman_urdf/meshes/simple/Wrist.STL" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
   <joint name="l_wrist_joint" type="fixed">
     <parent link="LWrMot3"/>
     <child link="l_wrist"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
-  <joint name="r_wrist_joint" type="fixed">
-    <parent link="RWrMot3"/>
-    <child link="r_wrist"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+  <!-- LINKS -->
+  <link name="Neck">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.019525578 8.7785097e-05 0.073374976 "/>
+      <mass value="2.3794941e-01"/>
+      <inertia ixx="0.00028460315" ixy="-5.4194691e-07" ixz="-7.3250232e-05" iyy="0.0004530875" iyz="-9.4474115e-08" izz="0.00027675534"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_visual">
+        <mesh filename="package://cogimon_urdf/meshes/NeckFixed.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/NeckFixed.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="HeadHokuyo">
+    <!-- TODO: CHECK THESE VALUES!!! -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.055322369 0.018472201 -0.018483703 "/>
+      <mass value="5.4611797e-01"/>
+      <inertia ixx="0.0019756996" ixy="-0.00011287972" ixz="0.00011284571" iyy="0.0044030675" iyz="0.00049540219" izz="0.0044027914"/>
+    </inertial>
+    <visual>
+      <origin rpy="-0.785398163398 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_visual">
+        <mesh filename="package://cogimon_urdf/meshes/HeadRoll.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="-0.785398163398 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry name="Neck_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/HeadRoll.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- JOINTS -->
+  <joint name="neck_frame" type="fixed">
+    <parent link="DWYTorso"/>
+    <child link="Neck"/>
+    <origin rpy="0 0 0" xyz="0.016 0.0 0.1965"/>
+  </joint>
+  <joint name="head_roll" type="revolute">
+    <parent link="Neck"/>
+    <child link="HeadHokuyo"/>
+    <origin rpy="0 0 0" xyz="0.0496 0.0 0.09"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="20" lower="-2.5" upper="2.5" velocity="6.283"/>
+    <!-- TODO: CHECK THESE VALUES!!! -->
+    <dynamics damping="3.0" friction="0"/>
+  </joint>
+  <!--xacro:property name="PI" value="3.14159265359" />
+<xacro:property name="PI_2" value="1.57079632679" /-->
+  <!-- LINKS -->
+  <link name="RSoftHand"/>
+  <link name="TCP_R"/>
+  <link name="RSoftHandLink">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0020955992 0.0043009755 -0.060792229"/>
+      <mass value="1.4"/>
+      <inertia ixx="0.0046340021" ixy="-5.6301252e-05" ixz="0.00021001241" iyy="0.0052222303" iyz="0.00020916976" izz="0.0013961628"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry name="RSoftHandLink_visual">
+        <mesh filename="package://cogimon_urdf/meshes/SoftHandOpen2.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry name="RSoftHandLink_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/SoftHandOpen2.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_handj" type="fixed">
+    <parent link="r_wrist"/>
+    <child link="RSoftHandLink"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0395"/>
+  </joint>
+  <joint name="r_handj2" type="fixed">
+    <parent link="RSoftHandLink"/>
+    <child link="RSoftHand"/>
+    <origin rpy="0 0 0" xyz="0 0.041 -0.1005"/>
+  </joint>
+  <joint name="TCP_Rjoint" type="fixed">
+    <parent link="RSoftHand"/>
+    <child link="TCP_R"/>
+    <origin rpy="-1.57079632679 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <link name="LSoftHand"/>
+  <link name="TCP_L"/>
+  <link name="LSoftHandLink">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0020955992 -0.0043009755 -0.060792229"/>
+      <mass value="1.4"/>
+      <inertia ixx="0.0046340021" ixy="5.6301252e-05" ixz="0.00021001241" iyy="0.0052222303" iyz="-0.00020916976" izz="0.0013961628"/>
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry name="LSoftHandLink_visual">
+        <mesh filename="package://cogimon_urdf/meshes/SoftHandOpen2.STL" scale="0.001 -0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry name="LSoftHandLink_collision">
+        <mesh filename="package://cogimon_urdf/meshes/simple/SoftHandOpen2.STL" scale="0.001 -0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- JOINTS -->
+  <joint name="l_handj" type="fixed">
+    <parent link="l_wrist"/>
+    <child link="LSoftHandLink"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.0395"/>
+  </joint>
+  <joint name="l_handj2" type="fixed">
+    <parent link="LSoftHandLink"/>
+    <child link="LSoftHand"/>
+    <origin rpy="0 0 0" xyz="0 -0.041 -0.1005"/>
+  </joint>
+  <joint name="TCP_Ljoint" type="fixed">
+    <parent link="LSoftHand"/>
+    <child link="TCP_L"/>
+    <origin rpy="1.57079632679 3.14159265359 0" xyz="0.0 0.0 0.0"/>
   </joint>
   <link name="l_ankle"/>
   <link name="l_sole"/>
@@ -976,7 +1120,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <child link="l_ankle"/>
   </joint>
   <joint name="l_sole_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 -0.054"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.069"/>
     <parent link="l_ankle"/>
     <child link="l_sole"/>
   </joint>
@@ -1030,7 +1174,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <child link="r_ankle"/>
   </joint>
   <joint name="r_sole_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 -0.054"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.069"/>
     <parent link="r_ankle"/>
     <child link="r_sole"/>
   </joint>
@@ -1067,6 +1211,18 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <origin rpy="0 0 0" xyz="-0.1035 0.055 0"/>
     <parent link="r_sole"/>
     <child link="r_foot_lower_left_link"/>
+  </joint>
+  <link name="r_arm_ft"/>
+  <joint name="r_arm_ft_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+    <parent link="RWrMot3"/>
+    <child link="r_arm_ft"/>
+  </joint>
+  <link name="l_arm_ft"/>
+  <joint name="l_arm_ft_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+    <parent link="LWrMot3"/>
+    <child link="l_arm_ft"/>
   </joint>
   <link name="world"/>
   <joint name="reference" type="floating">
