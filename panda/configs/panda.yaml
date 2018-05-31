@@ -1,0 +1,16 @@
+RobotName: "panda"
+
+GazeboXBotPlugin:
+  gains:
+    panda_joint1:   {p: 4000, d: 30}
+    panda_joint2:   {p: 3000, d: 30}
+    panda_joint3:   {p: 3000, d: 20}
+    panda_joint4:   {p: 3000, d: 20}
+    panda_joint5:   {p: 1500, d: 10}
+    panda_joint6:   {p: 4000, d: 30}
+    panda_joint7:   {p: 3000, d: 30}
+
+HALInterface:
+  lib_file: "libXBotPanda"
+  lib_name: "PANDA"
+
