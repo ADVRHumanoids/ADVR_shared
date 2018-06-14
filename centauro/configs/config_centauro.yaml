@@ -116,6 +116,7 @@ ec_board_ctrl:
 #
 ec_boards_base:
   create_pipes: false
+  use_pipes: false
 
 firmware_update:
   #
