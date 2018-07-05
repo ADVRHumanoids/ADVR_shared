@@ -57,8 +57,8 @@
 
 
     <group name="force_torque_sensors">
-      <joint name="j_ft_arm1"/>
-      <joint name="j_ft_arm2"/>
+      <joint name="j_ft_1"/>
+      <joint name="j_ft_2"/>
     </group>
 
     <group name="imu_sensors">
