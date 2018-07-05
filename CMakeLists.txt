@@ -40,7 +40,11 @@ else()
     message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-# core YAML installed in the config default location
-install(DIRECTORY core/
-        DESTINATION "${CMAKE_INSTALL_PREFIX}/configs"
-        FILES_MATCHING PATTERN "*.yaml")
+# config YAML installed in the config default location
+install(DIRECTORY .
+        DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xbot/configs/${PROJECT_NAME}"
+	PATTERN "*.kdev4" EXCLUDE
+	PATTERN "CMakeLists.txt" EXCLUDE
+	PATTERN "README.md" EXCLUDE
+        )
+	#FILES_MATCHING PATTERN "*.yaml")
