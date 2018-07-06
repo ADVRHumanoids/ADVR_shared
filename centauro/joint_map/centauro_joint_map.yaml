@@ -41,8 +41,10 @@ joint_map:
   55: ankle_yaw_4
   56: j_wheel_4
   18: j_ft_arm2
-  28: j_ft_arm1
+  81: j_ft_arm1
   104: imu_joint
   101: neck_yaw
   102: neck_pitch
   103: neck_velodyne
+  110: 110
+  111: 111
