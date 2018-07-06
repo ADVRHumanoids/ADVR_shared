@@ -14,13 +14,25 @@ GazeboXBotPlugin:
     j_arm2_6: {p: 2000, d: 5}
     torso_yaw: {p: 5000, d: 30}
 
+HALInterface:
+  lib_file: "libXBotEcat"
+  lib_name: "ETHERCAT"
+  IJoint: "libXBotEcat_Joint"
+  ISensors:
+   - [[18,28] , "libXBotEcat_FT"]
+   - [[104] , "libXBotEcat_IMU"]
+
+
+SCPLog:
+  remote_username: "centauro"
+  remote_ip_address: "10.24.4.77"
+  remote_log_folder_path: "/home/centauro/CENTAURO_LOG"
+
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix :
   # periodic - priority if needed here
 
-
-#
 ec_board_ctrl:
   eth_iface: rteth0
   #eth_iface: eth1
@@ -32,10 +44,7 @@ ec_board_ctrl:
   #sync_cycle_time_ns: 0
   sync_cycle_offset_ns: 1000000000
   power_off_boards: false
-
-#
-ec_boards_base:
-  create_pipes: false
+  use_pipes: false
 
 firmware_update:
   #

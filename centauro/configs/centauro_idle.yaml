@@ -39,19 +39,27 @@ GazeboXBotPlugin:
     j_wheel_3: *wheel
     j_wheel_4: *wheel 
 
- 
 HALInterface:
   lib_file: "libXBotEcat"
   lib_name: "ETHERCAT"
+  IJoint: "libXBotEcat_Joint"
+  ISensors:
+   - [[81] , "libXBotEcat_FT"]
+   - [[104] , "libXBotEcat_IMU"]
+  IEndEffectors: 
+   - [[110, 111], "libXBotEcat_HeriHand"]
 
-    
+
+SCPLog:
+  remote_username: "centauro"
+  remote_ip_address: "10.24.4.77"
+  remote_log_folder_path: "/home/centauro/CENTAURO_LOG"
+
 x_bot_ecat:
   name: XBotCore
   sdo_xddp_prefix :
   # periodic - priority if needed here
 
-
-#
 ec_board_ctrl:
   eth_iface: rteth0
   #eth_iface: eth1
@@ -63,10 +71,15 @@ ec_board_ctrl:
   #sync_cycle_time_ns: 0
   sync_cycle_offset_ns: 1000000000
   power_off_boards: false
+  use_pipes: false
 
-#
 ec_boards_base:
-  create_pipes: false
+  use_pipes: false
+  fault_power_off: true
+  log_level: 1
+
+ec_board_base:
+  use_pipes: false
 
 firmware_update:
   #
@@ -121,6 +134,12 @@ CentAcESC_X:
     impedance:  [0.0, 0.0, 1.0, 0.002, 0.0]
 
   
+HeriHandESC_X:
+  sign: 1
+  pos_offset: 0
+  pid :
+    position: [100000.0 , 0.0 , 1.0]
+
   
   
 #############################
