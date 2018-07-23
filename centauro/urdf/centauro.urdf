@@ -7,6 +7,444 @@
   <!-- /constants -->
   <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
      Also all the parameter dependencies are resolved-->
+  <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
+     Also all the parameter dependencies are resolved-->
+  <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
+     Also all the parameter dependencies are resolved-->
+  <gazebo reference="wheel_1">
+    <sensor name="wheel_1_contact_sensor_1" type="contact">
+      <always_on>true</always_on>
+      <update_rate>1000.0</update_rate>
+      <contact>
+        <collision>wheel_1_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="wheel_1_bumper">
+        <bumperTopicName>centauro/contacts_wheel_1</bumperTopicName>
+        <frameName>wheel_1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="wheel_2">
+    <sensor name="wheel_2_contact_sensor_1" type="contact">
+      <always_on>true</always_on>
+      <update_rate>1000.0</update_rate>
+      <contact>
+        <collision>wheel_2_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="wheel_2_bumper">
+        <bumperTopicName>centauro/contacts_wheel_2</bumperTopicName>
+        <frameName>wheel_2</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="wheel_3">
+    <sensor name="wheel_3_contact_sensor_1" type="contact">
+      <always_on>true</always_on>
+      <update_rate>1000.0</update_rate>
+      <contact>
+        <collision>wheel_3_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="wheel_3_bumper">
+        <bumperTopicName>centauro/contacts_wheel_3</bumperTopicName>
+        <frameName>wheel_3</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="wheel_4">
+    <sensor name="wheel_4_contact_sensor_1" type="contact">
+      <always_on>true</always_on>
+      <update_rate>1000.0</update_rate>
+      <contact>
+        <collision>wheel_4_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="wheel_4_bumper">
+        <bumperTopicName>centauro/contacts_wheel_4</bumperTopicName>
+        <frameName>wheel_4</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- Here all arguments from launch file are evaluated to the final xacro poropeties.
+     Also all the parameter dependencies are resolved-->
+  <gazebo reference="imu_link">
+    <sensor name="imu_link" type="imu">
+      <always_on>1</always_on>
+      <update_rate>500</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <imu>
+        <!--
+                <noise>
+                <type>gaussian</type>
+                <rate>
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                </rate>
+                <accel>
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                </accel>
+                </noise>
+                -->
+      </imu>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libGazeboXBotPlugin.so" name="gazebo_xbot_plugin">
+      <path_to_config_file>configs/ADVR_shared/centauro/configs/config_centauro.yaml</path_to_config_file>
+      <!--                <path_to_config_file>configs/ADVR_shared/centauro/configs/config_centauro.yaml</path_to_config_file> -->
+    </plugin>
+  </gazebo>
+  <!-- /CONTROLLER -->
+  <!-- VISUALiZATION AND FRICTION -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="pelvis">
+    <material>Gazebo/OrangeTransparent</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="torso_2">
+    <material>Gazebo/OrangeTransparent</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip1_1">
+    <material>Gazebo/Lane_1</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip1_2">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip1_3">
+    <material>Gazebo/Lane_1</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip1_4">
+    <material>Gazebo/Lane_1</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip2_1">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip2_2">
+    <material>Gazebo/OrangeTransparent</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip2_3">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="hip2_4">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="knee_1">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="knee_2">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="knee_3">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="knee_4">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle1_1">
+    <material>Gazebo/OrangeTransparent</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle1_2">
+    <material>Gazebo/OrangeTransparent  </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle1_3">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle1_4">
+    <material>Gazebo/OrangeTransparent  </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle2_1">
+    <material> Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle2_2">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle2_3">
+    <material>Gazebo/Lane_1</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="ankle2_4">
+    <material>Gazebo/Lane_1</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="wheel_1">
+    <material>Gazebo/Residential </material>
+    <collision>
+      <surface>
+        <friction>
+          <!--                                        <torsional>
+                                                <coefficient> 0.5 </coefficient>
+                                                <use_patch_radius>true</use_patch_radius>
+                                                <patch_radius>0.2</patch_radius>
+                                        </torsional>-->
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+          <bullet>
+            <friction>0.5</friction>
+            <friction2>0.5</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <ode>
+            <!--<soft_cfm>0.0001</soft_cfm>
+                                        <soft_erp>0.25</soft_erp> -->
+            <kp>2100000</kp>
+            <kd>1</kd>
+            <max_vel>100</max_vel>
+          </ode>
+          <bullet>
+            <soft_cfm>0.007</soft_cfm>
+            <soft_erp>0.25</soft_erp>
+            <kp>1000000</kp>
+            <kd>5</kd>
+            <split_impulse>0.01</split_impulse>
+          </bullet>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference="wheel_2">
+    <material>Gazebo/Residential</material>
+    <collision>
+      <surface>
+        <friction>
+          <!--                                        <torsional>
+                                                <coefficient> 0.5 </coefficient>
+                                                <use_patch_radius>true</use_patch_radius>
+                                                <patch_radius>0.2</patch_radius>
+                                        </torsional>-->
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+          <bullet>
+            <friction>0.5</friction>
+            <friction2>0.5</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <ode>
+            <!--<soft_cfm>0.0001</soft_cfm>
+                                        <soft_erp>0.25</soft_erp> -->
+            <kp>2100000</kp>
+            <kd>1</kd>
+            <max_vel>100</max_vel>
+          </ode>
+          <bullet>
+            <soft_cfm>0.007</soft_cfm>
+            <soft_erp>0.25</soft_erp>
+            <kp>1000000</kp>
+            <kd>5</kd>
+            <split_impulse>0.01</split_impulse>
+          </bullet>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference="wheel_3">
+    <material>Gazebo/Residential </material>
+    <collision>
+      <surface>
+        <friction>
+          <!--                                        <torsional>
+                                                <coefficient> 0.5 </coefficient>
+                                                <use_patch_radius>true</use_patch_radius>
+                                                <patch_radius>0.2</patch_radius>
+                                        </torsional>-->
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+          <bullet>
+            <friction>0.5</friction>
+            <friction2>0.5</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <ode>
+            <!--<soft_cfm>0.0001</soft_cfm>
+                                        <soft_erp>0.25</soft_erp> -->
+            <kp>2100000</kp>
+            <kd>1</kd>
+            <max_vel>100</max_vel>
+          </ode>
+          <bullet>
+            <soft_cfm>0.007</soft_cfm>
+            <soft_erp>0.25</soft_erp>
+            <kp>1000000</kp>
+            <kd>5</kd>
+            <split_impulse>0.01</split_impulse>
+          </bullet>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference="wheel_4">
+    <material>Gazebo/Residential</material>
+    <collision>
+      <surface>
+        <friction>
+          <!--                                        <torsional>
+                                                <coefficient> 0.5 </coefficient>
+                                                <use_patch_radius>true</use_patch_radius>
+                                                <patch_radius>0.2</patch_radius>
+                                        </torsional>-->
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+          <bullet>
+            <friction>0.5</friction>
+            <friction2>0.5</friction2>
+          </bullet>
+        </friction>
+        <contact>
+          <ode>
+            <!--<soft_cfm>0.0001</soft_cfm>
+                                        <soft_erp>0.25</soft_erp> -->
+            <kp>2100000</kp>
+            <kd>1</kd>
+            <max_vel>100</max_vel>
+          </ode>
+          <bullet>
+            <soft_cfm>0.007</soft_cfm>
+            <soft_erp>0.25</soft_erp>
+            <kp>1000000</kp>
+            <kd>5</kd>
+            <split_impulse>0.01</split_impulse>
+          </bullet>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference="arm1_1">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_1">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_2">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_2">
+    <material>Gazebo/OrangeTransparent</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_3">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_3">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_4">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_4">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_5">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_5">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_6">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_6">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_7">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_7">
+    <material>Gazebo/Lane_1 </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm1_8">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
+  <gazebo reference="arm2_8">
+    <material>Gazebo/OrangeTransparent </material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+  </gazebo>
   <material name="grey">
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
@@ -62,9 +500,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.02 0.07"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.52 0.38 0.25"/>
       </geometry>
     </collision>
   </link>
@@ -99,9 +537,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.25"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link1.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.2 0.3"/>
       </geometry>
     </collision>
   </link>
@@ -116,6 +554,18 @@
     <!-- TODO -->
   </joint>
   <!-- /torso joints -->
+  <transmission name="t_torso_yaw">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="torso_yaw">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_torso_yaw">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <!-- /torso actuators -->
   <!-- head links -->
   <link name="neck_1">
     <inertial>
@@ -131,9 +581,9 @@
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/neck_yaw.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
+      <!--   <geometry>
+      <box size="0.05 0.05 0.05"/>
+   </geometry> -->
     </collision>
   </link>
   <link name="neck_2">
@@ -150,9 +600,9 @@
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/neck_pitch.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
+      <!--   <geometry>
+      <box size="0.05 0.05 0.05"/>
+   </geometry> -->
     </collision>
   </link>
   <link name="neck_3">
@@ -169,9 +619,9 @@
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0 0.0"/>
-      <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/velodyne.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
+      <!--   <geometry>
+      <box size="0.05 0.05 0.05"/>
+   </geometry> -->
     </collision>
   </link>
   <!-- /head links -->
@@ -271,6 +721,40 @@
     <child link="velodyne_mount"/>
   </joint>
   <!-- /sensors transformations -->
+  <transmission name="t_neck_yaw">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="neck_yaw">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_neck_yaw">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_neck_pitch">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="neck_pitch">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_neck_pitch">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_neck_velodyne">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="neck_velodyne">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_neck_velodyne">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <!-- /torso actuators -->
   <!-- /torso -->
   <!-- LINKS -->
   <!-- shoulder yaw-roll-->
@@ -288,9 +772,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.05 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link2.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.1 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -309,9 +793,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link3.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.2"/>
       </geometry>
     </collision>
   </link>
@@ -331,9 +815,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.075"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link4.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.10"/>
       </geometry>
     </collision>
   </link>
@@ -352,9 +836,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.0 -0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link5.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.10"/>
       </geometry>
     </collision>
   </link>
@@ -374,9 +858,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link6.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -395,9 +879,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.0 -0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link7.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.13"/>
       </geometry>
     </collision>
   </link>
@@ -418,7 +902,7 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link8.stl" scale="0.001 -0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -488,50 +972,111 @@
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
+  <transmission name="t_j_arm1_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_5">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_6">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm1_7">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm1_7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm1_7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
-  <!-- wrist pitch-->
-  <joint name="j_ft_1" type="fixed">
-    <parent link="arm1_7"/>
-    <child link="ft_arm1"/>
-    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
-  </joint>
-  <!-- wrist pitch-->
-  <link name="ft_arm1">
-    <inertial>
-      <origin xyz="0.0 -0.0 0.0"/>
-      <mass value="0.15"/>
-      <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
-    </inertial>
-  </link>
   <!-- links -->
   <link name="arm1_8">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.00270235 -0.01411486 0.05023455"/>
-      <mass value="1.8366865"/>
-      <inertia ixx="0.0062253159" ixy="0.0003312435" ixz="5.17232e-05" iyy="0.0046306594" iyz="0.0001950252" izz="0.0037732152"/>
+      <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
       <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
     </inertial>
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/simplified/heri.stl" scale="0.001 -0.001 -0.001"/>
+        <mesh filename="package://centauro/centauro_urdf/meshes/simplified/link9.stl" scale="0.001 -0.001 -0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/heri.stl" scale="0.001 -0.001 -0.001"/>
+        <cylinder length="0.13" radius="0.013"/>
       </geometry>
     </collision>
   </link>
   <!-- /links -->
   <!-- joints -->
   <joint name="j_arm1_8" type="fixed">
-    <parent link="ft_arm1"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <parent link="arm1_7"/>
+    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <child link="arm1_8"/>
     <axis xyz="1 0 0"/>
   </joint>
@@ -555,9 +1100,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.05 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link2.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.1 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -576,9 +1121,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link3.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.2"/>
       </geometry>
     </collision>
   </link>
@@ -598,9 +1143,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.075"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link4.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.10"/>
       </geometry>
     </collision>
   </link>
@@ -619,9 +1164,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.0 -0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link5.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.10"/>
       </geometry>
     </collision>
   </link>
@@ -641,9 +1186,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link6.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -662,9 +1207,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.0 -0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link7.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.13"/>
       </geometry>
     </collision>
   </link>
@@ -685,7 +1230,7 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link8.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -755,23 +1300,84 @@
   </joint>
   <!-- wrist pitch-->
   <!-- force-troque sensor -->
+  <transmission name="t_j_arm2_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_5">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_6">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_arm2_7">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_arm2_7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_arm2_7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
-  <!-- wrist pitch-->
-  <joint name="j_ft_2" type="fixed">
-    <parent link="arm2_7"/>
-    <child link="ft_arm2"/>
-    <origin rpy="0.0 3.14159265359 -3.14159265359" xyz="0.0 0.0 -0.0405"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="0" lower="0.0" upper="0.0" velocity="0"/>
-  </joint>
-  <!-- wrist pitch-->
-  <link name="ft_arm2">
-    <inertial>
-      <origin xyz="0.0 0.0 0.0"/>
-      <mass value="0.15"/>
-      <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-    </inertial>
-  </link>
   <!-- links -->
   <link name="arm2_8">
     <inertial>
@@ -788,17 +1394,17 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.065"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link9.stl" scale="0.001 0.001 -0.001"/>
+        <cylinder length="0.13" radius="0.013"/>
       </geometry>
     </collision>
   </link>
   <!-- /links -->
   <!-- joints -->
   <joint name="j_arm2_8" type="fixed">
-    <parent link="ft_arm2"/>
-    <origin rpy="0.0 0.0 -1.5707963268" xyz="0.0 0.0 0.0"/>
+    <parent link="arm2_7"/>
+    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <child link="arm2_8"/>
     <axis xyz="1 0 0"/>
   </joint>
@@ -823,9 +1429,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -844,9 +1450,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.15 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.40 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -866,9 +1472,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.10 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/knee.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.30 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -887,9 +1493,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -908,9 +1514,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -929,9 +1535,9 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/wheel.stl" scale="0.001 0.001 0.001"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -977,6 +1583,72 @@
     <axis xyz="0 0 -1"/>
     <limit effort="35" velocity="20.0"/>
   </joint>
+  <transmission name="t_hip_yaw_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_yaw_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_yaw_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_hip_pitch_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_knee_pitch_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="knee_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_knee_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_pitch_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_pitch_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_yaw_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_yaw_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_yaw_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_wheel_1">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_wheel_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_wheel_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
   <link name="hip1_2">
     <inertial>
@@ -994,9 +1666,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1015,9 +1687,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.15 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.40 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1037,9 +1709,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.10 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/knee.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.30 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1058,9 +1730,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1079,9 +1751,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1100,9 +1772,9 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/wheel.stl" scale="0.001 0.001 0.001"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1148,6 +1820,72 @@
     <axis xyz="0 0 -1"/>
     <limit effort="35" velocity="20.0"/>
   </joint>
+  <transmission name="t_hip_yaw_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_yaw_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_yaw_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_hip_pitch_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_knee_pitch_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="knee_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_knee_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_pitch_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_pitch_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_yaw_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_yaw_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_yaw_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_wheel_2">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_wheel_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_wheel_2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
   <link name="hip1_3">
     <inertial>
@@ -1165,9 +1903,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1186,9 +1924,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.15 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.40 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1208,9 +1946,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.10 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/knee.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.30 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1229,9 +1967,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1250,9 +1988,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1271,9 +2009,9 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/wheel.stl" scale="0.001 0.001 0.001"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1319,6 +2057,72 @@
     <axis xyz="0 0 -1"/>
     <limit effort="35" velocity="20.0"/>
   </joint>
+  <transmission name="t_hip_yaw_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_yaw_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_yaw_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_hip_pitch_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_knee_pitch_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="knee_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_knee_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_pitch_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_pitch_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_yaw_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_yaw_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_yaw_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_wheel_3">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_wheel_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_wheel_3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
   <link name="hip1_4">
     <inertial>
@@ -1336,9 +2140,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 4.06442490005" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0.05"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
@@ -1357,9 +2161,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.15 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/hip-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.1 0.40 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1379,9 +2183,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.10 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/knee.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.30 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -1400,9 +2204,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0 0.0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-pitch.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1421,9 +2225,9 @@
       <material name="dark_grey"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.1"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/ankle-yaw.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -1442,9 +2246,9 @@
       <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/wheel.stl" scale="0.001 0.001 0.001"/>
+        <sphere radius="0.078"/>
       </geometry>
     </collision>
   </link>
@@ -1490,6 +2294,72 @@
     <axis xyz="0 0 -1"/>
     <limit effort="35" velocity="20.0"/>
   </joint>
+  <transmission name="t_hip_yaw_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_yaw_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_yaw_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_hip_pitch_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="hip_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hip_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_knee_pitch_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="knee_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_knee_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_pitch_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_pitch_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_ankle_yaw_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="ankle_yaw_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_ankle_yaw_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
+  <transmission name="t_j_wheel_4">
+    <type> transmission_interface/SimpleTransmission</type>
+    <joint name="j_wheel_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_j_wheel_4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <machanicalReduction>1</machanicalReduction>
+    </actuator>
+    <robotNamespace>/centauro</robotNamespace>
+  </transmission>
   <!-- /actuators -->
   <!-- /legs -->
 </robot>
