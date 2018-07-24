@@ -1,0 +1,35 @@
+XBotCore:
+  config_path: "configs/ADVR_shared/bonn_centauro/configs/bonn_centauro.yaml"
+
+XBotInterface:
+  urdf_path: "configs/ADVR_shared/bonn_centauro/urdf/bonn_centauro.urdf"
+  srdf_path: "configs/ADVR_shared/bonn_centauro/srdf/bonn_centauro.srdf"
+  joint_map_path: "configs/ADVR_shared/bonn_centauro/joint_map/bonn_centauro_joint_map.yaml"
+
+RobotInterface:
+  framework_name: "ROS"
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "false"
+  
+MasterCommunicationInterface:
+  framework_name: "ROS"
+
+XBotRTPlugins:
+  plugins: ["HomingExample"]
+  io_plugins: []
+  
+NRTPlugins:
+  plugins: []
+  
+WebServer:
+  enable: "true"
+  address: "127.0.0.1"
+  port: "8081"
+
+SimulationOptions:
+  verbose_mode: "true"
+  
+RobotInterfaceRos:
+  publish_tf: "false"
