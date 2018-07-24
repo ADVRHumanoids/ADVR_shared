@@ -25,25 +25,12 @@
   <material name="green">
     <color rgba="0.0 1.0 0.0 1"/>
   </material>
-  <!-- Head -->
-  <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
-and to define the end effectors of the robot.
-The coordinate frame called gaze defines the head position and orientation. The orientation indicates in which direction the head appears to be looking regardless of any sensors (camera for instance). -->
-  <!--link name="gaze"/>
-
-        <joint name="gaze_joint" type="fixed">
-                <parent link="torso"/>
-                <child link="gaze"/>
-                <origin xyz="0 0 0.1" rpy="0 0 0" />
-        </joint-->
-  <!-- NECK -->
-  <!--xacro:include filename="$(find cogimon_urdf)/urdf/parts/neck.urdf.xacro" /-->
   <!-- 
-  ROS urdf definition of the COGIMON humanoid robot by Istituto Italiano di Tecnologia
+  ROS urdf definition of the Bonn Centauro humanoid robot by Istituto Italiano di Tecnologia
   
   DO NOT INCLUDE THIS FILE DIRECTLY! USE cogimon_robot.urdf.xacro INSTEAD!
 
-  Author: Enrico Mingo Hoffman
+  Author: Enrico Mingo Hoffman, Luca Muratore
 
   Inertial matrix has to be in CoM frame (URDF specs)
 
@@ -63,13 +50,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="dark_grey"/>
       <geometry name="Waist_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Waist.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Waist.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="Waist_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Waist.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Waist.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -89,14 +76,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWLExt_visual">
-        <mesh filename="package://cogimon_urdf/meshes/TorsoRollExt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/TorsoRollExt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWLExt_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/TorsoRollExt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/TorsoRollExt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -109,14 +96,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWYTorso_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Chest.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Chest.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry name="DWYTorso_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Chest.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Chest.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -147,14 +134,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShp_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShp_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -167,14 +154,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShr_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShr_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -187,14 +174,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShy_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RShy_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -207,14 +194,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RElb_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RElb_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Elbow.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Elbow.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -227,14 +214,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RForearm_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RForearm_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -247,14 +234,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot2_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot2_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -267,14 +254,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot3_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="RWrMot3_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -287,14 +274,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry name="RShp_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Wrist.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Wrist.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry name="RShp_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Wrist.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -369,14 +356,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShp_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShp_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -389,14 +376,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShr_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShr_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderRoll.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -409,14 +396,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShy_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LShy_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ShoulderYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -429,14 +416,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LElb_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LElb_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Elbow.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Elbow.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -449,14 +436,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LForearm_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LForearm_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -469,14 +456,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot2_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot2_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -489,14 +476,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot3_visual">
-        <mesh filename="package://cogimon_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="LWrMot3_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/ForearmYaw.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -509,14 +496,14 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry name="LShp_visual">
-        <mesh filename="package://cogimon_urdf/meshes/Wrist.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/Wrist.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry name="LShp_collision">
-        <mesh filename="package://cogimon_urdf/meshes/simple/Wrist.STL" scale="0.001 -0.001 0.001"/>
+        <mesh filename="package://bonn_centauro_urdf/meshes/simple/Wrist.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
     </collision>
   </link>
