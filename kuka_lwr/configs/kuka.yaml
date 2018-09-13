@@ -19,5 +19,5 @@ HALInterface:
 #1 impedance
 #2 impedancewithtorque
 #3 torque  
-controlMode: 1
+controlMode: 3
 gains: {p: 1000, d: 10}
