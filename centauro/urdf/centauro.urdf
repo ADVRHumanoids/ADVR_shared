@@ -179,6 +179,21 @@
       </geometry>
     </collision>
   </link>
+  <link name="velodyne">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>	
+  </link>
+  <link name="velodyne_upright">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>	
+  </link>
+
   <!-- /head links -->
   <!-- head joints -->
   <joint name="neck_yaw" type="revolute">
@@ -205,6 +220,19 @@
     <limit effort="35" velocity="5.7" lower="-1000000000000000" upper="1000000000000000"/>
     <!-- TODO -->
   </joint>
+  <joint name="j_velodyne" type="fixed">
+    <parent link="neck_3"/>
+    <origin rpy="-1.57079632679 0.0349066 1.57079632679 " xyz="-0.138 0.0 -0.033"/>
+    <child link="velodyne"/>
+  </joint>	
+  <joint name="j_velodyne_upright" type="fixed">
+    <parent link="velodyne"/>
+    <origin rpy="1.57079632679 0.0 0.0 " xyz="0.0 0.0 0.0 "/>
+    <child link="velodyne_upright"/>
+  </joint>		
+	
+	
+  
   <!-- /head joints -->
   <transmission name="t_neck_yaw">
     <type> transmission_interface/SimpleTransmission</type>
@@ -560,9 +588,41 @@
   </link>
   <!-- /links -->
   <!-- joints -->
-  <joint name="j_arm1_8" type="fixed">
+  <joint name="110" type="fixed">
     <parent link="arm1_7"/>
     <child link="arm1_8"/>
+    <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0.0" upper="0" velocity="0"/>
+  </joint>
+   --&gt;
+   <!-- links -->
+  <link name="arm1_9">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.001 0.0 0.006"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="1e-05"/>
+      <!--          <inertia ixx="0.003"  ixy="0"  ixz="0" iyy="0.0025" iyz="0" izz="0.00016900" /> -->
+    </inertial>
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro/centauro_urdf/meshes/simplified/link9.stl" scale="0.001 -0.001 -0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://centauro/centauro_urdf/meshes/convex_hull/link9.stl" scale="0.001 -0.001 -0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- /links -->
+  <!-- joints -->
+  <joint name="111" type="fixed">
+    <parent link="arm1_8"/>
+    <child link="arm1_9"/>
     <origin rpy="0.0 3.14159265359 -1.5707963268" xyz="0.0 0.0 -0.0405"/>
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="0.0" upper="0" velocity="0"/>
