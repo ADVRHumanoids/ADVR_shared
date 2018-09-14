@@ -11,6 +11,7 @@ GazeboXBotPlugin:
     panda_joint7:   {p: 3000, d: 30}
 
 HALInterface:
-  lib_file: "libXBotPanda"
-  lib_name: "PANDA"
+  lib_file: "libXBotFranka"
+  lib_name: "Franka"
+  IJoint: "libXBotFranka_Joint"
 
