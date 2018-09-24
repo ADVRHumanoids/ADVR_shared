@@ -39,7 +39,7 @@
 
     <group name="arms">
 	<group name="left_arm"/>
-        <group name="right_arm"/>
+        <!--<group name="right_arm"/>-->
     </group>
     
     <group name="HeriHand">
@@ -63,7 +63,7 @@
 
     <group name="force_torque_sensors">
       <joint name="j_ft_arm1"/>
-     <!-- <joint name="j_ft_arm2"/>-->
+      <joint name="j_ft_arm2"/>
     </group>
 
     <group name="imu_sensors">

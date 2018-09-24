@@ -14,22 +14,60 @@ ModelInterface:
   is_model_floating_base: "true"
 
 RobotInterfaceROS:
-  publish_tf: true
+  publish_tf: false
   
 MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample","HeriHand"]
+  plugins: ["HomingExample", "HeriHand", "AlexCommunication", "OpenSotIk"]
   io_plugins: []
   
 NRTPlugins:
   plugins: []
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "10.24.4.100"
   port: "8081"
 
 SimulationOptions:
   verbose_mode: "false"    
+
+
+CartesianInterface:
+  solver: "OpenSot"
+  
+  problem_description:
+    solver_options:
+        regularization: 1e-3
+        back_end: "qpoases"
+    stack:
+      - ["LeftArm", "RightArm"]
+      - ["Postural"]
+    constraints: ["JointLimits", "VelocityLimits"]
+
+    LeftArm:
+      type: "Cartesian"
+      distal_link: "arm1_8"
+      base_link: "torso_2"
+      lambda: 0.1
+    
+    RightArm:
+      type: "Cartesian"
+      distal_link: "arm2_8"
+      base_link: "torso_2"
+      lambda: 0.1
+      
+    Postural:
+      type: "Postural"
+      lambda: 0.01
+      #indices: [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+      weight:
+        VIRTUALJOINT_1: 0.0
+        VIRTUALJOINT_2: 0.0
+        VIRTUALJOINT_3: 0.0
+        VIRTUALJOINT_4: 0.0
+        VIRTUALJOINT_5: 0.0
+        VIRTUALJOINT_6: 0.0
+

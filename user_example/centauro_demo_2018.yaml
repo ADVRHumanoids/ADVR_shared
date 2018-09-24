@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/centauro/configs/centauro_idle.yaml"
+  config_path: "configs/ADVR_shared/centauro/configs/centauro.yaml"
 
 XBotInterface:
   urdf_path: "configs/ADVR_shared/centauro/urdf/centauro.urdf"
@@ -12,21 +12,27 @@ RobotInterface:
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "true"
+
+RobotInterfaceROS:
+  publish_tf: true
   
 MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample"] #, "GcompGiusta"]
+  plugins: ["HomingExample", "HeriHand"]
   io_plugins: []
   
 NRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: []
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "10.24.4.100"
   port: "8081"
 
 SimulationOptions:
   verbose_mode: "false"    
+
+
+
