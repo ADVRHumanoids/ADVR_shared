@@ -11,7 +11,7 @@ RobotInterface:
 
 ModelInterface:
   model_type: "RBDL"
-  is_model_floating_base: "false"
+  is_model_floating_base: "true"
   
 MasterCommunicationInterface:
   framework_name: "ROS"
@@ -21,12 +21,12 @@ XBotRTPlugins:
   io_plugins: []
   
 NRTPlugins:
-  plugins: ["HomingExample"]
+  plugins: []
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
 
 SimulationOptions:
-  verbose_mode: "false"    
+  verbose_mode: "false"

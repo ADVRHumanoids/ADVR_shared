@@ -17,16 +17,16 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "OpenSotIk", "IkRosSMPub", "Grasp", "chengxu_walking"]
-  io_plugins: ["IkRosIo", "OdomPublisher", "JointStateRemapper"] 
+  plugins: ["HomingExample"]
+  io_plugins: []
   
 NRTPlugins:
-  plugins: ["ManipulationPlugin"]
+  plugins: []
   
 WebServer:
-  enable: "true"
+  enable: "false"
   address: "127.0.0.1"
   port: "8081"
 
 SimulationOptions:
-  verbose_mode: "false"  
+  verbose_mode: "false"
