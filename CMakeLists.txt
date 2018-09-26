@@ -43,8 +43,12 @@ endif()
 # config YAML installed in the config default location
 install(DIRECTORY .
         DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xbot/configs/${PROJECT_NAME}"
-	PATTERN "*.kdev4" EXCLUDE
-	PATTERN "CMakeLists.txt" EXCLUDE
-	PATTERN "README.md" EXCLUDE
+        PATTERN "*.kdev4" EXCLUDE
+        PATTERN "CMakeLists.txt" EXCLUDE
+        PATTERN "README.md" EXCLUDE
+        PATTERN ".git*" EXCLUDE
+        PATTERN "*.bash" EXCLUDE
         )
-	#FILES_MATCHING PATTERN "*.yaml")
+            
+install(PROGRAMS ./setup.bash DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xbot")
+        
