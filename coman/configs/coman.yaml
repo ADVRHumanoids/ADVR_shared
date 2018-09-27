@@ -1,5 +1,8 @@
 RobotName: "coman"
 
+GazeboXBotPlugin:
+  control_rate: 0.001
+
 HALInterface:
   lib_file: "libXBotEthernet"
   lib_name: "XBotEthernet"
