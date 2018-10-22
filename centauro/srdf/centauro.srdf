@@ -39,7 +39,7 @@
 
     <group name="arms">
 	<group name="left_arm"/>
-        <!--<group name="right_arm"/>-->
+        <group name="right_arm"/>
     </group>
     
     <group name="HeriHand">
@@ -88,6 +88,8 @@
    <group_state name="home" group="chains">
 
         <joint name="torso_yaw" value="0.0"/>
+
+        <joint name="neck_pitch" value="0.45"/>
 
         <joint name="j_arm1_1" value="0.5"/>
         <joint name="j_arm1_2" value="-0.3"/>

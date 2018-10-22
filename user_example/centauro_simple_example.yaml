@@ -20,20 +20,22 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "HeriHand", "AlexCommunication", "OpenSotIk"]
+  plugins: ["HomingExample", "HeriHand", "AlexCommunication", "OpenSotIk", "RTSharedControlROS", "CirclePublisher"]
   io_plugins: []
   
 NRTPlugins:
   plugins: []
   
 WebServer:
-  enable: "false"
+  enable: "true"
   address: "10.24.4.100"
   port: "8081"
 
 SimulationOptions:
   verbose_mode: "false"    
 
+RTSharedControlROS:
+  enabled_chains: ["rear_right_leg", "front_left_leg", "rear_left_leg", "front_right_leg", "neck", "velodyne"]
 
 CartesianInterface:
   solver: "OpenSot"
