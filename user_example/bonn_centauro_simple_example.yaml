@@ -33,3 +33,27 @@ SimulationOptions:
   
 RobotInterfaceRos:
   publish_tf: "false"
+
+CartesianInterface:
+  solver: "OpenSot"
+  problem_description:
+    stack:
+      - ["LeftArm", "RightArm"]
+      - ["Postural"]
+    constraints: ["JointLimits", "VelocityLimits"]
+    
+    LeftArm:
+      type: "Cartesian"
+      distal_link: "LWrMot3"
+      base_link: "DWYTorso"
+      lambda: 0.1
+    
+    RightArm:
+      type: "Cartesian"
+      distal_link: "RWrMot3"
+      base_link: "DWYTorso"
+      lambda: 0.1
+      
+    Postural:
+      type: "Postural"
+      lambda: 0.01
