@@ -152,7 +152,7 @@ CentAcESC_1:
     # pos_Kp pos_Kd tor_Kp tor_Kd tor_Ki
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 0.5, 0.001, 0.0]
-
+  ram_cmd : [38]
 
 ##############################
 # Right Arm
@@ -167,6 +167,7 @@ CentAcESC_2:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_3:
   control_mode: pos_3b
@@ -178,6 +179,7 @@ CentAcESC_3:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_4:
   control_mode: pos_3b
@@ -189,6 +191,7 @@ CentAcESC_4:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_5:
   control_mode: pos_3b
@@ -200,6 +203,7 @@ CentAcESC_5:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_6:
   control_mode: pos_3b
@@ -211,6 +215,7 @@ CentAcESC_6:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_7:
   control_mode: pos_3b
@@ -222,6 +227,7 @@ CentAcESC_7:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_8:
   control_mode: pos_3b
@@ -233,6 +239,7 @@ CentAcESC_8:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 ##############################
 # Left Arm
@@ -246,7 +253,8 @@ CentAcESC_9:
   pid :
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0] 
+  ram_cmd : [38]
 
 CentAcESC_10:
   control_mode: pos_3b
@@ -258,6 +266,7 @@ CentAcESC_10:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_11:
   control_mode: pos_3b
@@ -269,6 +278,7 @@ CentAcESC_11:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_12:
   control_mode: pos_3b
@@ -280,6 +290,7 @@ CentAcESC_12:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_13:
   control_mode: pos_3b
@@ -291,6 +302,7 @@ CentAcESC_13:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_14:
   control_mode: pos_3b
@@ -302,6 +314,7 @@ CentAcESC_14:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 CentAcESC_15:
   control_mode: pos_3b
@@ -313,6 +326,7 @@ CentAcESC_15:
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
+  ram_cmd : [38]
 
 ##############################
 # FrontLeft Leg
@@ -366,6 +380,10 @@ CentAcESC_75:
     position: [300.0 , 0.0 , 10.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
+  ram_cmd : [38]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 CentAcESC_76:
   control_mode: vel_71
@@ -376,6 +394,9 @@ CentAcESC_76:
     velocity: [30.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 
 ##############################
@@ -430,6 +451,10 @@ CentAcESC_45:
     position: [300.0 , 0.0 , 10.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 6.0, 0.002, 1.0]
+  ram_cmd : [38]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 CentAcESC_46:
   control_mode: vel_71
@@ -440,6 +465,9 @@ CentAcESC_46:
     velocity: [30.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 
 ##############################
@@ -494,6 +522,10 @@ CentAcESC_65:
     position: [300.0 , 0.0 , 10.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [100.0, 2.0, 5.5, 0.005, 1.0]
+  ram_cmd : [38]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 CentAcESC_66:
   control_mode: vel_71
@@ -504,6 +536,9 @@ CentAcESC_66:
     velocity: [30.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 
 ##############################
@@ -558,6 +593,10 @@ CentAcESC_55:
     position: [300.0 , 0.0 , 10.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [0.0, 0.0, 6.0, 0.002, 1.0]
+  ram_cmd : [38]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 CentAcESC_56:
   control_mode: vel_71
@@ -568,6 +607,9 @@ CentAcESC_56:
     velocity: [30.0 , 0.0 , 0.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
     impedance:  [20.0, 0.0, 0.0, 0.0, 0.0]
+  
+  upd_params :
+    backEmfCompensation : 0.0
 
 
 LpESC_101:
