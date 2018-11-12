@@ -27,7 +27,7 @@ joint_map:
   43: knee_pitch_2
   44: ankle_pitch_2
   45: ankle_yaw_2
-  46: j_wheel_2
+  56: j_wheel_2
   61: hip_yaw_3
   62: hip_pitch_3
   63: knee_pitch_3
@@ -39,7 +39,7 @@ joint_map:
   53: knee_pitch_4
   54: ankle_pitch_4
   55: ankle_yaw_4
-  56: j_wheel_4
+  46: j_wheel_4
   80: j_ft_arm2
   81: j_ft_arm1
   104: imu_joint
