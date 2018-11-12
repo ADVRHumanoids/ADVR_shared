@@ -158,7 +158,7 @@ CentAcESC_1:
 # Right Arm
 
 CentAcESC_2:
-  control_mode: impedance_d4
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 45
@@ -166,10 +166,10 @@ CentAcESC_2:
   pid :
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [100.0, 10.0, 2.0, 0.003, 0.0]
 
 CentAcESC_3:
-  control_mode: impedance_d4
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 45
@@ -177,10 +177,10 @@ CentAcESC_3:
   pid :
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.0, 0.003, 0.0]
+    impedance:  [100.0, 10.0, 2.0, 0.003, 0.0]
 
 CentAcESC_4:
-  control_mode: impedance_d4
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 0
@@ -188,10 +188,10 @@ CentAcESC_4:
   pid :
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.2, 0.003, 0.0]
+    impedance:  [100.0, 10.0, 2.0, 0.003, 0.0]
 
 CentAcESC_5:
-  control_mode: impedance_d4
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 0
@@ -199,10 +199,10 @@ CentAcESC_5:
   pid :
     position: [1000.0 , 0.0 , 30.0]
     #  .... tor_K divided by 10000 to respect the int range [0..65536]
-    impedance:  [50.0, 0.0, 1.4, 0.003, 0.0]
+    impedance:  [100.0, 10.0, 2.0, 0.003, 0.0]
 
 CentAcESC_6:
-  control_mode: idle
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 0
@@ -213,7 +213,7 @@ CentAcESC_6:
     impedance:  [100.0, 3.0, 1.0, 0.001, 0.0]
 
 CentAcESC_7:
-  control_mode: idle
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 0
@@ -224,7 +224,7 @@ CentAcESC_7:
     impedance:  [50.0, 2.0, 1.0, 0.001, 0.0]
 
 CentAcESC_8:
-  control_mode: idle
+  control_mode: pos_3b
   fault_power_off: false
   sign: 1
   pos_offset: 0
