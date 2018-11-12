@@ -20,7 +20,7 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "HeriHand", "AlexCommunication", "OpenSotIk", "RTSharedControlROS", "CirclePublisher"]
+  plugins: ["HomingExample", "HeriHand", "AlexCommunication", "OpenSotIk"] #, "RTSharedControlROS", "CirclePublisher"]
   io_plugins: []
   
 NRTPlugins:
