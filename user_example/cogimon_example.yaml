@@ -1,10 +1,10 @@
 XBotCore:
-  config_path: "configs/ADVR_shared/cogimon/configs/cogimon.yaml"
+  config_path: "/home/xin/catkin_ws/src/ADVR_shared/cogimon/configs/cogimon.yaml"
 
 XBotInterface:
-  urdf_path: "configs/ADVR_shared/cogimon/urdf/cogimon.urdf"
-  srdf_path: "configs/ADVR_shared/cogimon/srdf/cogimon.srdf"
-  joint_map_path: "configs/ADVR_shared/cogimon/joint_map/cogimon_joint_map.yaml"
+  urdf_path: "/home/xin/catkin_ws/src/ADVR_shared/cogimon/urdf/cogimon.urdf"
+  srdf_path: "/home/xin/catkin_ws/src/ADVR_shared/cogimon/srdf/cogimon.srdf"
+  joint_map_path: "/home/xin/catkin_ws/src/ADVR_shared/cogimon/joint_map/cogimon_joint_map.yaml"
 
 RobotInterface:
   framework_name: "ROS"
@@ -17,14 +17,14 @@ MasterCommunicationInterface:
   framework_name: "ROS"
 
 XBotRTPlugins:
-  plugins: ["HomingExample", "yw_walking_rt_plugin"] # , "Poses", "chengxu_walking", "yw_walking_rt_plugin"
+  plugins: ["HomingExample"] # , "Poses", "chengxu_walking", "yw_walking_rt_plugin","yw_walking_rt_plugin"
   io_plugins: []
   
 NRTPlugins:
   plugins: []
   
 TransmissionPlugins:
-  plugins: ["CogimonAnkles"]  
+  plugins: []
   
 WebServer:
   enable: "true"
